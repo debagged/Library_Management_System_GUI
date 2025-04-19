@@ -32,12 +32,14 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         username_textfield = new javax.swing.JTextField();
         password_label = new javax.swing.JLabel();
         password_textfield = new javax.swing.JTextField();
-        signIn_button = new javax.swing.JButton();
-        forgotPassword_label = new javax.swing.JLabel();
+        confirm_button = new javax.swing.JButton();
+        logIn_label = new javax.swing.JLabel();
         logInLine_label = new javax.swing.JLabel();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Forgot Password");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -57,11 +59,6 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
 
         username_textfield.setBackground(new java.awt.Color(255, 255, 255));
         username_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
-        username_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username_textfieldActionPerformed(evt);
-            }
-        });
 
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         password_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -69,27 +66,34 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
 
         password_textfield.setBackground(new java.awt.Color(255, 255, 255));
         password_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
-        password_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_textfieldActionPerformed(evt);
+
+        confirm_button.setBackground(new java.awt.Color(145, 187, 137));
+        confirm_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        confirm_button.setForeground(new java.awt.Color(255, 255, 255));
+        confirm_button.setText("Confirm");
+        confirm_button.setFocusable(false);
+        confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
             }
         });
 
-        signIn_button.setBackground(new java.awt.Color(145, 187, 137));
-        signIn_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        signIn_button.setForeground(new java.awt.Color(255, 255, 255));
-        signIn_button.setText("Confirm");
-        signIn_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signIn_buttonActionPerformed(evt);
+        logIn_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        logIn_label.setForeground(new java.awt.Color(79, 82, 78));
+        logIn_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logIn_label.setText("Log In");
+        logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
             }
         });
-
-        forgotPassword_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        forgotPassword_label.setForeground(new java.awt.Color(79, 82, 78));
-        forgotPassword_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        forgotPassword_label.setText("Log in");
-        forgotPassword_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         logInLine_label.setBackground(new java.awt.Color(103, 120, 97));
         logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
@@ -104,13 +108,16 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 .addComponent(loginHeader_label)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 24, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(signIn_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(forgotPassword_label)
-                            .addGap(98, 98, 98)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(confirm_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(103, 103, 103)
+                                .addComponent(logIn_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(98, 98, 98)))
+                        .addGap(22, 22, 22))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,9 +146,9 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(signIn_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(forgotPassword_label)
+                .addComponent(logIn_label)
                 .addGap(89, 89, 89))
         );
 
@@ -152,19 +159,32 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         getContentPane().add(mainBackground_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void username_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_username_textfieldActionPerformed
 
-    private void password_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_password_textfieldActionPerformed
+    private void MouseEntered(java.awt.event.MouseEvent evt) {
+        if(evt.getSource()==logIn_label){
+            logIn_label.setText("<html><u>Log&nbsp;In</html>");
+        }
+    }
 
-    private void signIn_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signIn_buttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_signIn_buttonActionPerformed
+    private void MouseExited(java.awt.event.MouseEvent evt) {
+        if(evt.getSource()==logIn_label){
+            logIn_label.setText("Log In");
+        }
+    }
+
+    private void MousePressed(java.awt.event.MouseEvent evt) {
+        if(evt.getSource()==logIn_label){
+            this.setVisible(false);
+            new com.mycompany.library.ui.mainpage.LibraryLogInPageUI().setVisible(true);
+        }
+
+        if(evt.getSource()==confirm_button){
+            //////////////
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -199,20 +219,20 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LibraryForgotPassResetPageUI().setVisible(true);
+                new com.mycompany.library.ui.mainpage.LibraryForgotPassResetPageUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel forgotPassword_label;
+    private javax.swing.JButton confirm_button;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logInLine_label;
+    private javax.swing.JLabel logIn_label;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JLabel mainBackground_label;
     private javax.swing.JLabel password_label;
     private javax.swing.JTextField password_textfield;
-    private javax.swing.JButton signIn_button;
     private javax.swing.JLabel username_label;
     private javax.swing.JTextField username_textfield;
     // End of variables declaration//GEN-END:variables

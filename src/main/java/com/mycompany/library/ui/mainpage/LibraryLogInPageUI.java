@@ -236,6 +236,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             if(UserData.authenticateUser(uname, pass)){
                 JOptionPane.showMessageDialog(rootPane, "Log in successful");
                 return;
+                
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Log in failed");
                 return;

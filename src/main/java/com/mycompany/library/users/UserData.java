@@ -114,13 +114,15 @@ public class UserData{
             if (resultSet.next()) {
                 String storedPassword = resultSet.getString("password");
 
-                System.out.println("User Login Successfully");
+                if(storedPassword.equals(inputHashedPassword)) return true;
 
-                return storedPassword.equals(inputHashedPassword); // Compare hashes
-            } else {
-                System.out.println("User not found");
-                return false; // User not found
+                //System.out.println("User Login Successfully");
+
+                //return storedPassword.equals(inputHashedPassword); // Compare hashes
             }
+
+            //System.out.println("User not found");
+            return false; // User not found
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,23 +136,6 @@ public class UserData{
             }
         }
     }
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
 
     String filePath = "src/main/resources/UserData_Log_File.txt";
 
@@ -260,13 +245,6 @@ public class UserData{
         return false;
     }
 
-
-
-
-
-
-
-
     // WITH DB PROPERTY //
 
     public static Connection checkDatabaseConnection(){
@@ -321,8 +299,8 @@ public class UserData{
                 isIDexisting = true;
             }
 
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
+        
         return isIDexisting;
     }
 

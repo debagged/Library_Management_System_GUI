@@ -4,6 +4,9 @@
  */
 package com.mycompany.library.ui.mainpage;
 
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author shawn
@@ -44,7 +47,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         studID_textfield = new javax.swing.JTextField();
         course_label = new javax.swing.JLabel();
         sex_label = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        suffixComboBox = new javax.swing.JComboBox<>();
         courseComboBox = new javax.swing.JComboBox<>();
         sexComboBox = new javax.swing.JComboBox<>();
         mainBackground_label = new javax.swing.JLabel();
@@ -87,9 +90,9 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         next_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         next_button.setForeground(new java.awt.Color(252, 255, 242));
         next_button.setText("Next");
-        next_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                next_buttonActionPerformed(evt);
+        next_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
             }
         });
 
@@ -152,9 +155,14 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         sex_label.setForeground(new java.awt.Color(79, 82, 78));
         sex_label.setText("Sex:");
 
-        jComboBox1.setBackground(new java.awt.Color(252, 255, 242));
-        jComboBox1.setForeground(new java.awt.Color(79, 82, 78));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jr.", "Sr.", "I.", "II.", "III.", "IV.", "V." }));
+        suffixComboBox.setBackground(new java.awt.Color(252, 255, 242));
+        suffixComboBox.setForeground(new java.awt.Color(79, 82, 78));
+        suffixComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Jr.", "Sr.", "Other(input)" }));
+        suffixComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suffixComboBoxActionPerformed(evt);
+            }
+        });
 
         courseComboBox.setBackground(new java.awt.Color(252, 255, 242));
         courseComboBox.setForeground(new java.awt.Color(79, 82, 78));
@@ -166,11 +174,6 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         sexComboBox.setSelectedItem("Male");
         sexComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         sexComboBox.setFocusable(false);
-        sexComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sexComboBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -206,7 +209,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                             .addGap(57, 57, 57)
                                             .addComponent(firstName_label))
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 206, Short.MAX_VALUE))
+                                        .addComponent(suffixComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 206, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addGap(63, 63, 63)
                                         .addComponent(middleName_label)))
@@ -263,7 +266,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(email_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(suffixComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(firstName_label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -300,13 +303,17 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void next_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_buttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_next_buttonActionPerformed
+    private void suffixComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suffixComboBoxActionPerformed
+        String selected = (String) suffixComboBox.getSelectedItem();
 
-    private void sexComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sexComboBoxActionPerformed
+        if("Other(input)".equals(selected)){
+            suffixComboBox.setEditable(true);
+            suffixComboBox.requestFocusInWindow();
+        
+        }else{
+            suffixComboBox.setEditable(false);
+        }
+    }
 
     private void MouseEntered(java.awt.event.MouseEvent evt) {
         if(evt.getSource()==logIn_label){
@@ -324,6 +331,12 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         if(evt.getSource()==logIn_label){
             this.setVisible(false);
             new com.mycompany.library.ui.mainpage.LibraryLogInPageUI().setVisible(true);
+        }
+
+        if(evt.getSource()==next_button){
+            String value = suffixComboBox.isEditable() ? (String) suffixComboBox.getEditor().getItem() : (String) suffixComboBox.getSelectedItem();
+            
+            JOptionPane.showMessageDialog(rootPane, "Suffix: " + value);
         }
     }
 
@@ -370,7 +383,6 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
     private javax.swing.JTextField email_textfield;
     private javax.swing.JLabel firstName_label;
     private javax.swing.JTextField firstName_textfield;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lastName_label;
     private javax.swing.JTextField lastName_textfield;
@@ -385,6 +397,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
     private javax.swing.JLabel sex_label;
     private javax.swing.JLabel studID_label;
     private javax.swing.JTextField studID_textfield;
+    private javax.swing.JComboBox<String> suffixComboBox;
     private javax.swing.JLabel suffix_label;
     // End of variables declaration//GEN-END:variables
 }

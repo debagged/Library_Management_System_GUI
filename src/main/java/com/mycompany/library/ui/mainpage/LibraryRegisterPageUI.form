@@ -89,7 +89,7 @@
                                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                               <Component id="firstName_label" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jComboBox1" alignment="1" pref="206" max="32767" attributes="0"/>
+                                          <Component id="suffixComboBox" alignment="1" pref="206" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -167,7 +167,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="email_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="suffixComboBox" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -292,7 +292,7 @@
             <Property name="text" type="java.lang.String" value="Next"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="next_buttonActionPerformed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="next_buttonMousePressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="logIn_label">
@@ -453,7 +453,7 @@
             <Property name="text" type="java.lang.String" value="Sex:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="suffixComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f2" green="ff" red="fc" type="rgb"/>
@@ -462,17 +462,17 @@
               <Color blue="4e" green="52" red="4f" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
-                <StringItem index="0" value="Jr."/>
-                <StringItem index="1" value="Sr."/>
-                <StringItem index="2" value="I."/>
-                <StringItem index="3" value="II."/>
-                <StringItem index="4" value="III."/>
-                <StringItem index="5" value="IV."/>
-                <StringItem index="6" value="V."/>
+              <StringArray count="4">
+                <StringItem index="0" value="None"/>
+                <StringItem index="1" value="Jr."/>
+                <StringItem index="2" value="Sr."/>
+                <StringItem index="3" value="Other(input)"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="suffixComboBoxActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -517,9 +517,6 @@
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sexComboBoxActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

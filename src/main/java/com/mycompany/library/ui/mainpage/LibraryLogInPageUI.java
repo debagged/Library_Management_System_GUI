@@ -1,5 +1,9 @@
 package com.mycompany.library.ui.mainpage;
 
+import javax.swing.JOptionPane;
+
+import com.mycompany.library.users.UserData;
+
 public class LibraryLogInPageUI extends javax.swing.JFrame {
 
     /**
@@ -23,11 +27,13 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         username_label = new javax.swing.JLabel();
         username_textfield = new javax.swing.JTextField();
         password_label = new javax.swing.JLabel();
-        password_textfield = new javax.swing.JTextField();
+        password_textfield = new javax.swing.JPasswordField();
         signIn_button = new javax.swing.JButton();
         forgotPassword_label = new javax.swing.JLabel();
         signUp_label = new javax.swing.JLabel();
         logInLine_label = new javax.swing.JLabel();
+        emptyUsername_label = new javax.swing.JLabel();
+        emptyPassword_label = new javax.swing.JLabel();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,6 +114,12 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
         logInLine_label.setOpaque(true);
 
+        emptyUsername_label.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        emptyUsername_label.setForeground(new java.awt.Color(204, 0, 0));
+
+        emptyPassword_label.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        emptyPassword_label.setForeground(new java.awt.Color(204, 0, 0));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -116,13 +128,14 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addComponent(loginHeader_label)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(signIn_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(password_textfield, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(signIn_button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(68, 68, 68)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(forgotPassword_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -132,17 +145,17 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                                         .addGap(29, 29, 29)))
                                 .addGap(62, 62, 62)))
                         .addGap(22, 22, 22))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(username_label)
-                                .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(password_label)
-                                .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(22, 22, 22)))))
+                                .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(username_label)
+                                    .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(password_label)))
+                            .addComponent(emptyUsername_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emptyPassword_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,15 +164,19 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(username_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
+                .addComponent(emptyUsername_label, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(password_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(emptyPassword_label, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(signIn_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(forgotPassword_label)
@@ -184,7 +201,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         }
 
         if(evt.getSource()==signUp_label){
-            signUp_label.setText("<html><u>Sign&nbsp;up</html>");
+            signUp_label.setText("<html><u>Sign&nbsp;Up</html>");
         }
     }
 
@@ -194,11 +211,38 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         }
 
         if(evt.getSource()==signUp_label){
-            signUp_label.setText("Sign up");
+            signUp_label.setText("Sign Up");
         }
     }
 
     private void MousePressed(java.awt.event.MouseEvent evt) {
+        
+        String uname = username_textfield.getText();
+        String pass = String.valueOf(password_textfield.getPassword());
+        emptyUsername_label.setText("");
+        emptyPassword_label.setText("");
+
+        if(uname.isBlank()){
+            emptyUsername_label.setText("Please enter your username");
+            return;
+        }
+
+        if(pass.isBlank()){
+            emptyPassword_label.setText("Please enter your password");
+            return;
+        }
+
+        if(evt.getSource()==signIn_button){
+            if(UserData.authenticateUser(uname, pass)){
+                JOptionPane.showMessageDialog(rootPane, "Log in successful");
+                return;
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Log in failed");
+                return;
+            }
+           
+        }
+
         if(evt.getSource()==forgotPassword_label){
             this.setVisible(false);
             new com.mycompany.library.ui.mainpage.LibraryForgotPassResetPageUI().setVisible(true);
@@ -208,6 +252,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             this.setVisible(false);
             new com.mycompany.library.ui.mainpage.LibraryRegisterPageUI().setVisible(true);
         }
+
     }
 
     /**
@@ -241,19 +286,21 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LibraryLogInPageUI().setVisible(true);
+                new com.mycompany.library.ui.mainpage.LibraryLogInPageUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel emptyPassword_label;
+    private javax.swing.JLabel emptyUsername_label;
     private javax.swing.JLabel forgotPassword_label;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logInLine_label;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JLabel mainBackground_label;
     private javax.swing.JLabel password_label;
-    private javax.swing.JTextField password_textfield;
+    private javax.swing.JPasswordField password_textfield;
     private javax.swing.JButton signIn_button;
     private javax.swing.JLabel signUp_label;
     private javax.swing.JLabel username_label;

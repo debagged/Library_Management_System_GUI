@@ -241,7 +241,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Log in failed");
                 return;
             }
-           
         }
 
         if(evt.getSource()==forgotPassword_label){
@@ -253,7 +252,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             this.setVisible(false);
             new com.mycompany.library.ui.mainpage.LibraryRegisterPageUI().setVisible(true);
         }
-
     }
 
     /**

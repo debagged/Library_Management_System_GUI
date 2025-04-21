@@ -7,3 +7,6 @@ Role: Student
 andre123:student2
 Role: Student
 =====================
+username:password
+Role: Student
+=====================

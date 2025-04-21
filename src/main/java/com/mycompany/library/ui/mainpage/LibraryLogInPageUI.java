@@ -42,7 +42,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setMaximumSize(new java.awt.Dimension(24, 24));
         jPanel2.setPreferredSize(new java.awt.Dimension(280, 430));
 
@@ -66,12 +65,13 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         password_textfield.setBackground(new java.awt.Color(255, 255, 255));
         password_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
 
-        signIn_button.setBackground(new java.awt.Color(145, 187, 137));
+        signIn_button.setBackground(new java.awt.Color(103, 120, 97));
         signIn_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         signIn_button.setForeground(new java.awt.Color(255, 255, 255));
         signIn_button.setText("Sign in");
         signIn_button.setFocusable(false);
         signIn_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
@@ -83,12 +83,15 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         forgotPassword_label.setText("Forgot Password?");
         forgotPassword_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         forgotPassword_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 MouseEntered(evt);
             }
+            @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 MouseExited(evt);
             }
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
@@ -99,12 +102,15 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         signUp_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         signUp_label.setText("Sign up");
         signUp_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 MouseEntered(evt);
             }
+            @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 MouseExited(evt);
             }
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
@@ -164,7 +170,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(username_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)

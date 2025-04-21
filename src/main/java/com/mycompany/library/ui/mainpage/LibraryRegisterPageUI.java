@@ -58,7 +58,6 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(252, 255, 242));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setMaximumSize(new java.awt.Dimension(24, 24));
         jPanel2.setPreferredSize(new java.awt.Dimension(460, 430));
 
@@ -86,11 +85,12 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         middleName_textfield.setForeground(new java.awt.Color(79, 82, 78));
         middleName_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
 
-        next_button.setBackground(new java.awt.Color(145, 187, 137));
+        next_button.setBackground(new java.awt.Color(103, 120, 97));
         next_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         next_button.setForeground(new java.awt.Color(252, 255, 242));
         next_button.setText("Next");
         next_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
@@ -102,12 +102,15 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         logIn_label.setText("Log in");
         logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 MouseEntered(evt);
             }
+            @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 MouseExited(evt);
             }
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
@@ -159,6 +162,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         suffixComboBox.setForeground(new java.awt.Color(79, 82, 78));
         suffixComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Jr.", "Sr.", "Other(input)" }));
         suffixComboBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 suffixComboBoxActionPerformed(evt);
             }
@@ -189,15 +193,13 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                     .addComponent(next_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(103, 103, 103)
-                        .addComponent(logIn_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logIn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                         .addGap(98, 98, 98)))
                 .addGap(108, 108, 108))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(107, 107, 107))
+                    .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -286,7 +288,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(suffix_label)
                         .addGap(24, 24, 24)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(next_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(logIn_label)
@@ -303,7 +305,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void suffixComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suffixComboBoxActionPerformed
+    private void suffixComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
         String selected = (String) suffixComboBox.getSelectedItem();
 
         if("Other(input)".equals(selected)){

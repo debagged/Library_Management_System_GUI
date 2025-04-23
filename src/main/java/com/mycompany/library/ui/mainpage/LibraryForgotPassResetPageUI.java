@@ -29,13 +29,16 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
 
         jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
-        username_label = new javax.swing.JLabel();
-        username_textfield = new javax.swing.JTextField();
+        newpassword_label = new javax.swing.JLabel();
+        newpassword_textfield = new javax.swing.JTextField();
         password_label = new javax.swing.JLabel();
         password_textfield = new javax.swing.JTextField();
         confirm_button = new javax.swing.JButton();
         logIn_label = new javax.swing.JLabel();
         logInLine_label = new javax.swing.JLabel();
+        loginstatus_label = new javax.swing.JLabel();
+        username_label = new javax.swing.JLabel();
+        username_textfield = new javax.swing.JTextField();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,7 +46,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(252, 255, 242));
         jPanel2.setMaximumSize(new java.awt.Dimension(24, 24));
         jPanel2.setPreferredSize(new java.awt.Dimension(280, 430));
 
@@ -53,21 +56,21 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         loginHeader_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginHeader_label.setText("PASSWORD RESET");
 
-        username_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        username_label.setForeground(new java.awt.Color(79, 82, 78));
-        username_label.setText("New Password:");
+        newpassword_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        newpassword_label.setForeground(new java.awt.Color(79, 82, 78));
+        newpassword_label.setText("New Password:");
 
-        username_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        username_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        newpassword_textfield.setBackground(new java.awt.Color(255, 255, 242));
+        newpassword_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
 
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         password_label.setForeground(new java.awt.Color(79, 82, 78));
         password_label.setText("Confirm Password:");
 
-        password_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        password_textfield.setBackground(new java.awt.Color(255, 255, 242));
         password_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
 
-        confirm_button.setBackground(new java.awt.Color(145, 187, 137));
+        confirm_button.setBackground(new java.awt.Color(103, 120, 97));
         confirm_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirm_button.setForeground(new java.awt.Color(255, 255, 255));
         confirm_button.setText("Confirm");
@@ -83,6 +86,18 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
         logInLine_label.setOpaque(true);
 
+        loginstatus_label.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        loginstatus_label.setForeground(new java.awt.Color(204, 0, 0));
+        loginstatus_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loginstatus_label.setText("Password doesn't match");
+
+        username_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        username_label.setForeground(new java.awt.Color(79, 82, 78));
+        username_label.setText("Username:");
+
+        username_textfield.setBackground(new java.awt.Color(255, 255, 242));
+        username_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -91,28 +106,26 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(loginHeader_label)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(username_label)
+                    .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(confirm_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(103, 103, 103)
-                                .addComponent(logIn_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(98, 98, 98)))
-                        .addGap(22, 22, 22))
+                        .addGap(24, 24, 24)
+                        .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(logIn_label))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(username_label)
-                                .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(password_label)
-                                .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(22, 22, 22)))))
+                        .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(newpassword_label)
+                            .addComponent(newpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password_label)
+                            .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 26, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,19 +134,25 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(username_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(newpassword_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(newpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(password_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logIn_label)
-                .addGap(89, 89, 89))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 290, -1));
@@ -211,8 +230,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERnewpassword_label        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -234,7 +252,10 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
     private javax.swing.JLabel logInLine_label;
     private javax.swing.JLabel logIn_label;
     private javax.swing.JLabel loginHeader_label;
+    private javax.swing.JLabel loginstatus_label;
     private javax.swing.JLabel mainBackground_label;
+    private javax.swing.JLabel newpassword_label;
+    private javax.swing.JTextField newpassword_textfield;
     private javax.swing.JLabel password_label;
     private javax.swing.JTextField password_textfield;
     private javax.swing.JLabel username_label;

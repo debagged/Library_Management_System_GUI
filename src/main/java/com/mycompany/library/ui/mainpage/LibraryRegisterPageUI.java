@@ -18,6 +18,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
      */
     public LibraryRegisterPageUI() {
         initComponents();
+        initListeners();
     }
 
     /**
@@ -29,7 +30,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         firstName_label = new javax.swing.JLabel();
         firstName_textfield = new javax.swing.JTextField();
@@ -58,7 +59,6 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(252, 255, 242));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setMaximumSize(new java.awt.Dimension(24, 24));
         jPanel2.setPreferredSize(new java.awt.Dimension(460, 430));
 
@@ -90,28 +90,12 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         next_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         next_button.setForeground(new java.awt.Color(252, 255, 242));
         next_button.setText("Next");
-        next_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                MousePressed(evt);
-            }
-        });
 
         logIn_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         logIn_label.setForeground(new java.awt.Color(79, 82, 78));
         logIn_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logIn_label.setText("Log in");
         logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                MousePressed(evt);
-            }
-        });
 
         logInLine_label.setBackground(new java.awt.Color(79, 82, 78));
         logInLine_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -286,7 +270,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(suffix_label)
                         .addGap(24, 24, 24)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(next_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(logIn_label)
@@ -303,7 +287,28 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void suffixComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suffixComboBoxActionPerformed
+    private void initListeners(){
+
+        next_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+
+        logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+    }
+
+    private void suffixComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
         String selected = (String) suffixComboBox.getSelectedItem();
 
         if("Other(input)".equals(selected)){

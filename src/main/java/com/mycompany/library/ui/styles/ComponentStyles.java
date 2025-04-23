@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -61,8 +62,9 @@ public class ComponentStyles {
             super.paintComponent(g); // Call the original paint method to paint the text
         }
     }
+    
 
-    public static class CustomRoundedButton2 extends JButton {
+    /*public static class CustomRoundedButton2 extends JButton {
         public CustomRoundedButton2(String text) {
             super(text);
             setFocusPainted(false); // Remove the default focus painting
@@ -87,7 +89,7 @@ public class ComponentStyles {
 
             super.paintComponent(g); // Call the original paint method to paint the text
         }
-    }
+    }*/
     
     public static class BackgroundPanel extends JPanel {
 

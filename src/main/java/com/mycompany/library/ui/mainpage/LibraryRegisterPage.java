@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.mycompany.library.users.*;
 import com.mycompany.library.ui.styles.ComponentStyles;
-import static com.mycompany.library.ui.mainpage.LibraryLogInPage.mainFrame;
+import static com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage.mainFrame;
 
 import java.awt.CardLayout;
 
@@ -196,7 +196,7 @@ public class LibraryRegisterPage implements ActionListener, MouseListener{
             if(password.equals(confirmPass)){
                 userData.saveDataToFile(username, password);
                 
-                JOptionPane.showMessageDialog(LibraryLogInPage.mainFrame, "Registration Successful", "Registered", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(OLD_LibraryLogInPage.mainFrame, "Registration Successful", "Registered", JOptionPane.PLAIN_MESSAGE);
                 usernameField.setText(null);
                 passwordField.setText(null);
                 confirmPasswordField.setText(null);
@@ -211,7 +211,7 @@ public class LibraryRegisterPage implements ActionListener, MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        CardLayout cl = (CardLayout) LibraryLogInPage.logInFieldPanel.getLayout();
+        CardLayout cl = (CardLayout) OLD_LibraryLogInPage.logInFieldPanel.getLayout();
         
         if(e.getSource()==haveAccount2){
             emptyUsernameMessageLabel.setText(null);
@@ -219,7 +219,7 @@ public class LibraryRegisterPage implements ActionListener, MouseListener{
             emptyConfirmPasswordMessageLabel.setText(null);
             matchPasswordMessageLabel.setText(null);
             mainFrame.setTitle("Log In");
-            cl.show(LibraryLogInPage.logInFieldPanel, "LogIn");
+            cl.show(OLD_LibraryLogInPage.logInFieldPanel, "LogIn");
         }
     }
 

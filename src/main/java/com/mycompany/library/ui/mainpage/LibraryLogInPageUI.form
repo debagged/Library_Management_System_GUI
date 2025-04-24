@@ -39,6 +39,9 @@
           <Dimension value="[280, 430]"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPanel()"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="260" y="90" width="290" height="-1"/>
@@ -196,9 +199,6 @@
             <Property name="text" type="java.lang.String" value="Sign in"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signIn_buttonMousePressed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="forgotPassword_label">
           <Properties>
@@ -214,11 +214,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="forgotPassword_labelMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="forgotPassword_labelMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="forgotPassword_labelMousePressed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="signUp_label">
           <Properties>
@@ -229,13 +224,8 @@
               <Color blue="4e" green="52" red="4f" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Sign up"/>
+            <Property name="text" type="java.lang.String" value="Sign Up"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signUp_labelMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signUp_labelMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signUp_labelMousePressed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="logInLine_label">
           <Properties>

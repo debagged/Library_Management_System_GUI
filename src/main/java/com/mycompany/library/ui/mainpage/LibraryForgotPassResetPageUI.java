@@ -15,6 +15,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
      */
     public LibraryForgotPassResetPageUI() {
         initComponents();
+        initListeners();
     }
 
     /**
@@ -26,7 +27,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         newpassword_label = new javax.swing.JLabel();
         newpassword_textfield = new javax.swing.JTextField();
@@ -74,28 +75,12 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         confirm_button.setForeground(new java.awt.Color(255, 255, 255));
         confirm_button.setText("Confirm");
         confirm_button.setFocusable(false);
-        confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                confirm_buttonMousePressed(evt);
-            }
-        });
 
         logIn_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         logIn_label.setForeground(new java.awt.Color(79, 82, 78));
         logIn_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logIn_label.setText("Log In");
         logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logIn_labelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                logIn_labelMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                logIn_labelMousePressed(evt);
-            }
-        });
 
         logInLine_label.setBackground(new java.awt.Color(103, 120, 97));
         logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
@@ -180,6 +165,26 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initListeners(){
+
+        confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+
+        logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+    }
 
     private void MouseEntered(java.awt.event.MouseEvent evt) {
         if(evt.getSource()==logIn_label){

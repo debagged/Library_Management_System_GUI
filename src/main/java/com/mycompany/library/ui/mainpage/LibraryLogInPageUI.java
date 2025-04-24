@@ -1,10 +1,6 @@
 package com.mycompany.library.ui.mainpage;
-
 import javax.swing.JOptionPane;
-
-import com.mycompany.library.ui.styles.ComponentStyles.CustomRoundedButton;
 import com.mycompany.library.users.UserData;
-
 public class LibraryLogInPageUI extends javax.swing.JFrame {
 
     /**
@@ -12,6 +8,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
      */
     public LibraryLogInPageUI() {
         initComponents();
+        initListeners();
     }
 
     /**
@@ -23,7 +20,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
         username_textfield = new javax.swing.JTextField();
@@ -70,44 +67,16 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         signIn_button.setForeground(new java.awt.Color(255, 255, 255));
         signIn_button.setText("Sign in");
         signIn_button.setFocusable(false);
-        signIn_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                signIn_buttonMousePressed(evt);
-            }
-        });
 
         forgotPassword_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         forgotPassword_label.setForeground(new java.awt.Color(79, 82, 78));
         forgotPassword_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         forgotPassword_label.setText("Forgot Password?");
         forgotPassword_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        forgotPassword_label.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                forgotPassword_labelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                forgotPassword_labelMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                forgotPassword_labelMousePressed(evt);
-            }
-        });
 
         signUp_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         signUp_label.setForeground(new java.awt.Color(79, 82, 78));
         signUp_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        signUp_label.setText("Sign up");
-        signUp_label.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                signUp_labelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                signUp_labelMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                signUp_labelMousePressed(evt);
-            }
-        });
 
         logInLine_label.setBackground(new java.awt.Color(103, 120, 97));
         logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
@@ -187,6 +156,40 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initListeners(){
+
+        signIn_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+
+        forgotPassword_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+
+        signUp_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+               MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+               MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+               MousePressed(evt);
+            }
+        });
+
+    }
+
     private void MouseEntered(java.awt.event.MouseEvent evt){
         if(evt.getSource()==forgotPassword_label){
             forgotPassword_label.setText("<html><u>Forgot&nbsp;Password?</html>");
@@ -214,17 +217,18 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         emptyUsername_label.setText("");
         emptyPassword_label.setText("");
 
-        if(uname.isBlank()){
-            emptyUsername_label.setText("Please enter your username");
-            return;
-        }
-
-        if(pass.isBlank()){
-            emptyPassword_label.setText("Please enter your password");
-            return;
-        }
-
         if(evt.getSource()==signIn_button){
+
+            if(uname.isBlank()){
+                emptyUsername_label.setText("Please enter your username");
+                return;
+            }
+
+            if(pass.isBlank()){
+                emptyPassword_label.setText("Please enter your password");
+                return;
+            }
+            
             if(UserData.authenticateUser(uname, pass)){
                 JOptionPane.showMessageDialog(rootPane, "Log in successful");
                 return;
@@ -245,6 +249,8 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             new com.mycompany.library.ui.mainpage.LibraryRegisterPageUI().setVisible(true);
         }
     }
+
+
 
     /**
      * @param args the command line arguments

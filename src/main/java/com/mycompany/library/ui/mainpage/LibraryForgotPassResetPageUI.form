@@ -39,6 +39,9 @@
           <Dimension value="[280, 430]"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPanel()"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="260" y="90" width="290" height="-1"/>
@@ -191,9 +194,6 @@
             <Property name="text" type="java.lang.String" value="Confirm"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="confirm_buttonMousePressed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="logIn_label">
           <Properties>
@@ -209,11 +209,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logIn_labelMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logIn_labelMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logIn_labelMousePressed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="logInLine_label">
           <Properties>

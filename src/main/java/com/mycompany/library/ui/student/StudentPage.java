@@ -7,7 +7,7 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 import com.mycompany.library.ui.styles.ComponentStyles;
-import com.mycompany.library.ui.mainpage.LibraryLogInPage;
+import com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage;
 
 public class StudentPage implements MouseListener{
     
@@ -204,7 +204,7 @@ public class StudentPage implements MouseListener{
         if(e.getSource()==logOutLabelContainer){
             burgerMenuPanel.setVisible(false);
             studentFrame.dispose();
-            LibraryLogInPage.mainFrame.setVisible(true);
+            OLD_LibraryLogInPage.mainFrame.setVisible(true);
         }
     }
 

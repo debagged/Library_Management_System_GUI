@@ -31,11 +31,6 @@
       <artifactId>AbsoluteLayout</artifactId>
       <version>RELEASE240</version>
     </dependency>
-      <dependency>
-          <groupId>unknown.binary</groupId>
-          <artifactId>CustomComponents</artifactId>
-          <version>SNAPSHOT</version>
-      </dependency>
 
       <dependency>
         <groupId>custom.style</groupId>

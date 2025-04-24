@@ -23,10 +23,10 @@ public class BorrowBooks implements MouseListener{
     JLabel emptyStudNameMessage = new JLabel();
     JLabel emptyStudIDMessage = new JLabel();
 
-    ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
+   /*  ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
     ComponentStyles.CustomRoundedButton2 clearListButton = new ComponentStyles.CustomRoundedButton2("Clear List");
     ComponentStyles.CustomRoundedButton2 resetButton = new ComponentStyles.CustomRoundedButton2("Reset");
-
+ */
     JPanel mainPanel = new JPanel();
     ArrayList<JPanel> bookPanelsList = new ArrayList<>();
     ArrayList<String> toBorrowBookList = new ArrayList<>();
@@ -106,14 +106,14 @@ public class BorrowBooks implements MouseListener{
         borrowedBookScrollPane.getViewport().setOpaque(false);
         borrowedBookScrollPane.setBorder(null);
 
-        confirmButton.setBounds(300,130,120,40);
+        /* confirmButton.setBounds(300,130,120,40);
         confirmButton.addMouseListener(this);
 
         clearListButton.setBounds(430,130,120,40);
         clearListButton.addMouseListener(this);
 
         resetButton.setBounds(560,130,120,40);
-        resetButton.addMouseListener(this);
+        resetButton.addMouseListener(this); */
         //-------------------------------------------------------------------------//
 
         //-------------------------------MAIN PANEL--------------------------------//
@@ -162,9 +162,9 @@ public class BorrowBooks implements MouseListener{
         inputPanel.add(emptyStudIDMessage);
         inputPanel.add(borrowBookLabel);
         inputPanel.add(borrowedBookScrollPane);
-        inputPanel.add(confirmButton);
+        /* inputPanel.add(confirmButton);
         inputPanel.add(clearListButton);
-        inputPanel.add(resetButton);
+        inputPanel.add(resetButton); */
         //----------------------------------------------------------------------------//
         
         //--------------------ADDING OF COMPONENTS (MAIN PANEL)-----------------------//
@@ -235,14 +235,14 @@ public class BorrowBooks implements MouseListener{
             StudentPage.studentFrame.setVisible(true);
         }
 
-        if(e.getSource()==clearListButton){
+        if(e.getSource()==homeButtonPanel){
             borrowedBooksPanel.removeAll();
             toBorrowBookList.clear();
             borrowedBooksPanel.revalidate();
             borrowedBooksPanel.repaint();
         }
 
-        if(e.getSource()==resetButton){
+        if(e.getSource()==homeButtonPanel){
 
             studNameField.setText(null);
             studNameField.requestFocusInWindow();
@@ -255,7 +255,7 @@ public class BorrowBooks implements MouseListener{
             borrowedBooksPanel.repaint();
         }
 
-        if(e.getSource()==confirmButton){
+        if(e.getSource()==homeButtonPanel){
             
             String studName = studNameField.getText();
             String studID = studIDField.getText();

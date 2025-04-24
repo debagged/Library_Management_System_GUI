@@ -11,9 +11,9 @@ import javax.swing.border.EmptyBorder;
 import com.mycompany.library.ui.styles.ComponentStyles;
 import com.mycompany.library.users.UserData;
 
-import static com.mycompany.library.ui.mainpage.LibraryLogInPage.mainFrame;
+import static com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage.mainFrame;
 
-public class LibraryForgotPassPage implements ActionListener, MouseListener{
+public class OLD_LibraryForgotPassPage implements ActionListener, MouseListener{
     
     ComponentStyles.CustomRoundedButton resetPassButton = new ComponentStyles.CustomRoundedButton("Reset Password");
     JTextField usernameField = new JTextField();
@@ -35,7 +35,7 @@ public class LibraryForgotPassPage implements ActionListener, MouseListener{
     
     
     
-    public LibraryForgotPassPage(){
+    public OLD_LibraryForgotPassPage(){
         
         //--------RIGHT OF MAIN PANEL (RESET PASSWORD FIELD) (1/2)---------- //
         resetPassFieldPanel.setPreferredSize(new Dimension(350,470));
@@ -171,7 +171,7 @@ public class LibraryForgotPassPage implements ActionListener, MouseListener{
                 matchPasswordMessageLabel.setText(null);
             
             if(userName.equals("admin")){
-                JOptionPane.showMessageDialog(LibraryLogInPage.mainFrame, "NICE TRY", "OKAY", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(OLD_LibraryLogInPage.mainFrame, "NICE TRY", "OKAY", JOptionPane.PLAIN_MESSAGE);
                 return;
             }
             
@@ -198,11 +198,11 @@ public class LibraryForgotPassPage implements ActionListener, MouseListener{
                 }
             
                 if(userData.forgotPassword(userName, newPass)){
-                    JOptionPane.showMessageDialog(LibraryLogInPage.mainFrame, "New password cannot be the old password", "Same Password", JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(OLD_LibraryLogInPage.mainFrame, "New password cannot be the old password", "Same Password", JOptionPane.PLAIN_MESSAGE);
                     return;
                 }
                 
-                JOptionPane.showMessageDialog(LibraryLogInPage.mainFrame, "Password Reset Successful", "Password Reset", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(OLD_LibraryLogInPage.mainFrame, "Password Reset Successful", "Password Reset", JOptionPane.PLAIN_MESSAGE);
                 usernameField.setText(null);
                 newPasswordField.setText(null);
                 confirmNewPasswordField.setText(null);
@@ -210,14 +210,14 @@ public class LibraryForgotPassPage implements ActionListener, MouseListener{
                 return;
             }
             
-            JOptionPane.showMessageDialog(LibraryLogInPage.mainFrame, "Username Not Found", "Username Not Found", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(OLD_LibraryLogInPage.mainFrame, "Username Not Found", "Username Not Found", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        CardLayout cl = (CardLayout) LibraryLogInPage.logInFieldPanel.getLayout();
+        CardLayout cl = (CardLayout) OLD_LibraryLogInPage.logInFieldPanel.getLayout();
         
         if(e.getSource()==signIn){
             emptyUsernameMessageLabel.setText(null);
@@ -225,7 +225,7 @@ public class LibraryForgotPassPage implements ActionListener, MouseListener{
             emptyConfirmNewPasswordMessageLabel.setText(null);
             matchPasswordMessageLabel.setText(null);
             mainFrame.setTitle("Log In");
-            cl.show(LibraryLogInPage.logInFieldPanel, "LogIn");
+            cl.show(OLD_LibraryLogInPage.logInFieldPanel, "LogIn");
         }
     }
 
@@ -267,7 +267,7 @@ public class LibraryForgotPassPage implements ActionListener, MouseListener{
     }
     
     public static void main(String[] args){
-        new LibraryForgotPassPage();
+        new OLD_LibraryForgotPassPage();
     }
 
 }

@@ -77,6 +77,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         signUp_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         signUp_label.setForeground(new java.awt.Color(79, 82, 78));
         signUp_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        signUp_label.setText("Sign Up");
 
         logInLine_label.setBackground(new java.awt.Color(103, 120, 97));
         logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
@@ -101,24 +102,23 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(signIn_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(57, 57, 57)
-                                    .addComponent(forgotPassword_label))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(90, 90, 90)
-                                    .addComponent(signUp_label))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(22, 22, 22)
-                                    .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGap(57, 57, 57)
+                            .addComponent(forgotPassword_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(73, 73, 73))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(90, 90, 90)
+                            .addComponent(signUp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(100, 100, 100))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(logInLine_label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                         .addComponent(username_label, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(username_textfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                         .addComponent(password_label, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(password_textfield, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,34 +214,22 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         
         String uname = username_textfield.getText();
         String pass = String.valueOf(password_textfield.getPassword());
-        emptyUsername_label.setText("");
-        emptyPassword_label.setText("");
 
         if(evt.getSource()==signIn_button){
-
-            if(uname.isBlank()){
-                emptyUsername_label.setText("Please enter your username");
-                return;
-            }
-
-            if(pass.isBlank()){
-                emptyPassword_label.setText("Please enter your password");
-                return;
-            }
             
             if(UserData.authenticateUser(uname, pass)){
                 JOptionPane.showMessageDialog(rootPane, "Log in successful");
                 return;
                 
             }else{
-                JOptionPane.showMessageDialog(roologinstatus_labeled");
+                //JOptionPane.showMessageDialog(roologinstatus_labeled");
                 return;
             }
         }
 
         if(evt.getSource()==forgotPassword_label){
             this.setVisible(false);
-            new com.mycompany.library.ui.mailoginstatus_labelPassResetPageUI().setVisible(true);
+            new com.mycompany.library.ui.mainpage.LibraryForgotPassResetPageUI().setVisible(true);
         }
 
         if(evt.getSource()==signUp_label){
@@ -249,7 +237,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             new com.mycompany.library.ui.mainpage.LibraryRegisterPageUI().setVisible(true);
         }
     }
-
 
 
     /**

@@ -27,8 +27,8 @@ public class LibraryAddBooks implements MouseListener{
     JLabel addIconLabel = new JLabel();
     JLabel cover = new JLabel();
 
-    ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
-    ComponentStyles.CustomRoundedButton2 resetButton = new ComponentStyles.CustomRoundedButton2("Reset");
+    /* ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
+    ComponentStyles.CustomRoundedButton2 resetButton = new ComponentStyles.CustomRoundedButton2("Reset"); */
 
     JPanel mainPanel = new JPanel();
     ArrayList<JPanel> bookPanelsList = new ArrayList<>();
@@ -114,11 +114,11 @@ public class LibraryAddBooks implements MouseListener{
         addIconLabel.setVisible(false);
         addCoverPanel.add(addIconLabel);
 
-        confirmButton.setBounds(500,60,150,40);
+        /* confirmButton.setBounds(500,60,150,40);
         confirmButton.addMouseListener(this);
 
         resetButton.setBounds(500,110,150,40);
-        resetButton.addMouseListener(this);
+        resetButton.addMouseListener(this); */
         //-------------------------------------------------------------------------//
 
         //-------------------------------MAIN PANEL--------------------------------//
@@ -167,8 +167,8 @@ public class LibraryAddBooks implements MouseListener{
         inputPanel.add(emptyBookAuthorMessage);
         inputPanel.add(addBookLabel);
         inputPanel.add(addCoverPanel);
-        inputPanel.add(confirmButton);
-        inputPanel.add(resetButton);
+       /*  inputPanel.add(confirmButton);
+        inputPanel.add(resetButton); */
         //----------------------------------------------------------------------------//
         
         //--------------------ADDING OF COMPONENTS (MAIN PANEL)-----------------------//
@@ -239,7 +239,7 @@ public class LibraryAddBooks implements MouseListener{
             AdminPage.adminFrame.setVisible(true);
         }
 
-        if(e.getSource()==resetButton){
+        /* if(e.getSource()==resetButton){
 
             bookTitleField.setText(null);
             bookTitleField.requestFocusInWindow();
@@ -251,9 +251,9 @@ public class LibraryAddBooks implements MouseListener{
             inputPanel.revalidate();
             inputPanel.repaint();
             
-        }
+        } */
 
-        if(e.getSource()==confirmButton){
+        if(e.getSource()==homeButtonPanel){
             
             String bookTitle = bookTitleField.getText();
             String bookAuthor = bookAuthorField.getText();

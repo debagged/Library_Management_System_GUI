@@ -26,7 +26,7 @@ import com.mycompany.library.ui.student.StudentPage;
 import com.mycompany.library.ui.styles.ComponentStyles;
 import com.mycompany.library.users.UserData;
 
-public class LibraryLogInPage implements KeyListener, MouseListener{
+public class OLD_LibraryLogInPage implements KeyListener, MouseListener{
     
     public static JFrame mainFrame = new JFrame();
     
@@ -56,7 +56,7 @@ public class LibraryLogInPage implements KeyListener, MouseListener{
     JLabel register2 = new JLabel("Register");
     JLabel register2Line = new JLabel("_______");
     
-    public LibraryLogInPage(){
+    public OLD_LibraryLogInPage(){
         
         //===================================================================//
         //---------------------------FRAME SET UP--------------------------- //
@@ -287,8 +287,8 @@ public class LibraryLogInPage implements KeyListener, MouseListener{
         
         // ADDING LAYERED PANE TO LOG IN FIELD //
         logInFieldPanel.add(logInField, "LogIn");
-        logInFieldPanel.add(new LibraryForgotPassPage().resetPassField, "ForgotPass");
-        logInFieldPanel.add(new LibraryRegisterPage().registerField, "Register");
+        logInFieldPanel.add(new OLD_LibraryForgotPassPage().resetPassField, "ForgotPass");
+        logInFieldPanel.add(new OLD_LibraryRegisterPage().registerField, "Register");
         
         //------------------------------------------------------------------ //
         
@@ -456,7 +456,7 @@ public class LibraryLogInPage implements KeyListener, MouseListener{
     }
     
     public static void main(String[] args){
-        new LibraryLogInPage();
+        new OLD_LibraryLogInPage();
     }
 
  

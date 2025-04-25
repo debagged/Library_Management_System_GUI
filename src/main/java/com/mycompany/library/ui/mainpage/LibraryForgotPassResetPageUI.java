@@ -117,7 +117,8 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                         .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(logIn_label))
+                        .addComponent(logIn_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(101, 101, 101))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +126,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                             .addComponent(newpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(password_label)
                             .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,7 +231,8 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERnewpassword_label        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LibraryForgotPassResetPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>

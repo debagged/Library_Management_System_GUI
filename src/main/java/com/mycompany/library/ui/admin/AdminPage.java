@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.mycompany.library.ui.styles.ComponentStyles;
-import com.mycompany.library.ui.mainpage.LibraryLogInPage;
+import com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage;
 
 public class AdminPage implements MouseListener{
     
@@ -213,7 +213,7 @@ public class AdminPage implements MouseListener{
         if(e.getSource()==logOutLabelContainer){
             burgerMenuPanel.setVisible(false);
             adminFrame.dispose();
-            LibraryLogInPage.mainFrame.setVisible(true);
+            OLD_LibraryLogInPage.mainFrame.setVisible(true);
         }
     }
 

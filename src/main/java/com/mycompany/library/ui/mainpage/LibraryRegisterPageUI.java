@@ -33,22 +33,23 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         firstName_label = new javax.swing.JLabel();
-        firstName_textfield = new javax.swing.JTextField();
+        firstName_textfield = new custom.components.RoundedTextField();
         middleName_label = new javax.swing.JLabel();
-        middleName_textfield = new javax.swing.JTextField();
+        middleName_textfield = new custom.components.RoundedTextField();
         next_button = new javax.swing.JButton();
         logIn_label = new javax.swing.JLabel();
-        lastName_textfield = new javax.swing.JTextField();
+        logInLine_label = new javax.swing.JLabel();
+        lastName_textfield = new custom.components.RoundedTextField();
         lastName_label = new javax.swing.JLabel();
         suffix_label = new javax.swing.JLabel();
         email_label = new javax.swing.JLabel();
-        email_textfield = new javax.swing.JTextField();
+        email_textfield = new custom.components.RoundedTextField();
         studID_label = new javax.swing.JLabel();
-        studID_textfield = new javax.swing.JTextField();
+        studID_textfield = new custom.components.RoundedTextField();
         course_label = new javax.swing.JLabel();
-        suffixComboBox = new javax.swing.JComboBox<>();
-        courseComboBox = new javax.swing.JComboBox<>();
-        sexComboBox = new javax.swing.JComboBox<>();
+        suffixComboBox = new custom.components.RoundedComboBox();
+        courseComboBox = new custom.components.RoundedComboBox();
+        sexComboBox = new custom.components.RoundedComboBox();
         sex_label = new javax.swing.JLabel();
         registerstatus_label = new javax.swing.JLabel();
         register_seperator = new javax.swing.JSeparator();
@@ -75,7 +76,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
 
         firstName_textfield.setBackground(new java.awt.Color(252, 255, 242));
         firstName_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        firstName_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        firstName_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
         firstName_textfield.setMinimumSize(new java.awt.Dimension(206, 27));
 
         middleName_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -85,7 +86,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
 
         middleName_textfield.setBackground(new java.awt.Color(252, 255, 242));
         middleName_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        middleName_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        middleName_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         next_button.setBackground(new java.awt.Color(103, 120, 97));
         next_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -100,7 +101,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
 
         lastName_textfield.setBackground(new java.awt.Color(252, 255, 242));
         lastName_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        lastName_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        lastName_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         lastName_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lastName_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -116,7 +117,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
 
         email_textfield.setBackground(new java.awt.Color(252, 255, 242));
         email_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        email_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        email_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         studID_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         studID_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -125,7 +126,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         studID_textfield.setBackground(new java.awt.Color(252, 255, 242));
         studID_textfield.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         studID_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        studID_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        studID_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         course_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         course_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -143,6 +144,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         courseComboBox.setBackground(new java.awt.Color(252, 255, 242));
         courseComboBox.setForeground(new java.awt.Color(79, 82, 78));
         courseComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseComboBox.setFocusable(false);
 
         sexComboBox.setBackground(new java.awt.Color(252, 255, 242));
         sexComboBox.setForeground(new java.awt.Color(79, 82, 78));

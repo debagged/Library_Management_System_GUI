@@ -27,7 +27,7 @@ public class LibraryAddBooks implements MouseListener{
     JLabel addIconLabel = new JLabel();
     JLabel cover = new JLabel();
 
-    /* ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
+/*     ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
     ComponentStyles.CustomRoundedButton2 resetButton = new ComponentStyles.CustomRoundedButton2("Reset"); */
 
     JPanel mainPanel = new JPanel();
@@ -114,7 +114,7 @@ public class LibraryAddBooks implements MouseListener{
         addIconLabel.setVisible(false);
         addCoverPanel.add(addIconLabel);
 
-        /* confirmButton.setBounds(500,60,150,40);
+      /*   confirmButton.setBounds(500,60,150,40);
         confirmButton.addMouseListener(this);
 
         resetButton.setBounds(500,110,150,40);
@@ -239,7 +239,7 @@ public class LibraryAddBooks implements MouseListener{
             AdminPage.adminFrame.setVisible(true);
         }
 
-        /* if(e.getSource()==resetButton){
+        if(e.getSource()==homeButtonPanel){
 
             bookTitleField.setText(null);
             bookTitleField.requestFocusInWindow();
@@ -251,7 +251,7 @@ public class LibraryAddBooks implements MouseListener{
             inputPanel.revalidate();
             inputPanel.repaint();
             
-        } */
+        }
 
         if(e.getSource()==homeButtonPanel){
             

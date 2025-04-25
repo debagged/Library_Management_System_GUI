@@ -9,7 +9,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
     public LibraryLogInPageUI() {
         initComponents();
         initListeners();
-    }
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,16 +104,16 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(57, 57, 57)
                             .addComponent(forgotPassword_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(73, 73, 73))
+                            .addGap(65, 65, 65))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(90, 90, 90)
                             .addComponent(signUp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(100, 100, 100))
+                            .addGap(97, 97, 97))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(22, 22, 22)
                             .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(logInLine_label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                        .addComponent(logInLine_label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(username_label, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(username_textfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                         .addComponent(password_label, javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +146,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 .addContainerGap(80, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 290, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 92, 290, -1));
 
         mainBackground_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mainBackground.png"))); // NOI18N
         mainBackground_label.setText("jLabel1");
@@ -222,7 +222,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 return;
                 
             }else{
-                //JOptionPane.showMessageDialog(roologinstatus_labeled");
+                JOptionPane.showMessageDialog(rootPane, "Log in failed");
                 return;
             }
         }

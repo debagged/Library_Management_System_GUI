@@ -232,10 +232,9 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LibraryRegisterPageUI_2().setVisible(true);
-        
-        }});
-    }
-  // Variables declaration - do not modify//GEN-BEGIN:variables
+            }});
+        }
+   // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirm_button;
     private javax.swing.JLabel confirmpassword_label;
     private javax.swing.JPasswordField confirmpassword_textfield;

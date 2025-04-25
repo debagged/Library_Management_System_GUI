@@ -23,10 +23,10 @@ public class BorrowBooks implements MouseListener{
     JLabel emptyStudNameMessage = new JLabel();
     JLabel emptyStudIDMessage = new JLabel();
 
-    /* ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
+   /*  ComponentStyles.CustomRoundedButton2 confirmButton = new ComponentStyles.CustomRoundedButton2("Confirm");
     ComponentStyles.CustomRoundedButton2 clearListButton = new ComponentStyles.CustomRoundedButton2("Clear List");
-    ComponentStyles.CustomRoundedButton2 resetButton = new ComponentStyles.CustomRoundedButton2("Reset"); */
-
+    ComponentStyles.CustomRoundedButton2 resetButton = new ComponentStyles.CustomRoundedButton2("Reset");
+ */
     JPanel mainPanel = new JPanel();
     ArrayList<JPanel> bookPanelsList = new ArrayList<>();
     ArrayList<String> toBorrowBookList = new ArrayList<>();

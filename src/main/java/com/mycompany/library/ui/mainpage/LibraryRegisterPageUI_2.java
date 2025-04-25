@@ -35,10 +35,10 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         createpassword_textfield = new javax.swing.JPasswordField();
         confirm_button = new javax.swing.JButton();
         login_label = new javax.swing.JLabel();
-        registerline_label = new javax.swing.JLabel();
         confirmpassword_label = new javax.swing.JLabel();
         confirmpassword_textfield = new javax.swing.JPasswordField();
         loginstatus_label = new javax.swing.JLabel();
+        register2_seperator = new javax.swing.JSeparator();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,10 +100,6 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
             }
         });
 
-        registerline_label.setBackground(new java.awt.Color(103, 120, 97));
-        registerline_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
-        registerline_label.setOpaque(true);
-
         confirmpassword_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmpassword_label.setForeground(new java.awt.Color(79, 82, 78));
         confirmpassword_label.setText("Confirm Password :");
@@ -116,33 +112,34 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         loginstatus_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginstatus_label.setText("Password doesn't match");
 
+        register2_seperator.setBackground(new java.awt.Color(103, 120, 97));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(login_label))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(createpassword_textfield)
-                        .addComponent(createpassword_label)
-                        .addComponent(createusername_label)
-                        .addComponent(createusername_textfield)
-                        .addComponent(confirmpassword_label)
-                        .addComponent(confirmpassword_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                        .addComponent(confirm_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(25, 25, 25)
-                            .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(registerline_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(64, Short.MAX_VALUE)
                 .addComponent(registerHeader_label)
                 .addGap(64, 64, 64))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(login_label))
+                    .addComponent(createpassword_textfield)
+                    .addComponent(createpassword_label)
+                    .addComponent(createusername_label)
+                    .addComponent(createusername_textfield)
+                    .addComponent(confirmpassword_label)
+                    .addComponent(confirmpassword_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(confirm_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(register2_seperator))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,8 +147,8 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(registerHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registerline_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(register2_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(createusername_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(createusername_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,7 +231,7 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
                 new LibraryRegisterPageUI_2().setVisible(true);
             }});
         }
-   // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirm_button;
     private javax.swing.JLabel confirmpassword_label;
     private javax.swing.JPasswordField confirmpassword_textfield;
@@ -246,7 +243,7 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
     private javax.swing.JLabel login_label;
     private javax.swing.JLabel loginstatus_label;
     private javax.swing.JLabel mainBackground_label;
+    private javax.swing.JSeparator register2_seperator;
     private javax.swing.JLabel registerHeader_label;
-    private javax.swing.JLabel registerline_label;
     // End of variables declaration//GEN-END:variables
 }

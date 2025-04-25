@@ -16,7 +16,7 @@ import static com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage.mainFrame;
 
 import java.awt.CardLayout;
 
-public class LibraryRegisterPage implements ActionListener, MouseListener{
+public class OLD_LibraryRegisterPage implements ActionListener, MouseListener{
 
     ComponentStyles.CustomRoundedButton registerButton = new ComponentStyles.CustomRoundedButton("Register");
     JTextField usernameField = new JTextField();
@@ -38,7 +38,7 @@ public class LibraryRegisterPage implements ActionListener, MouseListener{
     static JLabel haveAccount2 = new JLabel("Log in");
     JLabel haveAccountLine = new JLabel("_____");
     
-    public LibraryRegisterPage(){
+    public OLD_LibraryRegisterPage(){
         
         //--------RIGHT OF MAIN PANEL (RESET PASSWORD FIELD) (1/2)---------- //
         registerFieldPanel.setPreferredSize(new Dimension(350,470));
@@ -261,7 +261,7 @@ public class LibraryRegisterPage implements ActionListener, MouseListener{
     }
     
     public static void main(String[] args){
-        new LibraryRegisterPage();
+        new OLD_LibraryRegisterPage();
     }
 
 }

@@ -23,9 +23,9 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
-        username_textfield = new javax.swing.JTextField();
+        username_textfield = new custom.components.RoundedTextField();
         password_label = new javax.swing.JLabel();
-        password_textfield = new javax.swing.JPasswordField();
+        password_textfield = new custom.components.RoundedPasswordField();
         signIn_button = new javax.swing.JButton();
         forgotPassword_label = new javax.swing.JLabel();
         signUp_label = new javax.swing.JLabel();
@@ -53,14 +53,14 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         username_label.setText("Username :");
 
         username_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        username_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        username_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         password_label.setForeground(new java.awt.Color(79, 82, 78));
         password_label.setText("Password :");
 
         password_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        password_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        password_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         signIn_button.setBackground(new java.awt.Color(103, 120, 97));
         signIn_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -150,6 +150,8 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
 
         mainBackground_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mainBackground.png"))); // NOI18N
         mainBackground_label.setText("jLabel1");
+        mainBackground_label.setMaximumSize(new java.awt.Dimension(800, 600));
+        mainBackground_label.setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().add(mainBackground_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
@@ -237,7 +239,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             new com.mycompany.library.ui.mainpage.LibraryRegisterPageUI().setVisible(true);
         }
     }
-
 
 
     /**

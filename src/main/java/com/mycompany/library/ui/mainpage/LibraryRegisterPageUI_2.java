@@ -234,6 +234,7 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
                 new LibraryRegisterPageUI_2().setVisible(true);
             }});
         }
+    
    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirm_button;
     private javax.swing.JLabel confirmpassword_label;

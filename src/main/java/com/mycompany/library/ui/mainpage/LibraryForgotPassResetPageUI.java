@@ -30,15 +30,15 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         newpassword_label = new javax.swing.JLabel();
-        newpassword_textfield = new javax.swing.JTextField();
+        newpassword_textfield = new custom.components.RoundedPasswordField();
         password_label = new javax.swing.JLabel();
-        password_textfield = new javax.swing.JTextField();
+        password_textfield = new custom.components.RoundedPasswordField();
         confirm_button = new javax.swing.JButton();
         logIn_label = new javax.swing.JLabel();
         logInLine_label = new javax.swing.JLabel();
         loginstatus_label = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
-        username_textfield = new javax.swing.JTextField();
+        username_textfield = new custom.components.RoundedTextField();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,14 +61,14 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         newpassword_label.setText("New Password:");
 
         newpassword_textfield.setBackground(new java.awt.Color(255, 255, 242));
-        newpassword_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        newpassword_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         password_label.setForeground(new java.awt.Color(79, 82, 78));
         password_label.setText("Confirm Password:");
 
         password_textfield.setBackground(new java.awt.Color(255, 255, 242));
-        password_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        password_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         confirm_button.setBackground(new java.awt.Color(103, 120, 97));
         confirm_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -96,7 +96,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         username_label.setText("Username:");
 
         username_textfield.setBackground(new java.awt.Color(255, 255, 242));
-        username_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        username_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

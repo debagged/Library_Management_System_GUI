@@ -288,7 +288,7 @@ public class OLD_LibraryLogInPage implements KeyListener, MouseListener{
         // ADDING LAYERED PANE TO LOG IN FIELD //
         logInFieldPanel.add(logInField, "LogIn");
         logInFieldPanel.add(new OLD_LibraryForgotPassPage().resetPassField, "ForgotPass");
-        logInFieldPanel.add(new LibraryRegisterPage().registerField, "Register");
+        logInFieldPanel.add(new OLD_LibraryRegisterPage().registerField, "Register");
         
         //------------------------------------------------------------------ //
         

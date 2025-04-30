@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 import com.mycompany.library.functions.LibraryFunctions;
 import com.mycompany.library.ui.styles.ComponentStyles;
 
-public class BorrowBooks implements MouseListener{
+public class OLD_BorrowBooks implements MouseListener{
 
     JFrame borrowBooksFrame = new JFrame();
 
@@ -38,7 +38,7 @@ public class BorrowBooks implements MouseListener{
 
     LibraryFunctions libFuncs = new LibraryFunctions();
 
-    public BorrowBooks(){
+    public OLD_BorrowBooks(){
 
         // ---------------------------------FRAME SET UP------------------------------//
         ImageIcon logo = new ImageIcon("src/main/resources/images/logo.png");
@@ -232,7 +232,7 @@ public class BorrowBooks implements MouseListener{
 
         if(e.getSource()==homeButtonPanel){
             borrowBooksFrame.dispose();
-            StudentPage.studentFrame.setVisible(true);
+            OLD_StudentPage.studentFrame.setVisible(true);
         }
 
         if(e.getSource()==homeButtonPanel){
@@ -380,6 +380,6 @@ public class BorrowBooks implements MouseListener{
         }
     }
     public static void main(String[] args){
-        new BorrowBooks();
+        new OLD_BorrowBooks();
     }
 }

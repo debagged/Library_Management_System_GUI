@@ -38,7 +38,6 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         middleName_textfield = new custom.components.RoundedTextField();
         next_button = new javax.swing.JButton();
         logIn_label = new javax.swing.JLabel();
-        logInLine_label = new javax.swing.JLabel();
         lastName_textfield = new custom.components.RoundedTextField();
         lastName_label = new javax.swing.JLabel();
         suffix_label = new javax.swing.JLabel();
@@ -52,6 +51,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         sexComboBox = new custom.components.RoundedComboBox();
         sex_label = new javax.swing.JLabel();
         registerstatus_label = new javax.swing.JLabel();
+        login_seperator = new javax.swing.JSeparator();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,11 +97,6 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         logIn_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logIn_label.setText("Log in");
         logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        logInLine_label.setBackground(new java.awt.Color(79, 82, 78));
-        logInLine_label.setForeground(new java.awt.Color(79, 82, 78));
-        logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(79, 82, 78), 2));
-        logInLine_label.setOpaque(true);
 
         lastName_textfield.setBackground(new java.awt.Color(252, 255, 242));
         lastName_textfield.setForeground(new java.awt.Color(79, 82, 78));
@@ -166,6 +161,8 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         registerstatus_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         registerstatus_label.setText("Please enter your Fatima Email");
 
+        login_seperator.setBackground(new java.awt.Color(103, 120, 97));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -186,8 +183,8 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -233,10 +230,10 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                                         .addGap(94, 94, 94)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                     .addComponent(course_label)
-                                    .addGap(106, 106, 106)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(registerstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131))))
+                                    .addGap(106, 106, 106))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(registerstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(131, 131, 131)))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,8 +241,8 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(firstName_label)
                     .addComponent(sex_label))
@@ -399,9 +396,9 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lastName_label;
     private javax.swing.JTextField lastName_textfield;
-    private javax.swing.JLabel logInLine_label;
     private javax.swing.JLabel logIn_label;
     private javax.swing.JLabel loginHeader_label;
+    private javax.swing.JSeparator login_seperator;
     private javax.swing.JLabel mainBackground_label;
     private javax.swing.JLabel middleName_label;
     private javax.swing.JTextField middleName_textfield;

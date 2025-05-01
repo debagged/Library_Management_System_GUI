@@ -250,7 +250,7 @@
                     </LineBorder>
                   </Border>
                   <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
+                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
                   </Border>
                 </CompoundBorder>
               </Border>
@@ -292,7 +292,7 @@
                     </LineBorder>
                   </Border>
                   <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
+                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
                   </Border>
                 </CompoundBorder>
               </Border>
@@ -315,6 +315,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Next"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.CustomRoundedButton()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="logIn_label">
           <Properties>
@@ -348,7 +351,7 @@
                     </LineBorder>
                   </Border>
                   <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
+                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
                   </Border>
                 </CompoundBorder>
               </Border>
@@ -408,7 +411,7 @@
                     </LineBorder>
                   </Border>
                   <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
+                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
                   </Border>
                 </CompoundBorder>
               </Border>
@@ -449,7 +452,7 @@
                     </LineBorder>
                   </Border>
                   <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
+                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
                   </Border>
                 </CompoundBorder>
               </Border>

@@ -52,36 +52,39 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="username_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="username_textfield" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                      <Component id="confirm_button" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="loginstatus_label" min="-2" pref="191" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="logIn_label" max="32767" attributes="0"/>
-                          <EmptySpace min="98" pref="98" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="logInLine_label" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="newpassword_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="newpassword_textfield" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="password_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="password_textfield" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="logInLine_label" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="password_label" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="emptyConfirmPassMessage" min="-2" pref="191" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="confirmPassField" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="confirm_button" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="logIn_label" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="username_label" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="emptyUnameMessage" min="-2" pref="191" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="unameField" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="newpassword_label" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="emptyPassMessage" min="-2" pref="191" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="passField" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,24 +96,31 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="logInLine_label" min="-2" pref="4" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="username_label" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="username_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emptyUnameMessage" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="username_textfield" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="newpassword_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="unameField" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="newpassword_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emptyPassMessage" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="newpassword_textfield" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="password_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="passField" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="emptyConfirmPassMessage" min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="password_label" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="password_textfield" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="loginstatus_label" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="confirmPassField" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="confirm_button" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="logIn_label" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -142,30 +152,6 @@
             <Property name="text" type="java.lang.String" value="New Password:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="newpassword_textfield">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f2" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
-                <CompoundBorder>
-                  <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="61" green="78" red="67" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                  <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
-                  </Border>
-                </CompoundBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPasswordField()"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="password_label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -176,30 +162,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Confirm Password:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="password_textfield">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f2" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
-                <CompoundBorder>
-                  <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="61" green="78" red="67" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                  <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="5" right="5" top="0"/>
-                  </Border>
-                </CompoundBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPasswordField()"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="confirm_button">
           <Properties>
@@ -215,6 +177,9 @@
             <Property name="text" type="java.lang.String" value="Confirm"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.CustomRoundedButton()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="logIn_label">
           <Properties>
@@ -246,7 +211,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="loginstatus_label">
+        <Component class="javax.swing.JLabel" name="emptyUnameMessage">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="10" style="2"/>
@@ -254,8 +219,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Password doesn&apos;t match"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="username_label">
@@ -269,7 +233,7 @@
             <Property name="text" type="java.lang.String" value="Username:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="username_textfield">
+        <Component class="javax.swing.JTextField" name="unameField">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f2" green="ff" red="ff" type="rgb"/>
@@ -292,6 +256,32 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedTextField()"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="emptyPassMessage">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="10" style="2"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="emptyConfirmPassMessage">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="10" style="2"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+        </Component>
+        <Component class="custom.components.RoundedPasswordField" name="passField">
+        </Component>
+        <Component class="custom.components.RoundedPasswordField" name="confirmPassField">
         </Component>
       </SubComponents>
     </Container>

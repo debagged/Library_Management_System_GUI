@@ -92,10 +92,10 @@ public class LibraryDatabase {
     }
 
     private static Connection getConnected() {
-        // Corrected URL, username, and password
-        String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12767889?zeroDateTimeBehavior=CONVERT_TO_NULL";
-        String username = "sql12767889";
-        String password = "iQz13TG7uL";
+        
+        String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12774281?zeroDateTimeBehavior=CONVERT_TO_NULL";
+        String username = "sql12774281";
+        String password = "ANA1SUkuem";
         
         try {
             return DriverManager.getConnection(url, username, password);
@@ -104,6 +104,7 @@ public class LibraryDatabase {
         }
         return null;
     }
+    
 }
 /*
     To Access MYSQL in XAMPP or TERMINAL

@@ -19,6 +19,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import com.mycompany.library.database.LibraryDatabase;
+import com.mycompany.library.functions.LibraryFunctions;
+import com.mycompany.library.ui.mainpage.LibraryLogInPageUI;
 
 public class UserData{
 
@@ -129,12 +131,42 @@ public class UserData{
             return false;
         } finally {
             try {
-                if(connection != null)
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static boolean resetPassword(String username, String confirmPassword) {
+        Connection connection = LibraryDatabase.getConnection();
+        if (connection == null) return false; // Connection failed
+
+        String query = "UPDATE Login SET password = ? WHERE username = ?";
+        String inputHashedPassword = hashPassword(confirmPassword);
+        
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            
+            stmt.setString(1, inputHashedPassword);
+            stmt.setString(2, username);
+            
+            int rowsAffected = stmt.executeUpdate();
+            if (rowsAffected > 0) {
+                return true; //password updated
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    
+        return false; //uname not found
     }
 
     String filePath = "src/main/resources/UserData_Log_File.txt";
@@ -180,7 +212,7 @@ public class UserData{
         return null;
     }
     
-    public boolean checkUsername(String username){
+    /* public boolean checkUsername(String username){
         try {
             
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
@@ -203,9 +235,9 @@ public class UserData{
         
         return false;
         
-    }
+    } */
     
-    public boolean forgotPassword(String targetValue, String newValue){
+    /* public boolean forgotPassword(String targetValue, String newValue){
         try {
             // Read all lines from the file into a list
             List<String> lines = new ArrayList<>();
@@ -243,7 +275,7 @@ public class UserData{
         } catch (IOException e) {}
         
         return false;
-    }
+    } */
 
     // WITH DB PROPERTY //
 

@@ -4,31 +4,23 @@
  */
 package com.mycompany.library.ui.student;
 
+import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-
-import java.awt.*;
+import javax.swing.*;
 
 /**
  *
- * @author shawn
+ * @author Layosa
  */
-public class studentViewBooksDashboard extends javax.swing.JFrame {
+public class ViewBooksTemp extends javax.swing.JFrame {
 
     /**
-     * Creates new form studentViewBooksDashboard
+     * Creates new form ViewBooksTemp
      */
-    public studentViewBooksDashboard() {
+    public ViewBooksTemp() {
         initComponents();
-        getContentPane().setBackground(java.awt.Color.decode("#667961"));
-        initListeners();
         addBooksToPanel();
 
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -38,6 +30,7 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
         });
 
         changeScrollBarLook();
+        
     }
 
     /**
@@ -49,56 +42,43 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        sidePanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        burgerButton = new javax.swing.JLabel();
-        searchBar = new custom.components.RoundedTextField();
+        roundedTextField1 = new custom.components.RoundedTextField();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         booksPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Student Page");
+        setTitle("View Books");
         setMinimumSize(new java.awt.Dimension(800, 600));
 
-        sidePanel.setBackground(new java.awt.Color(255, 255, 242));
-        sidePanel.setPreferredSize(new java.awt.Dimension(75, 156));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 0));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fatima_logo_small.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-
-        burgerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burger_small.png"))); // NOI18N
-        burgerButton.setText("jLabel1");
-
-        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
-        sidePanel.setLayout(sidePanelLayout);
-        sidePanelLayout.setHorizontalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(burgerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
         );
-        sidePanelLayout.setVerticalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(burgerButton)
-                .addGap(21, 21, 21))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
-
-        searchBar.setBackground(new java.awt.Color(0, 102, 0));
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setToolTipText("");
+        jScrollPane1.setFocusable(false);
+        jScrollPane1.setHorizontalScrollBar(null);
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(700, 515));
         jScrollPane1.setOpaque(false);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(700, 0));
         jScrollPane1.setViewportView(booksPanel);
 
-        booksPanel.setBackground(new java.awt.Color(102, 121, 97));
-        booksPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 1, 1));
+        booksPanel.setMinimumSize(new java.awt.Dimension(0, 0));
+        booksPanel.setPreferredSize(new java.awt.Dimension(0, 0));
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 15, 15);
+        flowLayout1.setAlignOnBaseline(true);
+        booksPanel.setLayout(flowLayout1);
         jScrollPane1.setViewportView(booksPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,22 +86,22 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
-                    .addComponent(searchBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(roundedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(searchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(roundedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
+                .addGap(13, 13, 13))
         );
 
         pack();
@@ -179,10 +159,10 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
             }
         }
     }
-
+    
     private void resizeBooksPanel(){
         int bookPanelWidth = 200;
-        int bookPanelHeight = 290;
+        int bookPanelHeight = 310;
 
         int containerWidth = jScrollPane1.getViewport().getWidth();
         int containerHeight = jScrollPane1.getViewport().getHeight();
@@ -205,7 +185,7 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
             jScrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         }
     }
-    
+
     private void changeScrollBarLook(){
         javax.swing.JScrollBar verticalBar = jScrollPane1.getVerticalScrollBar();
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
@@ -235,50 +215,11 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void initListeners(){
-
-        burgerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                MousePressed(evt);
-            }
-        });
-    }
-
-    private void MouseEntered(java.awt.event.MouseEvent evt){
-        
-    }
-
-    private void MouseExited(java.awt.event.MouseEvent evt){
-
-    }
-    private boolean isExpanded = false;
-    private void MousePressed(java.awt.event.MouseEvent evt){
-        
-        if(evt.getSource()==burgerButton){
-
-            if(!isExpanded){
-                sidePanel.setPreferredSize(new Dimension(sidePanel.getWidth()+125,sidePanel.getHeight()));
-            }else{
-                sidePanel.setPreferredSize(new Dimension(sidePanel.getWidth()-125,sidePanel.getHeight()));
-            }
-
-            sidePanel.revalidate();
-            sidePanel.repaint();  
-            this.revalidate();
-            isExpanded = !isExpanded;
-        }
-    }
-
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -293,31 +234,28 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(studentViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooksTemp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(studentViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooksTemp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(studentViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooksTemp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(studentViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooksTemp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new studentViewBooksDashboard().setVisible(true);
+                new ViewBooksTemp().setVisible(true);
             }
-     
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel booksPanel;
-    private javax.swing.JLabel burgerButton;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private custom.components.RoundedTextField searchBar;
-    private javax.swing.JPanel sidePanel;
+    private custom.components.RoundedTextField roundedTextField1;
     // End of variables declaration//GEN-END:variables
 }

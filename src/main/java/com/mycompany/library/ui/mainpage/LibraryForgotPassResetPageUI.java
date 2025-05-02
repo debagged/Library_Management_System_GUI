@@ -95,7 +95,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         username_label.setText("Username:");
 
         unameField.setBackground(new java.awt.Color(255, 255, 242));
-        unameField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5)));
+        unameField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
 
         emptyPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyPassMessage.setForeground(new java.awt.Color(204, 0, 0));
@@ -104,6 +104,10 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         emptyConfirmPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyConfirmPassMessage.setForeground(new java.awt.Color(204, 0, 0));
         emptyConfirmPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        passField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+
+        confirmPassField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -239,6 +243,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
 
             if(!pass.equals(confirmPass)){
                 JOptionPane.showMessageDialog(rootPane, "Passwords Must Match!");
+                return;
             } else{
                 boolean isPassReset = UserData.resetPassword(uname, confirmPass);
 

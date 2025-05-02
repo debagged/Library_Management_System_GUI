@@ -1,5 +1,10 @@
 package com.mycompany.library.ui.mainpage;
 
+import javax.swing.JOptionPane;
+import javax.swing.event.MouseInputAdapter;
+
+import com.mycompany.library.users.UserData;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,6 +21,7 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
      */
     public LibraryRegisterPageUI_2() {
         initComponents();
+        initListeners();
     }
 
     /**
@@ -30,15 +36,17 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         registerHeader_label = new javax.swing.JLabel();
         createusername_label = new javax.swing.JLabel();
-        createusername_textfield = new javax.swing.JTextField();
+        createusername_textfield = new custom.components.RoundedTextField();
         createpassword_label = new javax.swing.JLabel();
-        createpassword_textfield = new javax.swing.JPasswordField();
-        confirm_button = new javax.swing.JButton();
-        login_label = new javax.swing.JLabel();
+        createpassword_textfield = new custom.components.RoundedPasswordField();
+        confirm_button = new custom.components.CustomRoundedButton();
+        back_label = new javax.swing.JLabel();
         confirmpassword_label = new javax.swing.JLabel();
-        confirmpassword_textfield = new javax.swing.JPasswordField();
-        loginstatus_label = new javax.swing.JLabel();
+        confirmpassword_textfield = new custom.components.RoundedPasswordField();
+        emptyUnameMessage = new javax.swing.JLabel();
         login_seperator = new javax.swing.JSeparator();
+        emptyNewPassMessage = new javax.swing.JLabel();
+        emptyConfirmPassMessage = new javax.swing.JLabel();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,60 +67,46 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         createusername_label.setText("Create Username :");
 
         createusername_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        createusername_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        createusername_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
 
         createpassword_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         createpassword_label.setForeground(new java.awt.Color(79, 82, 78));
         createpassword_label.setText("Create Password :");
 
         createpassword_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        createpassword_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
-        createpassword_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createpassword_textfieldActionPerformed(evt);
-            }
-        });
+        createpassword_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
 
         confirm_button.setBackground(new java.awt.Color(103, 120, 97));
         confirm_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirm_button.setForeground(new java.awt.Color(255, 255, 255));
         confirm_button.setText("Confirm");
         confirm_button.setFocusable(false);
-        confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                confirm_buttonMousePressed(evt);
-            }
-        });
 
-        login_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        login_label.setForeground(new java.awt.Color(79, 82, 78));
-        login_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        login_label.setText("Login");
-        login_label.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                login_labelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                login_labelMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                login_labelMousePressed(evt);
-            }
-        });
+        back_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        back_label.setForeground(new java.awt.Color(79, 82, 78));
+        back_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        back_label.setText("Back");
 
         confirmpassword_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmpassword_label.setForeground(new java.awt.Color(79, 82, 78));
         confirmpassword_label.setText("Confirm Password :");
 
         confirmpassword_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        confirmpassword_textfield.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        confirmpassword_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
 
-        loginstatus_label.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
-        loginstatus_label.setForeground(new java.awt.Color(204, 0, 0));
-        loginstatus_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loginstatus_label.setText("Password doesn't match");
+        emptyUnameMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        emptyUnameMessage.setForeground(new java.awt.Color(204, 0, 0));
+        emptyUnameMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         login_seperator.setBackground(new java.awt.Color(103, 120, 97));
+
+        emptyNewPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        emptyNewPassMessage.setForeground(new java.awt.Color(204, 0, 0));
+        emptyNewPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        emptyConfirmPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        emptyConfirmPassMessage.setForeground(new java.awt.Color(204, 0, 0));
+        emptyConfirmPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -124,22 +118,34 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
                 .addGap(64, 64, 64))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(login_seperator)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(login_label))
-                    .addComponent(createpassword_textfield)
-                    .addComponent(createpassword_label)
-                    .addComponent(createusername_label)
-                    .addComponent(createusername_textfield)
-                    .addComponent(confirmpassword_label)
-                    .addComponent(confirmpassword_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                    .addComponent(confirm_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(confirmpassword_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(emptyConfirmPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(login_seperator))
-                .addGap(0, 26, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(back_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(confirmpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(createpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(createusername_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(createpassword_label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(emptyNewPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(createusername_label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(emptyUnameMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 8, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,24 +155,28 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(createusername_label)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createusername_label)
+                    .addComponent(emptyUnameMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(createusername_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(createpassword_label)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createpassword_label)
+                    .addComponent(emptyNewPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(createpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(confirmpassword_label)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmpassword_label)
+                    .addComponent(emptyConfirmPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(confirmpassword_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(loginstatus_label, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login_label)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addComponent(back_label)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 290, -1));
@@ -176,27 +186,93 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         getContentPane().add(mainBackground_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void confirm_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirm_buttonMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirm_buttonMousePressed
+    private void initListeners(){
+        confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
 
-    private void login_labelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_labelMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_login_labelMouseEntered
+        back_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt){
+                MouseEntered(evt);
+            }
 
-    private void login_labelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_labelMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_login_labelMouseExited
+            public void mouseExited(java.awt.event.MouseEvent evt){
+                MouseExited(evt);
+            }
 
-    private void login_labelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_labelMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_login_labelMousePressed
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        });
+    }
 
-    private void createpassword_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createpassword_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createpassword_textfieldActionPerformed
+    private void MouseEntered(java.awt.event.MouseEvent evt){
+        if(evt.getSource()==back_label){
+            back_label.setText("<html><u>Back</html>");
+        }
+    }
+
+    private void MouseExited(java.awt.event.MouseEvent evt){
+        if(evt.getSource()==back_label){
+            back_label.setText("Back");
+        }
+    }
+
+    private void MousePressed(java.awt.event.MouseEvent evt){
+
+        String username = createusername_textfield.getText().trim();
+        String pass = String.valueOf(createpassword_textfield.getPassword());
+        String confirmPass = String.valueOf(confirmpassword_textfield.getPassword());
+        String userID = LibraryRegisterPageUI.studID_textfield.getText().trim();
+
+        if(evt.getSource()==back_label){
+            this.dispose();
+            new LibraryRegisterPageUI().setVisible(true);
+        }
+
+        if(evt.getSource()==confirm_button){
+
+            if(username.isBlank()){
+                emptyUnameMessage.setText("please enter your username");
+                return;
+            }
+
+            if(pass.isBlank()){
+                emptyNewPassMessage.setText("please enter your password");
+                return;
+            }
+
+            if(confirmPass.isBlank()){
+                emptyConfirmPassMessage.setText("please confirm your password");
+                return;
+            }
+
+            if(!pass.equals(confirmPass)){
+                JOptionPane.showMessageDialog(rootPane, "Passwords must match!");
+                return;
+            }else{
+                boolean isUserRegistered = UserData.registerUserLoginToDB(userID, username, confirmPass);
+
+                if(isUserRegistered){
+                    JOptionPane.showMessageDialog(rootPane, "Successfully registered!");
+                    createpassword_textfield.setText(null);
+                    createpassword_textfield.setText(null);
+                    confirmpassword_textfield.setText(null);
+                    //add page dispose
+                    return;
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Register Failed!");
+                    return;
+                }
+            }
+
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -233,6 +309,7 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel back_label;
     private javax.swing.JButton confirm_button;
     private javax.swing.JLabel confirmpassword_label;
     private javax.swing.JPasswordField confirmpassword_textfield;
@@ -240,10 +317,11 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
     private javax.swing.JPasswordField createpassword_textfield;
     private javax.swing.JLabel createusername_label;
     private javax.swing.JTextField createusername_textfield;
+    private javax.swing.JLabel emptyConfirmPassMessage;
+    private javax.swing.JLabel emptyNewPassMessage;
+    private javax.swing.JLabel emptyUnameMessage;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel login_label;
     private javax.swing.JSeparator login_seperator;
-    private javax.swing.JLabel loginstatus_label;
     private javax.swing.JLabel mainBackground_label;
     private javax.swing.JLabel registerHeader_label;
     // End of variables declaration//GEN-END:variables

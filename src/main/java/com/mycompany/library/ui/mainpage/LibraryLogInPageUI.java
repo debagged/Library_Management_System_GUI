@@ -231,7 +231,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
 
             if(uname.isEmpty()){
                 emptyUnameMessage.setText("please enter your username");
-                return;
             }
 
             if(pass.isEmpty()){
@@ -242,9 +241,18 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             boolean isAuthenticated = UserData.authenticateUser(uname, pass);
             
             if(isAuthenticated){
-                JOptionPane.showMessageDialog(rootPane, "Log in successful");
-                return;
-                
+
+                String id="";
+                if(uname.equals("admin")) id="Admin";
+                if(UserData.isUserIDExisting(id)){
+                    JOptionPane.showMessageDialog(rootPane, "Welcome Admin!");
+                    return;
+
+                } else{
+                    JOptionPane.showMessageDialog(rootPane, "Welcome Student!");
+                    return;  
+                }
+
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Username/Password not found");
                 return;

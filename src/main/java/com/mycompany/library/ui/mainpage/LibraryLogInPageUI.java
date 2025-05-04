@@ -231,6 +231,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
 
             if(uname.isEmpty()){
                 emptyUnameMessage.setText("please enter your username");
+                return;
             }
 
             if(pass.isEmpty()){

@@ -9,7 +9,7 @@ import javax.swing.*;
 import com.mycompany.library.ui.styles.ComponentStyles;
 import com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage;
 
-public class StudentPage implements MouseListener{
+public class OLD_StudentPage implements MouseListener{
     
     static JFrame studentFrame = new JFrame();
     ComponentStyles.RoundedPanel header = new ComponentStyles.RoundedPanel(20);
@@ -23,7 +23,7 @@ public class StudentPage implements MouseListener{
 
     String currUser;
     
-    public StudentPage(String username){
+    public OLD_StudentPage(String username){
 
         this.currUser = username;
 
@@ -193,12 +193,12 @@ public class StudentPage implements MouseListener{
 
         if(e.getSource()==viewBorrowedBooksPanel){
             studentFrame.setVisible(false);
-            new LibraryViewBorrowedBooks();
+            new OLD_LibraryViewBorrowedBooks();
         }
 
         if(e.getSource()==borrowBooksPanel){
             studentFrame.setVisible(false);
-            new BorrowBooks();
+            new OLD_BorrowBooks();
         }
 
         if(e.getSource()==logOutLabelContainer){
@@ -257,6 +257,6 @@ public class StudentPage implements MouseListener{
     }
     
     public static void main(String[] args){
-        new StudentPage("admin");
+        new OLD_StudentPage("admin");
     }
 }

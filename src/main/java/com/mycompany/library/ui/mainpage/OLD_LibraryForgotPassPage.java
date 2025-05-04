@@ -190,7 +190,7 @@ public class OLD_LibraryForgotPassPage implements ActionListener, MouseListener{
                 return;
             }
             
-            if(userData.checkUsername(userName)){
+            /* if(userData.checkUsername(userName)){
                 
                 if(!newPass.equals(confirmNewPass)){
                     matchPasswordMessageLabel.setText("Passwords Must Match");
@@ -208,7 +208,7 @@ public class OLD_LibraryForgotPassPage implements ActionListener, MouseListener{
                 confirmNewPasswordField.setText(null);
                 usernameField.requestFocusInWindow();
                 return;
-            }
+            } */
             
             JOptionPane.showMessageDialog(OLD_LibraryLogInPage.mainFrame, "Username Not Found", "Username Not Found", JOptionPane.PLAIN_MESSAGE);
         }

@@ -413,7 +413,7 @@ public class LibraryFunctions {
         return false;
     }
     
-    public boolean checkIfBorrowed(String title, String author){
+    public static boolean checkIfBorrowed(String title, String author){
 
         String bookInfo = title + "|" + author;
 

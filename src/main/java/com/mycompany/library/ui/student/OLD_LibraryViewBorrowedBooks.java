@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LibraryViewBorrowedBooks implements ActionListener{
+public class OLD_LibraryViewBorrowedBooks implements ActionListener{
 
     JFrame frame = new JFrame();
     JPanel panelContainer = new JPanel();
@@ -30,7 +30,7 @@ public class LibraryViewBorrowedBooks implements ActionListener{
     
     private Set<String> currentLabels;
 
-    public LibraryViewBorrowedBooks() {
+    public OLD_LibraryViewBorrowedBooks() {
         
         currentLabels = new HashSet<>();
         
@@ -138,7 +138,7 @@ public class LibraryViewBorrowedBooks implements ActionListener{
         
         if(e.getSource()==backButton){
             frame.dispose();
-            StudentPage.studentFrame.setVisible(true);
+            OLD_StudentPage.studentFrame.setVisible(true);
         }
     }
 
@@ -201,6 +201,6 @@ public class LibraryViewBorrowedBooks implements ActionListener{
     }
         
     public static void main(String[] args) {
-        new LibraryViewBorrowedBooks();
+        new OLD_LibraryViewBorrowedBooks();
     }
 }

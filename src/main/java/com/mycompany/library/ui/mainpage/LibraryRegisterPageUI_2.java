@@ -263,6 +263,8 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
                     createpassword_textfield.setText(null);
                     createpassword_textfield.setText(null);
                     confirmpassword_textfield.setText(null);
+                    this.dispose();
+                    new LibraryLogInPageUI().setVisible(true);
                     //add page dispose
                     return;
                 }else{

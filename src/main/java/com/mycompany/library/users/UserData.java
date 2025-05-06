@@ -26,7 +26,7 @@ public class UserData{
             
             String register_query = "INSERT INTO Users (user_ID, given_name, middle_name, last_name, gender, campus_email, course_ID) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement registerStatement = connect.prepareStatement(register_query)){
-                //String course_ID = courseChecker(course);
+                String course_ID = courseChecker(course);
     
                 // Set the parameter values
                 registerStatement.setString(1, user_ID);

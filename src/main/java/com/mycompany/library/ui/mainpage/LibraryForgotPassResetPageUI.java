@@ -249,6 +249,10 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
 
                 if(isPassReset){
                     JOptionPane.showMessageDialog(rootPane, "Password successfully reset!");
+                    unameField.setText(null);
+                    passField.setText(null);
+                    confirmPassField.setText(null);
+                    unameField.requestFocusInWindow();
                     return;
                 } else{
                     JOptionPane.showMessageDialog(rootPane, "Username not found!");

@@ -1,9 +1,17 @@
 package com.mycompany.library.users;
 
-import java.security.*;
-import java.sql.*;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Base64;
 
 import javax.swing.JOptionPane;
 
@@ -35,7 +43,7 @@ public class UserData{
                 registerStatement.setString(4, last_name);
                 registerStatement.setString(5, gender);
                 registerStatement.setString(6, campus_email);
-                registerStatement.setString(7, course);
+                registerStatement.setString(7, course_ID);
     
                 // Execute the prepared statementz`
                 registerStatement.executeUpdate();

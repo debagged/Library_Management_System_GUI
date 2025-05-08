@@ -10,10 +10,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
-        <exec.mainClass>com.mycompany.java_library.Java_Library</exec.mainClass>
+        <exec.mainClass>com.mycompany.library.Java_Library</exec.mainClass>
     </properties>
     
   <dependencies>
+  
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>

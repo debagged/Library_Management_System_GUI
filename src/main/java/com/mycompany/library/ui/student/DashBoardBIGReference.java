@@ -47,7 +47,7 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
         view_books_label.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         view_books_label.setForeground(new java.awt.Color(79, 82, 78));
         view_books_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        view_books_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view_booksSMALL_TEMP.png"))); // NOI18N
+        view_books_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search_books_icon_SMALL.png"))); // NOI18N
         view_books_label.setText("View Books");
 
         javax.swing.GroupLayout roundedPanel1Layout = new javax.swing.GroupLayout(roundedPanel1);
@@ -72,7 +72,7 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
         view_borrowed_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         view_borrowed_label.setForeground(new java.awt.Color(79, 82, 78));
         view_borrowed_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        view_borrowed_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view_borrowed_booksSMALL_TEMP.png"))); // NOI18N
+        view_borrowed_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/borrow_books_icon_SMALL.png"))); // NOI18N
         view_borrowed_label.setText("View Borrowed");
 
         javax.swing.GroupLayout roundedPanel2Layout = new javax.swing.GroupLayout(roundedPanel2);

@@ -4,7 +4,10 @@
  */
 package com.mycompany.library.ui.mainpage;
 
+import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import com.mycompany.library.users.UserData;
@@ -35,25 +38,25 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         firstName_label = new javax.swing.JLabel();
-        firstName_textfield = new custom.components.RoundedTextField();
         middleName_label = new javax.swing.JLabel();
-        middleName_textfield = new custom.components.RoundedTextField();
         next_button = new custom.components.CustomRoundedButton();
         logIn_label = new javax.swing.JLabel();
-        lastName_textfield = new custom.components.RoundedTextField();
         lastName_label = new javax.swing.JLabel();
         suffix_label = new javax.swing.JLabel();
         email_label = new javax.swing.JLabel();
-        email_textfield = new custom.components.RoundedTextField();
         studID_label = new javax.swing.JLabel();
-        studID_textfield = new custom.components.RoundedTextField();
         course_label = new javax.swing.JLabel();
-        suffix_combobox = new custom.components.RoundedComboBox();
-        course_combobox = new custom.components.RoundedComboBox();
-        sex_combobox = new custom.components.RoundedComboBox();
         sex_label = new javax.swing.JLabel();
-        emptyFieldsMessage = new javax.swing.JLabel();
+        errorMessage = new javax.swing.JLabel();
         login_seperator = new javax.swing.JSeparator();
+        fnameField = new custom.components.RoundedTextField();
+        mnameField = new custom.components.RoundedTextField();
+        lnameField = new custom.components.RoundedTextField();
+        studIDField = new custom.components.RoundedTextField();
+        emailField = new custom.components.RoundedTextField();
+        suffixComboBox = new custom.components.RoundedComboBox();
+        sexComboBox = new custom.components.RoundedComboBox();
+        courseComboBox = new custom.components.RoundedComboBox();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,20 +77,15 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         firstName_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         firstName_label.setForeground(new java.awt.Color(79, 82, 78));
         firstName_label.setText("First Name:");
-
-        firstName_textfield.setBackground(new java.awt.Color(252, 255, 242));
-        firstName_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        firstName_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
-        firstName_textfield.setMinimumSize(new java.awt.Dimension(206, 27));
+        firstName_label.setFocusable(false);
+        firstName_label.setRequestFocusEnabled(false);
 
         middleName_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         middleName_label.setForeground(new java.awt.Color(79, 82, 78));
         middleName_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         middleName_label.setText("Middle Name:");
-
-        middleName_textfield.setBackground(new java.awt.Color(252, 255, 242));
-        middleName_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        middleName_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        middleName_label.setFocusable(false);
+        middleName_label.setRequestFocusEnabled(false);
 
         next_button.setBackground(new java.awt.Color(103, 120, 97));
         next_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -100,70 +98,70 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         logIn_label.setText("Log in");
         logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        lastName_textfield.setBackground(new java.awt.Color(252, 255, 242));
-        lastName_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        lastName_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
-
         lastName_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lastName_label.setForeground(new java.awt.Color(79, 82, 78));
         lastName_label.setText("Last Name:");
+        lastName_label.setFocusable(false);
+        lastName_label.setRequestFocusEnabled(false);
 
         suffix_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         suffix_label.setForeground(new java.awt.Color(79, 82, 78));
         suffix_label.setText("Suffix:");
+        suffix_label.setFocusable(false);
+        suffix_label.setRequestFocusEnabled(false);
 
         email_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         email_label.setForeground(new java.awt.Color(79, 82, 78));
         email_label.setText("Fatima Email:");
-
-        email_textfield.setBackground(new java.awt.Color(252, 255, 242));
-        email_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        email_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        email_label.setFocusable(false);
+        email_label.setRequestFocusEnabled(false);
 
         studID_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         studID_label.setForeground(new java.awt.Color(79, 82, 78));
         studID_label.setText("Student ID:");
-
-        studID_textfield.setBackground(new java.awt.Color(252, 255, 242));
-        studID_textfield.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        studID_textfield.setForeground(new java.awt.Color(79, 82, 78));
-        studID_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        studID_label.setFocusable(false);
+        studID_label.setRequestFocusEnabled(false);
 
         course_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         course_label.setForeground(new java.awt.Color(79, 82, 78));
         course_label.setText("Course:");
-
-        suffix_combobox.setBackground(new java.awt.Color(252, 255, 242));
-        suffix_combobox.setForeground(new java.awt.Color(79, 82, 78));
-        suffix_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Jr.", "Sr.", "Other(input)" }));
-        suffix_combobox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                suffix_comboboxActionPerformed(evt);
-            }
-        });
-
-        course_combobox.setBackground(new java.awt.Color(252, 255, 242));
-        course_combobox.setForeground(new java.awt.Color(79, 82, 78));
-        course_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Senior High School", "BS in Nursing", "BS in Medical Laboratory Science (Medical Technology)", "BS in Pharmacy", "BS in Physical Therapy", "BS in Psychology", "BS in Accountancy", "BS in Accounting Information System", "BS in Tourism Management", "BS in Computer Science", "BS in Criminology" }));
-        course_combobox.setFocusable(false);
-
-        sex_combobox.setBackground(new java.awt.Color(252, 255, 242));
-        sex_combobox.setForeground(new java.awt.Color(79, 82, 78));
-        sex_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        sex_combobox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        sex_combobox.setFocusable(false);
+        course_label.setFocusable(false);
+        course_label.setRequestFocusEnabled(false);
 
         sex_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sex_label.setForeground(new java.awt.Color(79, 82, 78));
         sex_label.setText("Sex:");
+        sex_label.setFocusable(false);
+        sex_label.setRequestFocusEnabled(false);
 
-        emptyFieldsMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
-        emptyFieldsMessage.setForeground(new java.awt.Color(204, 0, 0));
-        emptyFieldsMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        errorMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        errorMessage.setForeground(new java.awt.Color(204, 0, 0));
+        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         login_seperator.setBackground(new java.awt.Color(103, 120, 97));
 
-        register_seperator.setBackground(new java.awt.Color(103, 120, 97));
+        fnameField.setBorderThickness(2.0F);
+
+        mnameField.setBorderThickness(2.0F);
+
+        lnameField.setBorderThickness(2.0F);
+
+        studIDField.setBorderThickness(2.0F);
+
+        emailField.setBorderThickness(2.0F);
+
+        suffixComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None", "Jr.", "II.", "Other(input)" }));
+        suffixComboBox.setBorderRadius(35);
+        suffixComboBox.setBorderThickness(2.0F);
+
+        sexComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        sexComboBox.setBorderRadius(35);
+        sexComboBox.setBorderThickness(2.0F);
+
+        courseComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Senior High School", "BS in Nursing", "BS in Medical Laboratory Science (Medical Technology)", "BS in Pharmacy", "BS in Physical Therapy", "BS in Psychology", "BS in Accountancy", "BS in Accounting Information System", "BS in Tourism Management", "BS in Computer Science", "BS in Criminology" }));
+        courseComboBox.setBorderRadius(35);
+        courseComboBox.setBorderThickness(2.0F);
+        courseComboBox.setMaximumSize(new java.awt.Dimension(206, 30));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -188,42 +186,31 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                     .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lastName_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(middleName_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(firstName_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(suffix_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                                .addGap(76, 76, 76)
-                                                .addComponent(suffix_label)))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                            .addGap(76, 76, 76)
-                                            .addComponent(suffix_label)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(66, 66, 66)
-                                        .addComponent(lastName_label)))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                     .addGap(65, 65, 65)
-                                    .addComponent(firstName_label)
-                                    .addGap(67, 67, 67)))
+                                    .addComponent(firstName_label))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addGap(76, 76, 76)
+                                    .addComponent(suffix_label))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addGap(66, 66, 66)
+                                    .addComponent(lastName_label))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addGap(59, 59, 59)
+                                    .addComponent(middleName_label))
+                                .addComponent(fnameField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mnameField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lnameField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(suffixComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(course_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(sex_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(email_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(studID_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(19, 19, 19))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(sex_label)
-                                                .addGap(117, 117, 117)))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(84, 84, 84)
+                                            .addComponent(sex_label)
+                                            .addGap(117, 117, 117))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                             .addComponent(sex_label)
                                             .addGap(117, 117, 117)))
@@ -232,9 +219,18 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                                         .addGap(87, 87, 87)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                     .addComponent(course_label)
-                                    .addGap(106, 106, 106))))
+                                    .addGap(106, 106, 106))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(sexComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(19, 19, 19))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(studIDField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(emailField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(courseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addContainerGap())))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(emptyFieldsMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(131, 131, 131)))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -250,34 +246,34 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                     .addComponent(sex_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstName_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sex_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(middleName_label)
                     .addComponent(course_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(course_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(middleName_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(courseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lastName_label)
                     .addComponent(studID_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(studID_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lastName_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(studIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(email_label)
                     .addComponent(suffix_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(suffix_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(email_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(emptyFieldsMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suffixComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(next_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -301,6 +297,13 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
+
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
         });
 
         logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -314,23 +317,83 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                 MousePressed(evt);
             }
         });
+
+        suffixComboBox.addActionListener(evt ->{
+            suffixComboBoxActionPerformed(evt);
+        });
+
+        //declaring methods for focusListener
+        java.awt.event.FocusListener fieldFocusListener = new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FocusGained(evt);
+            }
+
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FocusLost(evt);
+            }
+        };
+
+        //adding focus listener to components
+        JComponent[] components = {
+            fnameField, mnameField, lnameField,
+            suffixComboBox, sexComboBox, courseComboBox,
+            studIDField, emailField
+        };
+
+        for (JComponent comp : components) {
+            comp.addFocusListener(fieldFocusListener);
+        }
     }
-    
-    private void suffix_comboboxActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        String selected = (String) suffix_combobox.getSelectedItem();
+
+    private void suffixComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        String selected = (String) suffixComboBox.getSelectedItem();
 
         if("Other(input)".equals(selected)){
-            suffix_combobox.setEditable(true);
-            suffix_combobox.requestFocusInWindow();
+            suffixComboBox.setEditable(true);
+            suffixComboBox.requestFocusInWindow();
         
         }else{
-            suffix_combobox.setEditable(false);
+            suffixComboBox.setEditable(false);
         }
+    }
+
+    //method to update border thickness of components on focus
+    private void updateBorderThickness(Object source, int thickness) {
+        JComponent[] components = {
+            fnameField, mnameField, lnameField,
+            suffixComboBox, sexComboBox, courseComboBox,
+            studIDField, emailField
+        };
+
+        for (JComponent comp : components) {
+            if (source == comp) {
+                if(comp instanceof custom.components.RoundedTextField){
+                    ((custom.components.RoundedTextField) comp).setBorderThickness(thickness);
+                }
+
+                if(comp instanceof custom.components.RoundedComboBox){
+                    ((custom.components.RoundedComboBox) comp).setBorderThickness(thickness);
+                }
+                repaint();
+                break;
+            }
+        }
+    }
+
+    private void FocusGained(java.awt.event.FocusEvent evt){
+        updateBorderThickness(evt.getSource(), 3);
+    }
+    private void FocusLost(java.awt.event.FocusEvent evt){
+        updateBorderThickness(evt.getSource(), 2);
     }
 
     private void MouseEntered(java.awt.event.MouseEvent evt) {
         if(evt.getSource()==logIn_label){
             logIn_label.setText("<html><u>Log&nbsp;In</html>");
+        }
+
+        if(evt.getSource()==next_button){
+            next_button.setLocation(next_button.getX(), next_button.getY()-3);
         }
     }
 
@@ -338,18 +401,29 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
         if(evt.getSource()==logIn_label){
             logIn_label.setText("Log In");
         }
+
+        if(evt.getSource()==next_button){
+            next_button.setLocation(next_button.getX(), next_button.getY()+3);
+        }
+    }
+
+    private void showError(JTextField field) {
+        if (field instanceof custom.components.RoundedTextField){
+            ((custom.components.RoundedTextField) field).setBorderThickness(2);
+            ((custom.components.RoundedTextField) field).setBorderColor(new java.awt.Color(204, 0, 0));
+        }
     }
 
     private void MousePressed(java.awt.event.MouseEvent evt){ 
 
-        String given_name = firstName_textfield.getText().trim();
-        String middle_name = middleName_textfield.getText().trim();
-        String last_name = lastName_textfield.getText().trim();
-        String suffix = suffix_combobox.isEditable() ? (String) suffix_combobox.getEditor().getItem() : (String) suffix_combobox.getSelectedItem();
-        String sex = sex_combobox.getSelectedItem().toString().trim();
-        String course = course_combobox.getSelectedItem().toString().trim();
-        String user_ID = studID_textfield.getText().trim();
-        String campus_email = email_textfield.getText().trim();
+        String given_name = fnameField.getText().trim();
+        String middle_name = mnameField.getText().trim();
+        String last_name = lnameField.getText().trim();
+        String suffix = suffixComboBox.isEditable() ? (String) suffixComboBox.getEditor().getItem() : (String) suffixComboBox.getSelectedItem();
+        String sex = sexComboBox.getSelectedItem().toString().trim();
+        String course = courseComboBox.getSelectedItem().toString().trim();
+        String user_ID = studIDField.getText().trim();
+        String campus_email = emailField.getText().trim();
 
         if(evt.getSource()==logIn_label){
             this.setVisible(false);
@@ -364,7 +438,22 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
                 user_ID.isBlank() ||
                 campus_email.isBlank()){
 
-                emptyFieldsMessage.setText("Please fill out empty fields");
+                JTextField[] components = {
+                    fnameField, mnameField, lnameField,
+                    studIDField, emailField
+                };
+
+                for(JTextField comp1 : components){
+                    if(comp1.getText().isBlank()) continue;
+                    ((custom.components.RoundedTextField) comp1).setBorderColor(java.awt.Color.decode("#667961"));
+                }
+
+                for(JTextField comp : components){
+                    if(!comp.getText().isBlank()) continue;
+                    showError(comp);
+                }
+
+                errorMessage.setText("Please fill out empty fields");
                 return;
             }
             
@@ -376,7 +465,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
             }
 
             if(UserData.isUserIDExisting(user_ID)){
-                JOptionPane.showMessageDialog(null, "User ID already Exisiting, Please, Try Again", "User ID Duplication",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "User ID already Exisiting, Please Try Again", "User ID Duplication",JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -429,28 +518,28 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> course_combobox;
+    private custom.components.RoundedComboBox courseComboBox;
     private javax.swing.JLabel course_label;
+    private custom.components.RoundedTextField emailField;
     private javax.swing.JLabel email_label;
-    private javax.swing.JTextField email_textfield;
-    private javax.swing.JLabel emptyFieldsMessage;
+    private javax.swing.JLabel errorMessage;
     private javax.swing.JLabel firstName_label;
-    private javax.swing.JTextField firstName_textfield;
+    private custom.components.RoundedTextField fnameField;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lastName_label;
-    private javax.swing.JTextField lastName_textfield;
+    private custom.components.RoundedTextField lnameField;
     private javax.swing.JLabel logIn_label;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JSeparator login_seperator;
     private javax.swing.JLabel mainBackground_label;
     private javax.swing.JLabel middleName_label;
-    private javax.swing.JTextField middleName_textfield;
+    private custom.components.RoundedTextField mnameField;
     private javax.swing.JButton next_button;
-    private javax.swing.JComboBox<String> sex_combobox;
+    private custom.components.RoundedComboBox sexComboBox;
     private javax.swing.JLabel sex_label;
+    protected static custom.components.RoundedTextField studIDField;
     private javax.swing.JLabel studID_label;
-    protected static javax.swing.JTextField studID_textfield;
-    private javax.swing.JComboBox<String> suffix_combobox;
+    private custom.components.RoundedComboBox suffixComboBox;
     private javax.swing.JLabel suffix_label;
     // End of variables declaration//GEN-END:variables
 }

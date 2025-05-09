@@ -55,10 +55,6 @@
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="login_seperator" min="-2" pref="240" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                           <Component id="confirmpassword_label" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -68,10 +64,7 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="back_label" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="confirmpassword_textfield" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
                               <Component id="confirm_button" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="createpassword_textfield" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="createusername_textfield" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -88,7 +81,16 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="login_seperator" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="newUnameField" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="newPassField" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="confirmNewPassField" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -106,23 +108,23 @@
                       <Component id="createusername_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyUnameMessage" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="createusername_textfield" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  <Component id="newUnameField" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="createpassword_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyNewPassMessage" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="createpassword_textfield" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="newPassField" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="confirmpassword_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyConfirmPassMessage" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="confirmpassword_textfield" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="confirmNewPassField" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="confirm_button" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="back_label" max="-2" attributes="0"/>
@@ -158,30 +160,6 @@
             <Property name="text" type="java.lang.String" value="Create Username :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="createusername_textfield">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
-                <CompoundBorder>
-                  <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="61" green="78" red="67" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                  <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
-                  </Border>
-                </CompoundBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedTextField()"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="createpassword_label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -192,30 +170,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Create Password :"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="createpassword_textfield">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
-                <CompoundBorder>
-                  <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="61" green="78" red="67" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                  <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
-                  </Border>
-                </CompoundBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPasswordField()"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="confirm_button">
           <Properties>
@@ -258,30 +212,6 @@
             <Property name="text" type="java.lang.String" value="Confirm Password :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="confirmpassword_textfield">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
-                <CompoundBorder>
-                  <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="61" green="78" red="67" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                  <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="0" left="12" right="12" top="0"/>
-                  </Border>
-                </CompoundBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPasswordField()"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="emptyUnameMessage">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -321,6 +251,12 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+        </Component>
+        <Component class="custom.components.RoundedTextField" name="newUnameField">
+        </Component>
+        <Component class="custom.components.RoundedPasswordField" name="newPassField">
+        </Component>
+        <Component class="custom.components.RoundedPasswordField" name="confirmNewPassField">
         </Component>
       </SubComponents>
     </Container>

@@ -86,7 +86,7 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
         viewBooksLabel.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         viewBooksLabel.setForeground(new java.awt.Color(79, 82, 78));
         viewBooksLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewBooksLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view_booksSMALL_TEMP.png"))); // NOI18N
+        viewBooksLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search_books_icon_SMALL.png"))); // NOI18N
         viewBooksLabel.setPreferredSize(new java.awt.Dimension(130, 40));
 
         javax.swing.GroupLayout viewBooksButtonLayout = new javax.swing.GroupLayout(viewBooksButton);
@@ -110,7 +110,7 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
         viewBorrowedLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         viewBorrowedLabel.setForeground(new java.awt.Color(79, 82, 78));
         viewBorrowedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewBorrowedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view_borrowed_booksSMALL_TEMP.png"))); // NOI18N
+        viewBorrowedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/borrow_books_icon_SMALL.png"))); // NOI18N
         viewBorrowedLabel.setMaximumSize(new java.awt.Dimension(145, 40));
         viewBorrowedLabel.setMinimumSize(new java.awt.Dimension(145, 40));
         viewBorrowedLabel.setPreferredSize(new java.awt.Dimension(145, 40));

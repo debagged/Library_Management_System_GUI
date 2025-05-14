@@ -102,7 +102,7 @@ public class adminViewBooksDashboard extends javax.swing.JFrame {
 
         student_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         student_label.setForeground(new java.awt.Color(79, 82, 78));
-        student_label.setText("STUDENT");
+        student_label.setText("ADMIN");
 
         olfu_lms_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         olfu_lms_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -113,15 +113,17 @@ public class adminViewBooksDashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(student_label))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(olfu_logo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(olfu_lms_label)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(olfu_logo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(olfu_lms_label))
+                        .addGap(38, 38, 38)
+                        .addComponent(student_label)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(

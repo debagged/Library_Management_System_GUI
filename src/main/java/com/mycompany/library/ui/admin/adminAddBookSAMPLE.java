@@ -26,8 +26,21 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator1 = new javax.swing.JSeparator();
         registerHeader_label = new javax.swing.JLabel();
         login_seperator = new javax.swing.JSeparator();
+        booktitle_textfield = new custom.components.RoundedTextField();
+        roundedPanel1 = new custom.components.RoundedPanel();
+        jLabel1 = new javax.swing.JLabel();
+        booktitle_textfield1 = new custom.components.RoundedTextField();
+        bookauthor_textfield = new custom.components.RoundedTextField();
+        suffixComboBox = new custom.components.RoundedComboBox();
+        suffixComboBox1 = new custom.components.RoundedComboBox();
+        booktitle_textfield2 = new custom.components.RoundedTextField();
+        bookauthor_textfield1 = new custom.components.RoundedTextField();
+        published_label = new javax.swing.JLabel();
+        customRoundedButton6 = new custom.components.CustomRoundedButton();
+        customRoundedButton5 = new custom.components.CustomRoundedButton();
 
         setBackground(new java.awt.Color(255, 255, 242));
 
@@ -39,18 +52,138 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
 
         login_seperator.setBackground(new java.awt.Color(103, 120, 97));
 
+        booktitle_textfield.setForeground(new java.awt.Color(79, 82, 78));
+        booktitle_textfield.setText("Book Title:");
+        booktitle_textfield.setBorderThickness(2.0F);
+        booktitle_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booktitle_textfieldActionPerformed(evt);
+            }
+        });
+
+        roundedPanel1.setPreferredSize(new java.awt.Dimension(265, 272));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download_green.png"))); // NOI18N
+
+        javax.swing.GroupLayout roundedPanel1Layout = new javax.swing.GroupLayout(roundedPanel1);
+        roundedPanel1.setLayout(roundedPanel1Layout);
+        roundedPanel1Layout.setHorizontalGroup(
+            roundedPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundedPanel1Layout.createSequentialGroup()
+                .addContainerGap(69, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(68, 68, 68))
+        );
+        roundedPanel1Layout.setVerticalGroup(
+            roundedPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(roundedPanel1Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        booktitle_textfield1.setForeground(new java.awt.Color(79, 82, 78));
+        booktitle_textfield1.setText("Call Number:");
+        booktitle_textfield1.setBorderThickness(2.0F);
+        booktitle_textfield1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booktitle_textfield1ActionPerformed(evt);
+            }
+        });
+
+        bookauthor_textfield.setForeground(new java.awt.Color(79, 82, 78));
+        bookauthor_textfield.setText("Book Author:");
+        bookauthor_textfield.setBorderThickness(2.0F);
+        bookauthor_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookauthor_textfieldActionPerformed(evt);
+            }
+        });
+
+        suffixComboBox.setForeground(new java.awt.Color(79, 82, 78));
+        suffixComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Book Genre", "Jr.", "II.", "Other(input)" }));
+        suffixComboBox.setBorderRadius(35);
+        suffixComboBox.setBorderThickness(2.0F);
+        suffixComboBox.setPreferredSize(new java.awt.Dimension(138, 40));
+
+        suffixComboBox1.setForeground(new java.awt.Color(79, 82, 78));
+        suffixComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Book Edition", "Jr.", "II.", "Other(input)" }));
+        suffixComboBox1.setBorderRadius(35);
+        suffixComboBox1.setBorderThickness(2.0F);
+        suffixComboBox1.setPreferredSize(new java.awt.Dimension(138, 40));
+
+        booktitle_textfield2.setForeground(new java.awt.Color(79, 82, 78));
+        booktitle_textfield2.setText("No. of Pages");
+        booktitle_textfield2.setBorderThickness(2.0F);
+        booktitle_textfield2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booktitle_textfield2ActionPerformed(evt);
+            }
+        });
+
+        bookauthor_textfield1.setForeground(new java.awt.Color(79, 82, 78));
+        bookauthor_textfield1.setText("Date Acquired:");
+        bookauthor_textfield1.setBorderThickness(2.0F);
+        bookauthor_textfield1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookauthor_textfield1ActionPerformed(evt);
+            }
+        });
+
+        published_label.setBackground(new java.awt.Color(79, 82, 78));
+        published_label.setForeground(new java.awt.Color(79, 82, 78));
+        published_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        published_label.setText("Year Published:");
+
+        customRoundedButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/left_arrow_white.png"))); // NOI18N
+        customRoundedButton6.setText("");
+
+        customRoundedButton5.setForeground(new java.awt.Color(255, 255, 242));
+        customRoundedButton5.setText("CONFIRM");
+        customRoundedButton5.setPreferredSize(new java.awt.Dimension(93, 40));
+        customRoundedButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customRoundedButton5customRoundedButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(219, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(registerHeader_label)
                 .addGap(218, 218, 218))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addComponent(customRoundedButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(booktitle_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(booktitle_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bookauthor_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(suffixComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(booktitle_textfield2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bookauthor_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(suffixComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(published_label)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addComponent(roundedPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -58,14 +191,74 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(registerHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(488, Short.MAX_VALUE))
+                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(booktitle_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bookauthor_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(suffixComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(suffixComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(published_label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bookauthor_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(booktitle_textfield2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(booktitle_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(roundedPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customRoundedButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void booktitle_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booktitle_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_booktitle_textfieldActionPerformed
+
+    private void booktitle_textfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booktitle_textfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_booktitle_textfield1ActionPerformed
+
+    private void bookauthor_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookauthor_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bookauthor_textfieldActionPerformed
+
+    private void booktitle_textfield2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booktitle_textfield2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_booktitle_textfield2ActionPerformed
+
+    private void bookauthor_textfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookauthor_textfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bookauthor_textfield1ActionPerformed
+
+    private void customRoundedButton5customRoundedButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customRoundedButton5customRoundedButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customRoundedButton5customRoundedButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private custom.components.RoundedTextField bookauthor_textfield;
+    private custom.components.RoundedTextField bookauthor_textfield1;
+    private custom.components.RoundedTextField booktitle_textfield;
+    private custom.components.RoundedTextField booktitle_textfield1;
+    private custom.components.RoundedTextField booktitle_textfield2;
+    private custom.components.CustomRoundedButton customRoundedButton5;
+    private custom.components.CustomRoundedButton customRoundedButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator login_seperator;
+    private javax.swing.JLabel published_label;
     private javax.swing.JLabel registerHeader_label;
+    private custom.components.RoundedPanel roundedPanel1;
+    private custom.components.RoundedComboBox suffixComboBox;
+    private custom.components.RoundedComboBox suffixComboBox1;
     // End of variables declaration//GEN-END:variables
 }

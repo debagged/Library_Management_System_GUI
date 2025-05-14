@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.library.ui.student;
 
@@ -8,10 +8,10 @@ package com.mycompany.library.ui.student;
  *
  * @author shawn
  */
-public class viewBooksOverviewSAMPLE extends javax.swing.JFrame {
+public class viewBooksOverviewSAMPLE extends javax.swing.JPanel {
 
     /**
-     * Creates new form viewBooksOverviewSAMPLE
+     * Creates new form viewBooksOverviewSAMPLE2
      */
     public viewBooksOverviewSAMPLE() {
         initComponents();
@@ -26,235 +26,190 @@ public class viewBooksOverviewSAMPLE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        sidePanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        burgerButton = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        book_title_label = new javax.swing.JLabel();
-        book_title_label1 = new javax.swing.JLabel();
-        book_title_label2 = new javax.swing.JLabel();
-        customRoundedButton1 = new custom.components.CustomRoundedButton();
-        customRoundedButton2 = new custom.components.CustomRoundedButton();
-        login_seperator = new javax.swing.JSeparator();
+        book_title_label6 = new javax.swing.JLabel();
+        book_title_label7 = new javax.swing.JLabel();
+        book_title_label8 = new javax.swing.JLabel();
+        customRoundedButton5 = new custom.components.CustomRoundedButton();
+        customRoundedButton6 = new custom.components.CustomRoundedButton();
+        login_seperator2 = new javax.swing.JSeparator();
+        published_label = new javax.swing.JLabel();
+        genre_label = new javax.swing.JLabel();
+        edition_label = new javax.swing.JLabel();
+        isbn_label = new javax.swing.JLabel();
+        pages_label = new javax.swing.JLabel();
+        book_aquired_label = new javax.swing.JLabel();
+        call_number_label = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        setBackground(new java.awt.Color(255, 255, 242));
+        setPreferredSize(new java.awt.Dimension(670, 540));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        book_title_label6.setBackground(new java.awt.Color(79, 82, 78));
+        book_title_label6.setFont(new java.awt.Font("Segoe UI", 2, 17)); // NOI18N
+        book_title_label6.setForeground(new java.awt.Color(79, 82, 78));
+        book_title_label6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        book_title_label6.setText("Jenny Noa");
 
-        sidePanel.setBackground(new java.awt.Color(255, 255, 242));
-        sidePanel.setPreferredSize(new java.awt.Dimension(75, 156));
+        book_title_label7.setBackground(new java.awt.Color(79, 82, 78));
+        book_title_label7.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        book_title_label7.setForeground(new java.awt.Color(79, 82, 78));
+        book_title_label7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        book_title_label7.setText("Bad Dreams");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fatima_logo_small.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        book_title_label8.setBackground(new java.awt.Color(79, 82, 78));
+        book_title_label8.setFont(new java.awt.Font("Segoe UI", 2, 11)); // NOI18N
+        book_title_label8.setForeground(new java.awt.Color(79, 82, 78));
+        book_title_label8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        book_title_label8.setText("<html> <p style='width:230px;'> What happens when a love of performing is matched only by the need to be invisible? Jenny Noa’s unsparing debut examines the origins of her creative aspirations, the obstacles that have always stood in the way, and the painful, lengthy process of letting those dreams go. <br><br>  Bad Dreams is a poignant exploration of what it means to find and accept oneself while balancing life's unexpected turns and inconvenient passions. Whether it’s about her complicated relationship with her mother, the death of her young husband, her own struggle with mental illness, or the time that juvenile possum walked down the hall and into her bedroom, the author shares her observations with humility and humor. </p> </html>");
+        book_title_label8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        burgerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burger_smaller_green.png"))); // NOI18N
-
-        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
-        sidePanel.setLayout(sidePanelLayout);
-        sidePanelLayout.setHorizontalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(burgerButton)))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-        sidePanelLayout.setVerticalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(burgerButton)
-                .addGap(24, 24, 24))
-        );
-
-        jPanel2.setBackground(new java.awt.Color(145, 181, 119));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 242));
-        jPanel3.setPreferredSize(new java.awt.Dimension(670, 540));
-
-        book_title_label.setBackground(new java.awt.Color(79, 82, 78));
-        book_title_label.setFont(new java.awt.Font("Segoe UI", 2, 17)); // NOI18N
-        book_title_label.setForeground(new java.awt.Color(79, 82, 78));
-        book_title_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        book_title_label.setText("Jenny Noa");
-
-        book_title_label1.setBackground(new java.awt.Color(79, 82, 78));
-        book_title_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        book_title_label1.setForeground(new java.awt.Color(79, 82, 78));
-        book_title_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        book_title_label1.setText("Bad Dreams");
-
-        book_title_label2.setBackground(new java.awt.Color(79, 82, 78));
-        book_title_label2.setFont(new java.awt.Font("Segoe UI", 2, 11)); // NOI18N
-        book_title_label2.setForeground(new java.awt.Color(79, 82, 78));
-        book_title_label2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        book_title_label2.setText("<html> <p style='width:230px;'> What happens when a love of performing is matched only by the need to be invisible? Jenny Noa’s unsparing debut examines the origins of her creative aspirations, the obstacles that have always stood in the way, and the painful, lengthy process of letting those dreams go. <br><br>  Bad Dreams is a poignant exploration of what it means to find and accept oneself while balancing life's unexpected turns and inconvenient passions. Whether it’s about her complicated relationship with her mother, the death of her young husband, her own struggle with mental illness, or the time that juvenile possum walked down the hall and into her bedroom, the author shares her observations with humility and humor. </p> </html>");
-        book_title_label2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        customRoundedButton1.setText("BORROW BOOK");
-        customRoundedButton1.addActionListener(new java.awt.event.ActionListener() {
+        customRoundedButton5.setForeground(new java.awt.Color(255, 255, 242));
+        customRoundedButton5.setText("BORROW BOOK");
+        customRoundedButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customRoundedButton1ActionPerformed(evt);
+                customRoundedButton5customRoundedButton1ActionPerformed(evt);
             }
         });
 
-        customRoundedButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/left_arrow.png"))); // NOI18N
-        customRoundedButton2.setText("");
+        customRoundedButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/left_arrow_white.png"))); // NOI18N
+        customRoundedButton6.setText("");
 
-        login_seperator.setBackground(new java.awt.Color(103, 120, 97));
-        login_seperator.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        login_seperator2.setBackground(new java.awt.Color(103, 120, 97));
+        login_seperator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(294, Short.MAX_VALUE)
-                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(customRoundedButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(customRoundedButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(book_title_label1)
-                            .addGap(107, 107, 107))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(book_title_label)
-                            .addGap(126, 126, 126))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(book_title_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(23, 23, 23)))))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(customRoundedButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(book_title_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(book_title_label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(book_title_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(customRoundedButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
-                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-        );
+        published_label.setBackground(new java.awt.Color(79, 82, 78));
+        published_label.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        published_label.setForeground(new java.awt.Color(79, 82, 78));
+        published_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        published_label.setText("Published:");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
+        genre_label.setBackground(new java.awt.Color(79, 82, 78));
+        genre_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        genre_label.setForeground(new java.awt.Color(79, 82, 78));
+        genre_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        genre_label.setText("Genre:");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        edition_label.setBackground(new java.awt.Color(79, 82, 78));
+        edition_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        edition_label.setForeground(new java.awt.Color(79, 82, 78));
+        edition_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        edition_label.setText("Edition:");
+
+        isbn_label.setBackground(new java.awt.Color(79, 82, 78));
+        isbn_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        isbn_label.setForeground(new java.awt.Color(79, 82, 78));
+        isbn_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        isbn_label.setText("ISBN:");
+
+        pages_label.setBackground(new java.awt.Color(79, 82, 78));
+        pages_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        pages_label.setForeground(new java.awt.Color(79, 82, 78));
+        pages_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        pages_label.setText("Pages:");
+
+        book_aquired_label.setBackground(new java.awt.Color(79, 82, 78));
+        book_aquired_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        book_aquired_label.setForeground(new java.awt.Color(79, 82, 78));
+        book_aquired_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        book_aquired_label.setText("Book Aquired:");
+
+        call_number_label.setBackground(new java.awt.Color(79, 82, 78));
+        call_number_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        call_number_label.setForeground(new java.awt.Color(79, 82, 78));
+        call_number_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        call_number_label.setText("Call Number:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(genre_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(edition_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(isbn_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pages_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(book_aquired_label, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                    .addComponent(call_number_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(published_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(login_seperator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(customRoundedButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(book_title_label8, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(book_title_label7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(book_title_label6)
+                                .addGap(19, 19, 19)))))
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(454, 454, 454)
+                        .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(book_title_label7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(book_title_label6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(book_title_label8, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(customRoundedButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(published_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(genre_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edition_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(isbn_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pages_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(book_aquired_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(call_number_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))
+                    .addComponent(login_seperator2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void customRoundedButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customRoundedButton1ActionPerformed
+    private void customRoundedButton5customRoundedButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customRoundedButton5customRoundedButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_customRoundedButton1ActionPerformed
+    }//GEN-LAST:event_customRoundedButton5customRoundedButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewBooksOverviewSAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewBooksOverviewSAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewBooksOverviewSAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewBooksOverviewSAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new viewBooksOverviewSAMPLE().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel book_title_label;
-    private javax.swing.JLabel book_title_label1;
-    private javax.swing.JLabel book_title_label2;
-    private javax.swing.JLabel burgerButton;
-    private custom.components.CustomRoundedButton customRoundedButton1;
-    private custom.components.CustomRoundedButton customRoundedButton2;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator login_seperator;
-    private javax.swing.JPanel sidePanel;
+    private javax.swing.JLabel book_aquired_label;
+    private javax.swing.JLabel book_title_label6;
+    private javax.swing.JLabel book_title_label7;
+    private javax.swing.JLabel book_title_label8;
+    private javax.swing.JLabel call_number_label;
+    private custom.components.CustomRoundedButton customRoundedButton5;
+    private custom.components.CustomRoundedButton customRoundedButton6;
+    private javax.swing.JLabel edition_label;
+    private javax.swing.JLabel genre_label;
+    private javax.swing.JLabel isbn_label;
+    private javax.swing.JSeparator login_seperator2;
+    private javax.swing.JLabel pages_label;
+    private javax.swing.JLabel published_label;
     // End of variables declaration//GEN-END:variables
 }

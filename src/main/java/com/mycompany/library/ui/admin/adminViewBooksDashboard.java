@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.library.ui.student;
+package com.mycompany.library.ui.admin;
 
 /**
  *
  * @author shawn
  */
-public class DashBoardBIGReference extends javax.swing.JFrame {
+public class adminViewBooksDashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form DashBoardBIGReference
+     * Creates new form adminViewBooksDashboard
      */
-    public DashBoardBIGReference() {
+    public adminViewBooksDashboard() {
         initComponents();
     }
 
@@ -36,6 +36,9 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
         olfu_logo_label = new javax.swing.JLabel();
         student_label = new javax.swing.JLabel();
         olfu_lms_label = new javax.swing.JLabel();
+        roundedPanel3 = new custom.components.RoundedPanel();
+        view_borrowed_label1 = new javax.swing.JLabel();
+        view_borrowed_label2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,11 +72,11 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
 
         roundedPanel2.setPreferredSize(new java.awt.Dimension(200, 64));
 
-        view_borrowed_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        view_borrowed_label.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         view_borrowed_label.setForeground(new java.awt.Color(79, 82, 78));
         view_borrowed_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        view_borrowed_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/borrow_books_icon_SMALL.png"))); // NOI18N
-        view_borrowed_label.setText("View Borrowed");
+        view_borrowed_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit_books_40x40.png"))); // NOI18N
+        view_borrowed_label.setText("Edit Books");
 
         javax.swing.GroupLayout roundedPanel2Layout = new javax.swing.GroupLayout(roundedPanel2);
         roundedPanel2.setLayout(roundedPanel2Layout);
@@ -94,12 +97,12 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
 
         jPanel1.setOpaque(false);
 
-        olfu_logo_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/olfu_logo_big.png"))); // NOI18N
+        olfu_logo_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ccs_logo_big.png"))); // NOI18N
         olfu_logo_label.setText("jLabel2");
 
         student_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         student_label.setForeground(new java.awt.Color(79, 82, 78));
-        student_label.setText("STUDENT");
+        student_label.setText("ADMIN");
 
         olfu_lms_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         olfu_lms_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -110,15 +113,17 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(student_label))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(olfu_logo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(olfu_lms_label)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(olfu_logo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(olfu_lms_label))
+                        .addGap(38, 38, 38)
+                        .addComponent(student_label)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -133,27 +138,64 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        roundedPanel3.setPreferredSize(new java.awt.Dimension(200, 64));
+
+        view_borrowed_label1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        view_borrowed_label1.setForeground(new java.awt.Color(79, 82, 78));
+        view_borrowed_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        view_borrowed_label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/addBooks_green_40x40.png"))); // NOI18N
+        view_borrowed_label1.setText("Add Books");
+
+        javax.swing.GroupLayout roundedPanel3Layout = new javax.swing.GroupLayout(roundedPanel3);
+        roundedPanel3.setLayout(roundedPanel3Layout);
+        roundedPanel3Layout.setHorizontalGroup(
+            roundedPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(roundedPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(view_borrowed_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        roundedPanel3Layout.setVerticalGroup(
+            roundedPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(roundedPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(view_borrowed_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        view_borrowed_label2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        view_borrowed_label2.setForeground(new java.awt.Color(79, 82, 78));
+        view_borrowed_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        view_borrowed_label2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/logout_green_25x25.png"))); // NOI18N
+        view_borrowed_label2.setText("Logout");
+
         javax.swing.GroupLayout side_panel_dashboardLayout = new javax.swing.GroupLayout(side_panel_dashboard);
         side_panel_dashboard.setLayout(side_panel_dashboardLayout);
         side_panel_dashboardLayout.setHorizontalGroup(
             side_panel_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, side_panel_dashboardLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(view_borrowed_label2)
+                .addGap(22, 22, 22)
                 .addComponent(burgerButton)
                 .addGap(26, 26, 26))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, side_panel_dashboardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(roundedPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(side_panel_dashboardLayout.createSequentialGroup()
                 .addGroup(side_panel_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(side_panel_dashboardLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(roundedPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(side_panel_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(side_panel_dashboardLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(roundedPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(side_panel_dashboardLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(side_panel_dashboardLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(side_panel_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(roundedPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                            .addComponent(roundedPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         side_panel_dashboardLayout.setVerticalGroup(
             side_panel_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,8 +206,14 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
                 .addComponent(roundedPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(roundedPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
-                .addComponent(burgerButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(roundedPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addGroup(side_panel_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(burgerButton)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, side_panel_dashboardLayout.createSequentialGroup()
+                        .addComponent(view_borrowed_label2)
+                        .addGap(1, 1, 1)))
                 .addGap(24, 24, 24))
         );
 
@@ -202,20 +250,20 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DashBoardBIGReference.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DashBoardBIGReference.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DashBoardBIGReference.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DashBoardBIGReference.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminViewBooksDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashBoardBIGReference().setVisible(true);
+                new adminViewBooksDashboard().setVisible(true);
             }
         });
     }
@@ -227,9 +275,12 @@ public class DashBoardBIGReference extends javax.swing.JFrame {
     private javax.swing.JLabel olfu_logo_label;
     private custom.components.RoundedPanel roundedPanel1;
     private custom.components.RoundedPanel roundedPanel2;
+    private custom.components.RoundedPanel roundedPanel3;
     private javax.swing.JPanel side_panel_dashboard;
     private javax.swing.JLabel student_label;
     private javax.swing.JLabel view_books_label;
     private javax.swing.JLabel view_borrowed_label;
+    private javax.swing.JLabel view_borrowed_label1;
+    private javax.swing.JLabel view_borrowed_label2;
     // End of variables declaration//GEN-END:variables
 }

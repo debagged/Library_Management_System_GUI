@@ -100,7 +100,7 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="logInLine_label" min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="login_seperator" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="username_label" alignment="3" min="-2" max="-2" attributes="0"/>

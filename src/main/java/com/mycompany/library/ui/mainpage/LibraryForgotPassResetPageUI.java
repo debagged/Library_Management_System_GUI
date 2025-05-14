@@ -398,7 +398,6 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
     private javax.swing.JLabel emptyPassMessage;
     private javax.swing.JLabel emptyUnameMessage;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel logInLine_label;
     private javax.swing.JLabel logIn_label;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JLabel mainBackground_label;

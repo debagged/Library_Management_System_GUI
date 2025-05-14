@@ -101,6 +101,7 @@ public class LibraryRegisterPageUI_2 extends javax.swing.JFrame {
         emptyConfirmPassMessage.setForeground(new java.awt.Color(204, 0, 0));
         emptyConfirmPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(

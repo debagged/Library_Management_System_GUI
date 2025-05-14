@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import com.mycompany.library.ui.admin.AdminPage;
+import com.mycompany.library.ui.admin.OLD_AdminPage;
 import com.mycompany.library.ui.student.OLD_StudentPage;
 import com.mycompany.library.ui.styles.ComponentStyles;
 import com.mycompany.library.users.UserData;
@@ -351,7 +351,7 @@ public class OLD_LibraryLogInPage implements KeyListener, MouseListener{
                     passwordField.setText(null);
                     usernameField.requestFocusInWindow();
                     mainFrame.setVisible(false);
-                    new AdminPage(username);
+                    new OLD_AdminPage(username);
             
                 } else {
                     

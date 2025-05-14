@@ -139,7 +139,7 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(username_label)
@@ -400,7 +400,6 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
     private javax.swing.JLabel forgotPassword_label;
     private javax.swing.JLabel invalidLogInMessage;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel logInLine_label;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JLabel mainBackground_label;
     private custom.components.RoundedPasswordField passField;

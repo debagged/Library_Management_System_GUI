@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import com.mycompany.library.ui.admin.LibraryAddBooks;
+import com.mycompany.library.ui.admin.OLD_LibraryAddBooks;
 
 public class MoveFiles {
 
@@ -20,8 +20,8 @@ public class MoveFiles {
         // Define target directory and new file name
         Path targetDirectory = Paths.get("src/main/resources/BookCovers");
 
-        String author = LibraryAddBooks.bookAuthorField.getText();
-        String title = LibraryAddBooks.bookTitleField.getText();
+        String author = OLD_LibraryAddBooks.bookAuthorField.getText();
+        String title = OLD_LibraryAddBooks.bookTitleField.getText();
 
         Path targetPath = targetDirectory.resolve(title + "_" + author + "." +extension);
 

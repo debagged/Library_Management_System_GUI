@@ -1,5 +1,6 @@
 package com.mycompany.library.ui.mainpage;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -7,14 +8,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.*;
+
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.mycompany.library.users.*;
-import com.mycompany.library.ui.styles.ComponentStyles;
 import static com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage.mainFrame;
-
-import java.awt.CardLayout;
+import com.mycompany.library.ui.styles.ComponentStyles;
+import com.mycompany.library.users.UserData;
 
 public class OLD_LibraryRegisterPage implements ActionListener, MouseListener{
 

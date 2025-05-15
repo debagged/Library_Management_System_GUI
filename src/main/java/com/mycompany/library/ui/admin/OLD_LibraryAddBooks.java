@@ -196,11 +196,11 @@ public class OLD_LibraryAddBooks implements MouseListener{
                 String title = bookDescription[0];
                 String author = bookDescription[1];
 
-                if(libFuncs.checkIfBorrowed(title, author)){
+                /* if(libFuncs.checkIfBorrowed(title, author)){
                     mainPanel.revalidate();
                     mainPanel.repaint();
                     continue;
-                }
+                } */
 
                 ImageIcon origIcon = new ImageIcon(cover.getPath());
                 Image scaledIcon = origIcon.getImage().getScaledInstance(160, 230, Image.SCALE_SMOOTH);

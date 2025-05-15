@@ -3,7 +3,6 @@ package com.mycompany.library.ui.mainpage;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.event.MouseInputAdapter;
 
 import com.mycompany.library.users.UserData;
 

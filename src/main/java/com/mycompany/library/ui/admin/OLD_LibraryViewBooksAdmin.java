@@ -173,12 +173,12 @@ public class OLD_LibraryViewBooksAdmin implements ActionListener{
         if (!currentLabels.contains(uniqueBookKey)) {
             // Create and add author label
             
-            if(libFuncs.checkIfBorrowed(title, author)){
+            /* if(libFuncs.checkIfBorrowed(title, author)){
                 bookAuthorLabel = new JLabel("(Borrowed)"+author);
                 
             } else{
                 bookAuthorLabel = new JLabel(author);
-            }
+            } */
             
             bookAuthorLabel.setForeground(Color.decode("#E2E2B6"));
             bookAuthorLabel.setFont(new Font(null, Font.PLAIN, 15));

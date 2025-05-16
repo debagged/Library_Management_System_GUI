@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import com.mycompany.library.ui.styles.ComponentStyles;
 import com.mycompany.library.ui.mainpage.OLD_LibraryLogInPage;
 
-public class AdminPage implements MouseListener{
+public class OLD_AdminPage implements MouseListener{
     
     static JFrame adminFrame = new JFrame();
     ComponentStyles.RoundedPanel header = new ComponentStyles.RoundedPanel(20);
@@ -30,7 +30,7 @@ public class AdminPage implements MouseListener{
 
     String currUser;
     
-    public AdminPage(String username){
+    public OLD_AdminPage(String username){
 
         this.currUser = username;
 
@@ -202,12 +202,12 @@ public class AdminPage implements MouseListener{
 
         if(e.getSource()==viewBooksPanel){
             adminFrame.setVisible(false);
-            new LibraryViewBooksAdmin();
+            new OLD_LibraryViewBooksAdmin();
         }
 
         if(e.getSource()==addBooksPanel){
             adminFrame.setVisible(false);
-            new LibraryAddBooks();
+            new OLD_LibraryAddBooks();
         }
 
         if(e.getSource()==logOutLabelContainer){
@@ -266,6 +266,6 @@ public class AdminPage implements MouseListener{
     }
     
     public static void main(String[] args){
-        new AdminPage("admin");
+        new OLD_AdminPage("admin");
     }
 }

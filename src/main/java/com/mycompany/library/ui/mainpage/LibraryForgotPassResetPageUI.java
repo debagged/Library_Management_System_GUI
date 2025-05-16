@@ -4,7 +4,10 @@
  */
 package com.mycompany.library.ui.mainpage;
 
+import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import com.mycompany.library.users.UserData;
 
@@ -37,14 +40,14 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         password_label = new javax.swing.JLabel();
         confirm_button = new custom.components.CustomRoundedButton();
         logIn_label = new javax.swing.JLabel();
-        logInLine_label = new javax.swing.JLabel();
         emptyUnameMessage = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
-        unameField = new custom.components.RoundedTextField();
         emptyPassMessage = new javax.swing.JLabel();
         emptyConfirmPassMessage = new javax.swing.JLabel();
         passField = new custom.components.RoundedPasswordField();
         confirmPassField = new custom.components.RoundedPasswordField();
+        unameField = new custom.components.RoundedTextField();
+        jSeparator1 = new javax.swing.JSeparator();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,10 +85,6 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         logIn_label.setText("Log In");
         logIn_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        logInLine_label.setBackground(new java.awt.Color(103, 120, 97));
-        logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
-        logInLine_label.setOpaque(true);
-
         emptyUnameMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyUnameMessage.setForeground(new java.awt.Color(204, 0, 0));
         emptyUnameMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -93,9 +92,6 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         username_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         username_label.setForeground(new java.awt.Color(79, 82, 78));
         username_label.setText("Username:");
-
-        unameField.setBackground(new java.awt.Color(255, 255, 242));
-        unameField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
 
         emptyPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyPassMessage.setForeground(new java.awt.Color(204, 0, 0));
@@ -106,8 +102,12 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         emptyConfirmPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         passField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        passField.setBorderThickness(2.0F);
 
         confirmPassField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        confirmPassField.setBorderThickness(2.0F);
+
+        unameField.setBorderThickness(2.0F);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -121,7 +121,6 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(password_label)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -133,12 +132,13 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                                 .addComponent(username_label)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(emptyUnameMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(newpassword_label)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(emptyPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -147,7 +147,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(username_label)
@@ -170,7 +170,7 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logIn_label)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 290, -1));
@@ -189,6 +189,14 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
             }
+
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
         });
 
         logIn_label.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,17 +210,87 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 MousePressed(evt);
             }
         });
+
+        //declaring methods for focusListener
+        java.awt.event.FocusListener fieldFocusListener = new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FocusGained(evt);
+            }
+
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FocusLost(evt);
+            }
+        };
+
+        //adding focus listener to components
+        JComponent[] components = {
+            unameField, passField, confirmPassField
+        };
+
+        for (JComponent comp : components) {
+            comp.addFocusListener(fieldFocusListener);
+        }
+    }
+
+    //method to update border thickness of components on focus
+    private void updateBorderThickness(Object source, int thickness) {
+        JComponent[] components = {
+            unameField, passField, confirmPassField
+        };
+
+        for (JComponent comp : components) {
+            if (source == comp) {
+                if(comp instanceof custom.components.RoundedTextField){
+                    ((custom.components.RoundedTextField) comp).setBorderThickness(thickness);
+                }
+
+                if(comp instanceof custom.components.RoundedPasswordField){
+                    ((custom.components.RoundedPasswordField) comp).setBorderThickness(thickness);
+                }
+                repaint();
+                break;
+            }
+        }
+    }
+
+    public void FocusGained(java.awt.event.FocusEvent evt){
+        updateBorderThickness(evt.getSource(), 3);
+    }
+
+    public void FocusLost(java.awt.event.FocusEvent evt){
+        updateBorderThickness(evt.getSource(), 2);
     }
 
     private void MouseEntered(java.awt.event.MouseEvent evt) {
         if(evt.getSource()==logIn_label){
             logIn_label.setText("<html><u>Log&nbsp;In</html>");
         }
+
+        if(evt.getSource()==confirm_button){
+            confirm_button.setLocation(confirm_button.getX(), confirm_button.getY()-3);
+        }
     }
 
     private void MouseExited(java.awt.event.MouseEvent evt) {
         if(evt.getSource()==logIn_label){
             logIn_label.setText("Log In");
+        }
+
+        if(evt.getSource()==confirm_button){
+            confirm_button.setLocation(confirm_button.getX(), confirm_button.getY()+3);
+        }
+    }
+
+    private void showError(JTextField field, JLabel messageLabel, String message) {
+        messageLabel.setText(message);
+        if (field instanceof custom.components.RoundedTextField){
+            ((custom.components.RoundedTextField) field).setBorderThickness(2);
+            ((custom.components.RoundedTextField) field).setBorderColor(new java.awt.Color(204, 0, 0));
+        }
+
+        if (field instanceof custom.components.RoundedPasswordField){
+            ((custom.components.RoundedPasswordField) field).setBorderThickness(2);
+            ((custom.components.RoundedPasswordField) field).setBorderColor(new java.awt.Color(204, 0, 0));
         }
     }
 
@@ -224,40 +302,44 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
         emptyUnameMessage.setText(null);
         emptyPassMessage.setText(null);
         emptyConfirmPassMessage.setText(null);
+        unameField.setBorderColor(java.awt.Color.decode("#667961"));
+        passField.setBorderColor(java.awt.Color.decode("#667961"));
+        confirmPassField.setBorderColor(java.awt.Color.decode("#667961"));
 
         if(evt.getSource()==confirm_button){
-            if(uname.isEmpty()){
-                emptyUnameMessage.setText("please enter your username");
+            if(uname.isBlank()){
+                showError(unameField, emptyUnameMessage, "please enter your username");
                 return;
             }
 
-            if(pass.isEmpty()){
-                emptyPassMessage.setText("please enter your password");
+            if(pass.isBlank()){
+                showError(passField, emptyPassMessage, "please enter your new password");
                 return;
             }
 
-            if(confirmPass.isEmpty()){
-                emptyConfirmPassMessage.setText("please confirm your password");
+            if(confirmPass.isBlank()){
+                showError(confirmPassField, emptyConfirmPassMessage, "please confirm your password");
                 return;
             }
 
             if(!pass.equals(confirmPass)){
-                JOptionPane.showMessageDialog(rootPane, "Passwords Must Match!");
+                showError(passField, emptyPassMessage, "passwords must match");
+                showError(confirmPassField, emptyConfirmPassMessage, "passwords must match");
                 return;
-            } else{
-                boolean isPassReset = UserData.resetPassword(uname, confirmPass);
 
-                if(isPassReset){
-                    JOptionPane.showMessageDialog(rootPane, "Password successfully reset!");
-                    unameField.setText(null);
-                    passField.setText(null);
-                    confirmPassField.setText(null);
-                    unameField.requestFocusInWindow();
-                    return;
-                } else{
-                    JOptionPane.showMessageDialog(rootPane, "Username not found!");
+            } else{
+
+                boolean isPassReset = UserData.resetPassword(uname, confirmPass);
+                if(!isPassReset){
+                    showError(unameField, emptyUnameMessage, "username not found");
                     return;
                 }
+
+                JOptionPane.showMessageDialog(rootPane, "Password successfully reset!");
+                unameField.setText(null);
+                passField.setText(null);
+                confirmPassField.setText(null);
+                unameField.requestFocusInWindow();
             }
         }
 
@@ -265,8 +347,6 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
             this.setVisible(false);
             new com.mycompany.library.ui.mainpage.LibraryLogInPageUI().setVisible(true);
         }
-
-        
     }
 
     /**
@@ -314,14 +394,14 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
     private javax.swing.JLabel emptyPassMessage;
     private javax.swing.JLabel emptyUnameMessage;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel logInLine_label;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel logIn_label;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JLabel mainBackground_label;
     private javax.swing.JLabel newpassword_label;
     private custom.components.RoundedPasswordField passField;
     private javax.swing.JLabel password_label;
-    private javax.swing.JTextField unameField;
+    private custom.components.RoundedTextField unameField;
     private javax.swing.JLabel username_label;
     // End of variables declaration//GEN-END:variables
 }

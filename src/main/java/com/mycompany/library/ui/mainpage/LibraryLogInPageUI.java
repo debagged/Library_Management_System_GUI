@@ -1,8 +1,9 @@
 package com.mycompany.library.ui.mainpage;
-
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import com.mycompany.library.users.UserData;
 
+import com.mycompany.library.ui.student.studentViewBooksDashboard;
+import com.mycompany.library.users.UserData;
 public class LibraryLogInPageUI extends javax.swing.JFrame {
 
     /**
@@ -25,14 +26,15 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         jPanel2 = new custom.components.RoundedPanel();
         loginHeader_label = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
-        username_textfield = new custom.components.RoundedTextField();
         password_label = new javax.swing.JLabel();
-        password_textfield = new custom.components.RoundedPasswordField();
         signIn_button = new custom.components.CustomRoundedButton();
         forgotPassword_label = new javax.swing.JLabel();
         signUp_label = new javax.swing.JLabel();
-        logInLine_label = new javax.swing.JLabel();
         emptyUnameMessage = new javax.swing.JLabel();
+        unameField = new custom.components.RoundedTextField();
+        passField = new custom.components.RoundedPasswordField();
+        invalidLogInMessage = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         emptyPassMessage = new javax.swing.JLabel();
         mainBackground_label = new javax.swing.JLabel();
 
@@ -55,20 +57,14 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         username_label.setForeground(new java.awt.Color(79, 82, 78));
         username_label.setText("Username :");
 
-        username_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        username_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
-
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         password_label.setForeground(new java.awt.Color(79, 82, 78));
         password_label.setText("Password :");
 
-        password_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        password_textfield.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
-
         signIn_button.setBackground(new java.awt.Color(103, 120, 97));
         signIn_button.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         signIn_button.setForeground(new java.awt.Color(255, 255, 255));
-        signIn_button.setText("Sign in");
+        signIn_button.setText("Sign In");
         signIn_button.setFocusable(false);
 
         forgotPassword_label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -82,78 +78,80 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         signUp_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         signUp_label.setText("Sign Up");
 
-        logInLine_label.setBackground(new java.awt.Color(103, 120, 97));
-        logInLine_label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97), 2));
-        logInLine_label.setOpaque(true);
-
         emptyUnameMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyUnameMessage.setForeground(new java.awt.Color(204, 0, 0));
         emptyUnameMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        unameField.setBorderThickness(2.0F);
+
+        passField.setBorderThickness(2.0F);
+
+        invalidLogInMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        invalidLogInMessage.setForeground(new java.awt.Color(204, 0, 0));
+        invalidLogInMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jSeparator1.setBackground(new java.awt.Color(103, 120, 97));
+        jSeparator1.setForeground(new java.awt.Color(103, 120, 97));
+
         emptyPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyPassMessage.setForeground(new java.awt.Color(204, 0, 0));
-        emptyPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loginHeader_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(loginHeader_label))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(logInLine_label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(username_textfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(password_textfield, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(username_label)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emptyUnameMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(password_label)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emptyPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(signIn_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(forgotPassword_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(5, 5, 5))
+                                .addComponent(emptyPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(username_label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(emptyUnameMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(unameField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(passField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(signIn_button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(signUp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(85, 85, 85)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(signUp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(forgotPassword_label, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(24, 24, 24)
                 .addComponent(loginHeader_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logInLine_label, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(username_label)
-                    .addComponent(emptyUnameMessage))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(username_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emptyUnameMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(username_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(password_label)
-                    .addComponent(emptyPassMessage))
+                    .addComponent(emptyPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(signIn_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(forgotPassword_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(signUp_label)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(64, 64, 64))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 92, 290, -1));
@@ -173,6 +171,14 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         signIn_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePressed(evt);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt){
+                MouseExited(evt);
+            }
+
+            public void mouseEntered(java.awt.event.MouseEvent evt){
+                MouseEntered(evt);
             }
         });
 
@@ -200,6 +206,55 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
             }
         });
 
+        //declaring methods for focusListener
+        java.awt.event.FocusListener fieldFocusListener = new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FocusGained(evt);
+            }
+
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FocusLost(evt);
+            }
+        };
+
+        //adding focus listener to components
+        JComponent[] components = {
+            unameField, passField
+        };
+
+        for (JComponent comp : components) {
+            comp.addFocusListener(fieldFocusListener);
+        }
+
+    }
+
+    //method to update border thickness of components on focus
+    private void updateBorderThickness(Object source, int thickness) {
+        JComponent[] components = {
+            unameField, passField
+        };
+
+        for (JComponent comp : components) {
+            if (source == comp) {
+                if(comp instanceof custom.components.RoundedTextField){
+                    ((custom.components.RoundedTextField) comp).setBorderThickness(thickness);
+                }
+
+                if(comp instanceof custom.components.RoundedPasswordField){
+                    ((custom.components.RoundedPasswordField) comp).setBorderThickness(thickness);
+                }
+                repaint();
+                break;
+            }
+        }
+    }
+
+    public void FocusGained(java.awt.event.FocusEvent evt){
+        updateBorderThickness(evt.getSource(), 3);
+    }
+
+    public void FocusLost(java.awt.event.FocusEvent evt){
+        updateBorderThickness(evt.getSource(), 2);
     }
 
     private void MouseEntered(java.awt.event.MouseEvent evt){
@@ -209,6 +264,10 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
 
         if(evt.getSource()==signUp_label){
             signUp_label.setText("<html><u>Sign&nbsp;Up</html>");
+        }
+
+        if(evt.getSource()==signIn_button){
+            signIn_button.setLocation(signIn_button.getX(), signIn_button.getY()-3);
         }
     }
 
@@ -220,24 +279,34 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         if(evt.getSource()==signUp_label){
             signUp_label.setText("Sign Up");
         }
+
+        if(evt.getSource()==signIn_button){
+            signIn_button.setLocation(signIn_button.getX(), signIn_button.getY()+3);
+        }
     }
 
     private void MousePressed(java.awt.event.MouseEvent evt) {
         
-        String uname = username_textfield.getText();
-        String pass = String.valueOf(password_textfield.getPassword());
+        String uname = unameField.getText();
+        String pass = String.valueOf(passField.getPassword());
         emptyUnameMessage.setText(null);
         emptyPassMessage.setText(null);
+        unameField.setBorderColor(java.awt.Color.decode("#667961"));
+        passField.setBorderColor(java.awt.Color.decode("#667961"));
 
         if(evt.getSource()==signIn_button){
 
             if(uname.isEmpty()){
                 emptyUnameMessage.setText("please enter your username");
+                unameField.setBorderThickness(2);
+                unameField.setBorderColor(new java.awt.Color(204,0,0));
                 return;
             }
 
             if(pass.isEmpty()){
                 emptyPassMessage.setText("please enter your password");
+                passField.setBorderThickness(2);
+                passField.setBorderColor(new java.awt.Color(204,0,0));
                 return;
             }
 
@@ -253,11 +322,17 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
 
                 } else{
                     JOptionPane.showMessageDialog(rootPane, "Welcome Student!");
+                    this.dispose();
+                    new studentViewBooksDashboard().setVisible(true);
                     return;  
                 }
 
             }else{
-                JOptionPane.showMessageDialog(rootPane, "Username/Password not found");
+                invalidLogInMessage.setText("Username/Password not found");
+                unameField.setBorderThickness(2);
+                unameField.setBorderColor(new java.awt.Color(204,0,0));
+                passField.setBorderThickness(2);
+                passField.setBorderColor(new java.awt.Color(204,0,0));
                 return;
             }
         }
@@ -314,15 +389,16 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
     private javax.swing.JLabel emptyPassMessage;
     private javax.swing.JLabel emptyUnameMessage;
     private javax.swing.JLabel forgotPassword_label;
+    private javax.swing.JLabel invalidLogInMessage;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel logInLine_label;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel loginHeader_label;
     private javax.swing.JLabel mainBackground_label;
+    private custom.components.RoundedPasswordField passField;
     private javax.swing.JLabel password_label;
-    private javax.swing.JPasswordField password_textfield;
     private javax.swing.JButton signIn_button;
     private javax.swing.JLabel signUp_label;
+    private custom.components.RoundedTextField unameField;
     private javax.swing.JLabel username_label;
-    private javax.swing.JTextField username_textfield;
     // End of variables declaration//GEN-END:variables
 }

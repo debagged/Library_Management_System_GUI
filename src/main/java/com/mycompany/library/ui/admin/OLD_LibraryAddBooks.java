@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 import com.mycompany.library.ui.styles.ComponentStyles;
 import com.mycompany.library.functions.*;
 
-public class LibraryAddBooks implements MouseListener{
+public class OLD_LibraryAddBooks implements MouseListener{
 
     JFrame borrowBooksFrame = new JFrame();
 
@@ -41,7 +41,7 @@ public class LibraryAddBooks implements MouseListener{
 
     ComponentStyles.RoundedPanel inputPanel = new ComponentStyles.RoundedPanel(20);
 
-    public LibraryAddBooks(){
+    public OLD_LibraryAddBooks(){
 
         // ---------------------------------FRAME SET UP------------------------------//
         ImageIcon logo = new ImageIcon("src/main/resources/images/logo.png");
@@ -196,11 +196,11 @@ public class LibraryAddBooks implements MouseListener{
                 String title = bookDescription[0];
                 String author = bookDescription[1];
 
-                if(libFuncs.checkIfBorrowed(title, author)){
+                /* if(libFuncs.checkIfBorrowed(title, author)){
                     mainPanel.revalidate();
                     mainPanel.repaint();
                     continue;
-                }
+                } */
 
                 ImageIcon origIcon = new ImageIcon(cover.getPath());
                 Image scaledIcon = origIcon.getImage().getScaledInstance(160, 230, Image.SCALE_SMOOTH);
@@ -236,7 +236,7 @@ public class LibraryAddBooks implements MouseListener{
 
         if(e.getSource()==homeButtonPanel){
             borrowBooksFrame.dispose();
-            AdminPage.adminFrame.setVisible(true);
+            OLD_AdminPage.adminFrame.setVisible(true);
         }
 
         if(e.getSource()==homeButtonPanel){
@@ -283,7 +283,7 @@ public class LibraryAddBooks implements MouseListener{
                     String author = bookDescription[1];
 
                     if(bookTitle.equals(title) && bookAuthor.equals(author)){
-                        JOptionPane.showMessageDialog(AdminPage.adminFrame, "This Book is already added!", "Already Added", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(OLD_AdminPage.adminFrame, "This Book is already added!", "Already Added", JOptionPane.INFORMATION_MESSAGE);
                         return;
                     }
                     
@@ -303,7 +303,7 @@ public class LibraryAddBooks implements MouseListener{
             mainPanel.revalidate();
             mainPanel.repaint();
 
-            JOptionPane.showMessageDialog(AdminPage.adminFrame, "Book Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(OLD_AdminPage.adminFrame, "Book Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 
             
         }
@@ -393,6 +393,6 @@ public class LibraryAddBooks implements MouseListener{
         }
     }
     public static void main(String[] args){
-        new LibraryAddBooks();
+        new OLD_LibraryAddBooks();
     }
 }

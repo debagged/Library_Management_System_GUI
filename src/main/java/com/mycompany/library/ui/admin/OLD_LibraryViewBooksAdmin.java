@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LibraryViewBooksAdmin implements ActionListener{
+public class OLD_LibraryViewBooksAdmin implements ActionListener{
     
     LibraryFunctions libFuncs = new LibraryFunctions();
 
@@ -32,7 +32,7 @@ public class LibraryViewBooksAdmin implements ActionListener{
     
     private Set<String> currentLabels;
 
-    public LibraryViewBooksAdmin() {
+    public OLD_LibraryViewBooksAdmin() {
         
         currentLabels = new HashSet<>();
         
@@ -138,12 +138,12 @@ public class LibraryViewBooksAdmin implements ActionListener{
         
         if(e.getSource()==backButton){
             frame.dispose();
-            AdminPage.adminFrame.setVisible(true);
+            OLD_AdminPage.adminFrame.setVisible(true);
         }
         
         if(e.getSource()==addBooksButton){
             frame.dispose();
-            new LibraryAddBooks();
+            new OLD_LibraryAddBooks();
         }
     }
     
@@ -173,12 +173,12 @@ public class LibraryViewBooksAdmin implements ActionListener{
         if (!currentLabels.contains(uniqueBookKey)) {
             // Create and add author label
             
-            if(libFuncs.checkIfBorrowed(title, author)){
+            /* if(libFuncs.checkIfBorrowed(title, author)){
                 bookAuthorLabel = new JLabel("(Borrowed)"+author);
                 
             } else{
                 bookAuthorLabel = new JLabel(author);
-            }
+            } */
             
             bookAuthorLabel.setForeground(Color.decode("#E2E2B6"));
             bookAuthorLabel.setFont(new Font(null, Font.PLAIN, 15));
@@ -202,6 +202,6 @@ public class LibraryViewBooksAdmin implements ActionListener{
     }
         
     public static void main(String[] args) {
-        new LibraryViewBooksAdmin();
+        new OLD_LibraryViewBooksAdmin();
     }
 }

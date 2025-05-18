@@ -33,9 +33,9 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
         emptyUnameMessage = new javax.swing.JLabel();
         unameField = new custom.components.RoundedTextField();
         passField = new custom.components.RoundedPasswordField();
-        invalidLogInMessage = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         emptyPassMessage = new javax.swing.JLabel();
+        invalidLogInMessage = new javax.swing.JLabel();
         mainBackground_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,15 +86,15 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
 
         passField.setBorderThickness(2.0F);
 
-        invalidLogInMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
-        invalidLogInMessage.setForeground(new java.awt.Color(204, 0, 0));
-        invalidLogInMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
         jSeparator1.setBackground(new java.awt.Color(103, 120, 97));
         jSeparator1.setForeground(new java.awt.Color(103, 120, 97));
 
         emptyPassMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         emptyPassMessage.setForeground(new java.awt.Color(204, 0, 0));
+
+        invalidLogInMessage.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        invalidLogInMessage.setForeground(new java.awt.Color(204, 0, 0));
+        invalidLogInMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -118,7 +118,8 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                                 .addComponent(unameField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(passField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(signIn_button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(signIn_button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(invalidLogInMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +146,9 @@ public class LibraryLogInPageUI extends javax.swing.JFrame {
                     .addComponent(emptyPassMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(invalidLogInMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(signIn_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(forgotPassword_label)

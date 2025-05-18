@@ -577,7 +577,7 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
 
         JComponent[] components = {
             burgerButton, burgerButtonPanel, viewBooksButton,
-            viewBorrowedBooksButton
+            viewBorrowedBooksButton, logOutLabel
         };
 
         for(JComponent comp : components){
@@ -622,6 +622,10 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
             viewBorrowedBooksButton.setBackground(new Color(141,181,119,200));
             sidePanel.repaint();
         }
+
+        if(evt.getSource()==logOutLabel){
+            logOutPanel.setBackground(new Color(0,0,0,100));
+        }
     }
 
     private void MouseExited(java.awt.event.MouseEvent evt){
@@ -647,6 +651,10 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
         if(evt.getSource()==viewBorrowedBooksButton){
             viewBorrowedBooksButton.setBackground(new Color(0,0,0,0));
             sidePanel.repaint();
+        }
+
+        if(evt.getSource()==logOutLabel){
+            logOutPanel.setBackground(new Color(0,0,0,0));
         }
     }
 
@@ -684,6 +692,11 @@ public class studentViewBooksDashboard extends javax.swing.JFrame {
             highlightButton(viewBorrowedBooksButton);
             sidePanel.revalidate();
             sidePanel.repaint();
+        }
+
+        if(evt.getSource()==logOutLabel){
+            this.dispose();
+            new com.mycompany.library.ui.mainpage.LibraryLogInPageUI().setVisible(true);
         }
 
     }

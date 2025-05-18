@@ -1,18 +1,22 @@
 package com.mycompany.library.functions;
 
+import java.awt.Image;
 import java.io.*;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.time.LocalDate;
 
-
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import com.mycompany.library.users.UserData;
-// import com.mycompany.library.database.LibraryDatabase;
+import java.sql.Statement;
 
 public class LibraryFunctions {
 
@@ -108,18 +112,16 @@ public class LibraryFunctions {
         } 
     }
 
-
-    public static void borrowBook (String ISBN, String user_ID){
+    public static boolean borrowBook (String ISBN, String user_ID){
         Connection connect = null;  
         LocalDate today = LocalDate.now();
         LocalDate returnDate = today.plusDays(7);
 
         try {
             connect = UserData.checkDatabaseConnection();
-            if (connect == null) return;
+            if (connect == null) return false;
             
             connect.setAutoCommit(false);  //Starts Transaction
-
 
             String borrowQuery = "INSERT INTO Borrowed_Books (ISBN, user_ID, borrowed_date, return_date) VALUES (?, ?, ?, ?)";
             try (PreparedStatement borrowStmt = connect.prepareStatement(borrowQuery)){
@@ -131,34 +133,34 @@ public class LibraryFunctions {
                 borrowStmt.executeUpdate();
 
                 connect.commit();
-                JOptionPane.showMessageDialog(null, "Book Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                return true;
     
             } catch (SQLException e) {
                 try {
                     if (connect != null) 
                         connect.rollback();
                     e.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Registration failed. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return false;
                 } catch (SQLException rollback) {
                     rollback.printStackTrace();
+                    return false;
                 }
             } finally {
                 if (connect != null) {
                     try {
-                        connect.setAutoCommit(true); // reset autocommit
-                        connect.close(); // ✅ make sure it's closed
+                        connect.setAutoCommit(true);
+                        connect.close();
                     } catch (SQLException e) {
                         e.printStackTrace();
+                        return false;
                     }
                 }  
             } 
         } catch (SQLException e)  {
             e.printStackTrace();
-
+            return false;
         }
     }
-
-
 
     public static void genreAdder (String genreToAdd){
         Connection connect = UserData.checkDatabaseConnection(); 
@@ -275,11 +277,279 @@ public class LibraryFunctions {
         }
         return status_ID;
     }
-    
 
+    private static final Random random = new Random();
 
+    public static String generateCallNumber(String genreName, String authorLastName) {
+        String query = "SELECT tag_ID FROM Tags WHERE LOWER(tag_name) = ?";
 
+        try (Connection conn = UserData.checkDatabaseConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
 
+            stmt.setString(1, genreName.toLowerCase());
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String genreID = rs.getString("tag_ID");  // e.g., "001-099"
+                String[] rangeParts = genreID.split("-");
+                if (rangeParts.length != 3) return "Invalid genre_ID format.";
+
+                int start = Integer.parseInt(rangeParts[1]);
+                int end = Integer.parseInt(rangeParts[2]);
+
+                int ddcNumber = start + random.nextInt(end - start + 1);
+                String ddcCode = String.format("%03d", ddcNumber);
+
+                String authorCode = authorLastName.length() >= 3
+                        ? authorLastName.substring(0, 3).toUpperCase()
+                        : authorLastName.toUpperCase();
+
+                return ddcCode + "." + authorCode;
+            } else {
+                return "Genre not found.";
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Database error.";
+        }
+    }
+
+    public static boolean saveBookToDatabase(
+    String isbn,
+    String title,
+    String edition,
+    String author,
+    int yearPublished,
+    int pages,
+    String dateAcquired,
+    String callNumber,
+    String description,
+    byte[] imageBytes
+    ) {
+
+        String sql = "INSERT INTO Books (ISBN, book_title, edition, book_author, year_published, pages, date_acquired, call_number, description, book_cover) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                
+        String addStatus = "INSERT INTO Book_Status (ISBN) " + "VALUES (?)";
+
+        try (Connection conn = UserData.checkDatabaseConnection()){
+            conn.setAutoCommit(false); // Start transaction
+
+            try (
+                PreparedStatement stmt1 = conn.prepareStatement(sql);
+                PreparedStatement stmt2 = conn.prepareStatement(addStatus)
+            ) {
+                stmt1.setString(1, isbn);
+                stmt1.setString(2, title);
+                stmt1.setString(3, edition);
+                stmt1.setString(4, author);
+                stmt1.setInt(5, yearPublished);
+                stmt1.setInt(6, pages);
+                stmt1.setString(7, dateAcquired);
+                stmt1.setString(8, callNumber);
+                stmt1.setString(9, description);
+                stmt1.setBytes(10, imageBytes);
+                stmt1.executeUpdate();
+
+                // Insert into Books_Status
+                stmt2.setString(1, isbn);
+                stmt2.executeUpdate();
+
+                conn.commit();
+                return true;
+            } catch (Exception e) {
+                conn.rollback();
+                e.printStackTrace();
+                return false;
+            } finally {
+                conn.setAutoCommit(true);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static class bookInfos {
+        public String isbn;
+        public String title;
+        public String edition;
+        public String author;
+        public int yearPublished;
+        public int pages;
+        public String dateAcquired;
+        public String callNumber;
+        public String description;
+        public ImageIcon cover;
+
+        public bookInfos(String isbn, String title, String edition, String author,
+                        int yearPublished, int pages, String dateAcquired, String callNumber,
+                        String description, ImageIcon cover) {
+            this.isbn = isbn;
+            this.title = title;
+            this.edition = edition;
+            this.author = author;
+            this.yearPublished = yearPublished;
+            this.pages = pages;
+            this.dateAcquired = dateAcquired;
+            this.callNumber = callNumber;
+            this.description = description;
+            this.cover = cover;
+        }
+    }
+
+    public static List<bookInfos> fetchBookData() {
+        List<bookInfos> books = new ArrayList<>();
+
+        try (Connection conn = UserData.checkDatabaseConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM Books")) {
+
+            while (rs.next()) {
+                byte[] imageBytes = rs.getBytes("book_cover");
+                ImageIcon icon = new ImageIcon(imageBytes);
+
+                // Optionally scale the image
+                Image scaled = icon.getImage().getScaledInstance(145, 215, Image.SCALE_SMOOTH);
+                icon = new ImageIcon(scaled);
+
+                bookInfos book = new bookInfos(
+                        rs.getString("ISBN"),
+                        rs.getString("book_title"),
+                        rs.getString("edition"),
+                        rs.getString("book_author"),
+                        rs.getInt("year_published"),
+                        rs.getInt("pages"),
+                        rs.getString("date_acquired"),
+                        rs.getString("call_number"),
+                        rs.getString("description"),
+                        icon
+                );
+
+                books.add(book);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or handle via your preferred method
+        }
+
+        return books;
+    }
+
+    public static List<bookInfos> fetchBookByTitle(String title) {
+        List<bookInfos> books = new ArrayList<>();
+
+        String query = "SELECT * FROM Books WHERE book_title = ?";
+
+        try (Connection conn = UserData.checkDatabaseConnection();
+            PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, title);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    byte[] imageBytes = rs.getBytes("book_cover");
+                    ImageIcon icon = new ImageIcon(imageBytes);
+                    Image scaledImage = icon.getImage().getScaledInstance(100, 140, Image.SCALE_SMOOTH);
+                    icon = new ImageIcon(scaledImage);
+
+                    bookInfos book = new bookInfos(
+                            rs.getString("ISBN"),
+                            rs.getString("book_title"),
+                            rs.getString("edition"),
+                            rs.getString("book_author"),
+                            rs.getInt("year_published"),
+                            rs.getInt("pages"),
+                            rs.getString("date_acquired"),
+                            rs.getString("call_number"),
+                            rs.getString("description"),
+                            icon
+                    );
+                    
+                    books.add(book);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return books;
+    }
+
+    public static class BorrowedBookInfos {
+        public String isbn;
+        public String id;
+
+        public BorrowedBookInfos(String isbn, String id) {
+            this.isbn = isbn;
+            this.id = id;
+        }
+    }
+
+    public static List<BorrowedBookInfos> fetchBorrowedBookData() {
+        List<BorrowedBookInfos> books = new ArrayList<>();
+
+        try (Connection conn = UserData.checkDatabaseConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM Borrowed_Books")) {
+
+            while (rs.next()) {
+                
+                BorrowedBookInfos book = new BorrowedBookInfos(
+                        rs.getString("ISBN"),
+                        rs.getString("user_ID")
+                );
+
+                books.add(book);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return books;
+    }
+
+    public static void returnBook(String ISBN, String ID){
+        Connection conn = null;
+
+        try{
+            conn = UserData.checkDatabaseConnection();
+            if(conn == null) return;
+
+            conn.setAutoCommit(false);
+            
+            String removeBook = "DELETE FROM Borrowed_Books WHERE ISBN = ? AND user_ID = ?";
+
+            try(PreparedStatement removeBook_stmt = conn.prepareStatement(removeBook)){
+
+                removeBook_stmt.setString(1, ISBN);
+                removeBook_stmt.setString(2,ID);
+
+                removeBook_stmt.executeUpdate();
+            }
+
+            conn.commit();
+
+        } catch(SQLException e){
+            e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException err){
+                err.printStackTrace();
+            }
+        } finally{
+            try{
+                conn.setAutoCommit(true);
+                conn.close();
+            } catch(SQLException e){
+                e.printStackTrace();
+            }
+            
+        }
+    }
 
 
 
@@ -412,63 +682,8 @@ public class LibraryFunctions {
 
         return false;
     }
-    
-    public static boolean checkIfBorrowed(String title, String author){
-
-        String bookInfo = title + "|" + author;
-
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/Borrowed_Books.txt"))){
-                
-            // Read the file content into a String
-            String borrowedLine;
-
-            while((borrowedLine = reader.readLine()) != null){
-                String[] parts = borrowedLine.split("\\|");
-
-                String foundTitle = parts[2].trim();
-                String foundAuthor = parts[3].trim();
-
-                String book = foundTitle + "|" + foundAuthor;
-
-                // Check if the file content contains the Book
-                if(book.equals(bookInfo)){
-                    return true;
-                }
-            }
-        } catch (IOException e) {}
-        return false;
-    }
 
     public boolean isBorrowed = false;
-    
-    //Library Functions
-    /* public void borrowBooks(String isbn, String studName, String studID){
-
-        // Ensure the borrowed books file exists
-        borrowedBooksFile = new File("Borrowed_Books.txt");
-
-        try (BufferedReader br = new BufferedReader(new FileReader("Books.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split("\\|");
-
-                //extracted info from splits, creates new fields
-                String  foundAuthor = parts[0].trim(),
-                        foundTitle = parts[1].trim(),
-                        foundISBN = parts[2].trim();
-
-                if (isbn.equalsIgnoreCase(foundISBN)){
-                    
-                    // return info to rightful fields
-                    book_author = foundAuthor;
-                    book_title = foundTitle;
-                    book_isbn = foundISBN;
-
-                    fileWriterBorrowers(studName, studID, book_title, book_author, book_isbn);
-                }
-            }
-        } catch(IOException e){}
-    } */
 
     public void borrowBooks(String title,String author, String studName, String studID){
 

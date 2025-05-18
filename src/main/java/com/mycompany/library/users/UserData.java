@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Base64;
+import java.util.concurrent.ExecutionException;
 
 import javax.swing.JOptionPane;
 
@@ -116,7 +117,6 @@ public class UserData{
             }
         }
     }
-
 
     public static boolean authenticateUser(String inputUsername, String inputPassword) {
         Connection connection = LibraryDatabase.getConnection();
@@ -288,6 +288,24 @@ public class UserData{
         
         return false;
     }
+
+    public static String getStudID(String username){
+        String getID_query = "SELECT user_ID from Login WHERE username = ?";
+
+        try{
+            PreparedStatement getUserID = connect.prepareStatement(getID_query);
+
+            getUserID.setString(1, username);
+            ResultSet ID = getUserID.executeQuery();
+
+            if (ID.next()){
+                String studID = ID.getString("user_ID");
+                return studID;
+            }
+        } catch (Exception e){}
+
+        return null;
+    } 
 
     private static String hashPassword(String password) {
         try {

@@ -322,6 +322,11 @@ public class LibraryForgotPassResetPageUI extends javax.swing.JFrame {
                 return;
             }
 
+            if(uname.equals("admin") || uname.equals("Admin")){
+                showError(unameField, emptyUnameMessage, "Invalid Input");
+                return;
+            }
+
             if(!pass.equals(confirmPass)){
                 showError(passField, emptyPassMessage, "passwords must match");
                 showError(confirmPassField, emptyConfirmPassMessage, "passwords must match");

@@ -364,6 +364,7 @@
         </Component>
         <Component class="custom.components.RoundedTextField" name="fnameField">
           <Properties>
+            <Property name="borderRadius" type="int" value="30"/>
             <Property name="borderThickness" type="float" value="2.0"/>
           </Properties>
         </Component>

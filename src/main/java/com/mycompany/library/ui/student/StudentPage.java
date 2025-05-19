@@ -704,6 +704,7 @@ public class StudentPage extends javax.swing.JFrame {
         JComponent[] components = {
             burgerButton, burgerButtonPanel, viewBooksButton,
             viewBorrowedBooksButton, logOutLabel
+            viewBorrowedBooksButton, logOutLabel
         };
 
         for(JComponent comp : components){

@@ -27,16 +27,22 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
     private void initComponents() {
 
         returnBook_button = new custom.components.CustomRoundedButton();
-        customRoundedButton6 = new custom.components.CustomRoundedButton();
+        backArrow_button = new custom.components.CustomRoundedButton();
+        borrowedBookInfo_label = new javax.swing.JLabel();
         bookTitle_label = new javax.swing.JLabel();
-        bookTitle_label1 = new javax.swing.JLabel();
         bookAuthor_label = new javax.swing.JLabel();
-        bookAuthor_label1 = new javax.swing.JLabel();
-        login_seperator = new javax.swing.JSeparator();
-        login_seperator1 = new javax.swing.JSeparator();
+        publishedDate_label = new javax.swing.JLabel();
+        vertical_seperator = new javax.swing.JSeparator();
+        borrowedBookInfo_seperator = new javax.swing.JSeparator();
         genre_label = new javax.swing.JLabel();
-        genre_label1 = new javax.swing.JLabel();
-        genre_label2 = new javax.swing.JLabel();
+        edition_label = new javax.swing.JLabel();
+        isbn_label = new javax.swing.JLabel();
+        pages_label = new javax.swing.JLabel();
+        bookAquired_label = new javax.swing.JLabel();
+        callNumber_label = new javax.swing.JLabel();
+        borrowedBookInfo_seperator2 = new javax.swing.JSeparator();
+        borrowedDate_label = new javax.swing.JLabel();
+        dueDate_label = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 242));
 
@@ -51,20 +57,20 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
             }
         });
 
-        customRoundedButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/left_arrow_white.png"))); // NOI18N
-        customRoundedButton6.setText("");
+        backArrow_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/left_arrow_white.png"))); // NOI18N
+        backArrow_button.setText("");
+
+        borrowedBookInfo_label.setBackground(new java.awt.Color(79, 82, 78));
+        borrowedBookInfo_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        borrowedBookInfo_label.setForeground(new java.awt.Color(79, 82, 78));
+        borrowedBookInfo_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        borrowedBookInfo_label.setText("BORROWED BOOK INFO");
 
         bookTitle_label.setBackground(new java.awt.Color(79, 82, 78));
-        bookTitle_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        bookTitle_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         bookTitle_label.setForeground(new java.awt.Color(79, 82, 78));
         bookTitle_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookTitle_label.setText("BORROWED BOOK INFO");
-
-        bookTitle_label1.setBackground(new java.awt.Color(79, 82, 78));
-        bookTitle_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        bookTitle_label1.setForeground(new java.awt.Color(79, 82, 78));
-        bookTitle_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookTitle_label1.setText("Bad Dreams");
+        bookTitle_label.setText("Bad Dreams");
 
         bookAuthor_label.setBackground(new java.awt.Color(79, 82, 78));
         bookAuthor_label.setFont(new java.awt.Font("Segoe UI Semibold", 2, 16)); // NOI18N
@@ -72,16 +78,16 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
         bookAuthor_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bookAuthor_label.setText("Jenny Noa");
 
-        bookAuthor_label1.setBackground(new java.awt.Color(79, 82, 78));
-        bookAuthor_label1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        bookAuthor_label1.setForeground(new java.awt.Color(79, 82, 78));
-        bookAuthor_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookAuthor_label1.setText("Published November 16, 2024");
+        publishedDate_label.setBackground(new java.awt.Color(79, 82, 78));
+        publishedDate_label.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        publishedDate_label.setForeground(new java.awt.Color(79, 82, 78));
+        publishedDate_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        publishedDate_label.setText("Published November 16, 2024");
 
-        login_seperator.setBackground(new java.awt.Color(103, 120, 97));
-        login_seperator.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        vertical_seperator.setBackground(new java.awt.Color(103, 120, 97));
+        vertical_seperator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        login_seperator1.setBackground(new java.awt.Color(103, 120, 97));
+        borrowedBookInfo_seperator.setBackground(new java.awt.Color(103, 120, 97));
 
         genre_label.setBackground(new java.awt.Color(79, 82, 78));
         genre_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
@@ -89,17 +95,49 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
         genre_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         genre_label.setText("Genre:");
 
-        genre_label1.setBackground(new java.awt.Color(79, 82, 78));
-        genre_label1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        genre_label1.setForeground(new java.awt.Color(79, 82, 78));
-        genre_label1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        genre_label1.setText("Genre:");
+        edition_label.setBackground(new java.awt.Color(79, 82, 78));
+        edition_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        edition_label.setForeground(new java.awt.Color(79, 82, 78));
+        edition_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        edition_label.setText("Edition:");
 
-        genre_label2.setBackground(new java.awt.Color(79, 82, 78));
-        genre_label2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        genre_label2.setForeground(new java.awt.Color(79, 82, 78));
-        genre_label2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        genre_label2.setText("Genre:");
+        isbn_label.setBackground(new java.awt.Color(79, 82, 78));
+        isbn_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        isbn_label.setForeground(new java.awt.Color(79, 82, 78));
+        isbn_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        isbn_label.setText("ISBN:");
+
+        pages_label.setBackground(new java.awt.Color(79, 82, 78));
+        pages_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        pages_label.setForeground(new java.awt.Color(79, 82, 78));
+        pages_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        pages_label.setText("Pages:");
+
+        bookAquired_label.setBackground(new java.awt.Color(79, 82, 78));
+        bookAquired_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        bookAquired_label.setForeground(new java.awt.Color(79, 82, 78));
+        bookAquired_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bookAquired_label.setText("Book Aquired:");
+
+        callNumber_label.setBackground(new java.awt.Color(79, 82, 78));
+        callNumber_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        callNumber_label.setForeground(new java.awt.Color(79, 82, 78));
+        callNumber_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        callNumber_label.setText("Call Number:");
+
+        borrowedBookInfo_seperator2.setBackground(new java.awt.Color(103, 120, 97));
+
+        borrowedDate_label.setBackground(new java.awt.Color(79, 82, 78));
+        borrowedDate_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        borrowedDate_label.setForeground(new java.awt.Color(79, 82, 78));
+        borrowedDate_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        borrowedDate_label.setText("Borrowed Date:");
+
+        dueDate_label.setBackground(new java.awt.Color(79, 82, 78));
+        dueDate_label.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        dueDate_label.setForeground(new java.awt.Color(79, 82, 78));
+        dueDate_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dueDate_label.setText("Due Date:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -110,32 +148,40 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(bookTitle_label1))
+                        .addComponent(bookTitle_label))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(bookAuthor_label))
-                    .addComponent(bookAuthor_label1))
+                    .addComponent(publishedDate_label))
                 .addGap(62, 62, 62)
-                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vertical_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(returnBook_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(backArrow_button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(genre_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(login_seperator1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(genre_label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(genre_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(edition_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(isbn_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(pages_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bookAquired_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(callNumber_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(borrowedBookInfo_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(borrowedBookInfo_seperator2)
+                                    .addComponent(borrowedDate_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(dueDate_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(57, 57, 57))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addComponent(bookTitle_label)
+                        .addComponent(borrowedBookInfo_label)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -144,30 +190,42 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bookAuthor_label1)
+                        .addComponent(publishedDate_label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bookTitle_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bookTitle_label, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bookAuthor_label, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(login_seperator)
+                            .addComponent(vertical_seperator)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(bookTitle_label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(borrowedBookInfo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(login_seperator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(borrowedBookInfo_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(genre_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(genre_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edition_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(genre_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
+                                .addComponent(isbn_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pages_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bookAquired_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(callNumber_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(borrowedBookInfo_seperator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(borrowedDate_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dueDate_label, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(returnBook_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customRoundedButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(backArrow_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(34, 34, 34))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -178,16 +236,22 @@ public class studentReturnBookViewSAMPLE extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private custom.components.CustomRoundedButton backArrow_button;
+    private javax.swing.JLabel bookAquired_label;
     private javax.swing.JLabel bookAuthor_label;
-    private javax.swing.JLabel bookAuthor_label1;
     private javax.swing.JLabel bookTitle_label;
-    private javax.swing.JLabel bookTitle_label1;
-    private custom.components.CustomRoundedButton customRoundedButton6;
+    private javax.swing.JLabel borrowedBookInfo_label;
+    private javax.swing.JSeparator borrowedBookInfo_seperator;
+    private javax.swing.JSeparator borrowedBookInfo_seperator2;
+    private javax.swing.JLabel borrowedDate_label;
+    private javax.swing.JLabel callNumber_label;
+    private javax.swing.JLabel dueDate_label;
+    private javax.swing.JLabel edition_label;
     private javax.swing.JLabel genre_label;
-    private javax.swing.JLabel genre_label1;
-    private javax.swing.JLabel genre_label2;
-    private javax.swing.JSeparator login_seperator;
-    private javax.swing.JSeparator login_seperator1;
+    private javax.swing.JLabel isbn_label;
+    private javax.swing.JLabel pages_label;
+    private javax.swing.JLabel publishedDate_label;
     private custom.components.CustomRoundedButton returnBook_button;
+    private javax.swing.JSeparator vertical_seperator;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,6 @@ import java.awt.Window;
 
 import javax.swing.JComponent;
 import javax.swing.JDialog;
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import com.mycompany.library.functions.LibraryFunctions;
@@ -174,15 +173,12 @@ public class returnBookPopUp extends javax.swing.JPanel {
         }
 
         if(evt.getSource()==returnBookButton){
-            LibraryFunctions.returnBook(StudentPage.ISBN, StudentPage.userID);
-
             Window parentWindow = SwingUtilities.getWindowAncestor(this);
-
             if (parentWindow instanceof JDialog) {
-
-                //JOptionPane.showMessageDialog(this, "Book Returned!");
-                StudentPage.borrowedBooksPanel.removeAll();
+                
+                LibraryFunctions.returnBook(StudentPage.ISBN, StudentPage.userID);
                 StudentPage.booksPanel.removeAll();
+                StudentPage.borrowedBooksPanel.removeAll();
                 parentWindow.dispose();
             }
         }

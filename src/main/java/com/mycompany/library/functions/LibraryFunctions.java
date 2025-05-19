@@ -3,7 +3,6 @@ package com.mycompany.library.functions;
 import java.awt.Image;
 import java.io.*;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -536,16 +535,18 @@ public class LibraryFunctions {
         } catch(SQLException e){
             e.printStackTrace();
             try {
-                conn.rollback();
+                if(conn != null)conn.rollback();
             } catch (SQLException err){
                 err.printStackTrace();
             }
         } finally{
-            try{
-                conn.setAutoCommit(true);
-                conn.close();
-            } catch(SQLException e){
-                e.printStackTrace();
+            if(conn != null){
+                try{
+                    conn.setAutoCommit(true);
+                    conn.close();
+                } catch(SQLException e){
+                    e.printStackTrace();
+                }
             }
             
         }

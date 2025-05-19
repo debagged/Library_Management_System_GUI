@@ -349,6 +349,7 @@ public class StudentPage extends javax.swing.JFrame {
 
         borrowedBooksScrollPane.setBorder(null);
         borrowedBooksScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        borrowedBooksScrollPane.setOpaque(false);
 
         borrowedBooksPanel.setBackground(Color.decode("#91B577"));
         borrowedBooksPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 10));
@@ -880,16 +881,6 @@ public class StudentPage extends javax.swing.JFrame {
             }
         }
 
-        /* if(booksPanel.getComponentCount() == 0){
-            addBooksToPanel();
-            booksPanel.repaint();
-            booksPanel.revalidate();
-            
-            addBorrowedBooksToPanel();
-            borrowedBooksPanel.repaint();
-            borrowedBooksPanel.revalidate();
-        } */
-
         for(JPanel book : borrowedBookPanelsList){
 
             if(evt.getSource()==book){
@@ -921,7 +912,7 @@ public class StudentPage extends javax.swing.JFrame {
                 returnBook.bookAuthorLabel.setText(author);
                 returnBook.bookCoverLabel.setIcon(bookCover);
 
-                JDialog returnBookDialog = new JDialog();
+                JDialog returnBookDialog = new JDialog((JFrame) null, "Return Book", true);
                 returnBookDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
                 returnBookDialog.setContentPane(returnBook);
                 returnBookDialog.pack();
@@ -934,12 +925,12 @@ public class StudentPage extends javax.swing.JFrame {
             booksPanel.getComponentCount() == 0){
                     
             addBorrowedBooksToPanel();
-            borrowedBooksPanel.repaint();
-            borrowedBooksPanel.revalidate();
-
             addBooksToPanel();
+
             booksPanel.repaint();
             booksPanel.revalidate();
+            borrowedBooksPanel.repaint();
+            borrowedBooksPanel.revalidate();
         }
 
         if(evt.getSource()==viewBooksButton){

@@ -2,7 +2,6 @@ package com.mycompany.library.ui.mainpage;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
-import com.mycompany.library.functions.LibraryFunctions;
 import com.mycompany.library.ui.admin.AdminPage;
 import com.mycompany.library.ui.student.StudentPage;
 import com.mycompany.library.users.UserData;

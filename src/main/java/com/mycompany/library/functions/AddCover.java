@@ -3,6 +3,8 @@ package com.mycompany.library.functions;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 public class AddCover {
 
@@ -28,13 +30,25 @@ public class AddCover {
             File selectedFolder = chooser.getSelectedFile();
             cover = selectedFolder.getAbsolutePath();
         }
-    }    
-    public static void main(String[] args) {
-        
+    }
+    
+    public static byte[] getCoverBytes() {
+        if (cover != null) {
+            try {
+                return Files.readAllBytes(new File(cover).toPath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null; // if no image is selected or error occurred
     }
 
-    public String getCover(){
+    public static String getCover(){
         return cover;
+    }
+    
+    public static void main(String[] args) {
+        
     }
 
 }

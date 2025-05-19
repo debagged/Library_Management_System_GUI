@@ -124,12 +124,12 @@ public class ViewBooksTemp extends javax.swing.JFrame {
                 String title = bookDescription[0];
                 String author = bookDescription[1];
 
-                if(com.mycompany.library.functions.LibraryFunctions.checkIfBorrowed(title, author)){
+                /* if(com.mycompany.library.functions.LibraryFunctions.checkIfBorrowed(title, author)){
                     booksPanel.revalidate();
                     booksPanel.repaint();
                     continue;
                 } else {
-                }
+                } */
 
                 ImageIcon origIcon = new ImageIcon(cover.getPath());
                 Image scaledIcon = origIcon.getImage().getScaledInstance(160, 230, Image.SCALE_SMOOTH);

@@ -1,18 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.library.ui.admin;
 
-/**
- *
- * @author shawn
- */
 public class adminAddBookSAMPLE extends javax.swing.JPanel {
 
-    /**
-     * Creates new form adminAddBookSAMPLE
-     */
     public adminAddBookSAMPLE() {
         initComponents();
     }
@@ -54,12 +43,8 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
 
         booktitle_textfield.setForeground(new java.awt.Color(79, 82, 78));
         booktitle_textfield.setText("Book Title:");
+        booktitle_textfield.setBorderRadius(40);
         booktitle_textfield.setBorderThickness(2.0F);
-        booktitle_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                booktitle_textfieldActionPerformed(evt);
-            }
-        });
 
         roundedPanel1.setPreferredSize(new java.awt.Dimension(265, 272));
 
@@ -84,21 +69,13 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
 
         booktitle_textfield1.setForeground(new java.awt.Color(79, 82, 78));
         booktitle_textfield1.setText("Call Number:");
+        booktitle_textfield1.setBorderRadius(40);
         booktitle_textfield1.setBorderThickness(2.0F);
-        booktitle_textfield1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                booktitle_textfield1ActionPerformed(evt);
-            }
-        });
 
         bookauthor_textfield.setForeground(new java.awt.Color(79, 82, 78));
         bookauthor_textfield.setText("Book Author:");
+        bookauthor_textfield.setBorderRadius(40);
         bookauthor_textfield.setBorderThickness(2.0F);
-        bookauthor_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookauthor_textfieldActionPerformed(evt);
-            }
-        });
 
         suffixComboBox.setForeground(new java.awt.Color(79, 82, 78));
         suffixComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Book Genre", "Jr.", "II.", "Other(input)" }));
@@ -114,21 +91,13 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
 
         booktitle_textfield2.setForeground(new java.awt.Color(79, 82, 78));
         booktitle_textfield2.setText("No. of Pages");
+        booktitle_textfield2.setBorderRadius(40);
         booktitle_textfield2.setBorderThickness(2.0F);
-        booktitle_textfield2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                booktitle_textfield2ActionPerformed(evt);
-            }
-        });
 
         bookauthor_textfield1.setForeground(new java.awt.Color(79, 82, 78));
         bookauthor_textfield1.setText("Date Acquired:");
+        bookauthor_textfield1.setBorderRadius(40);
         bookauthor_textfield1.setBorderThickness(2.0F);
-        bookauthor_textfield1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookauthor_textfield1ActionPerformed(evt);
-            }
-        });
 
         published_label.setBackground(new java.awt.Color(79, 82, 78));
         published_label.setForeground(new java.awt.Color(79, 82, 78));
@@ -137,15 +106,12 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
 
         customRoundedButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/left_arrow_white.png"))); // NOI18N
         customRoundedButton6.setText("");
+        customRoundedButton6.setRadius(40);
 
         customRoundedButton5.setForeground(new java.awt.Color(255, 255, 242));
         customRoundedButton5.setText("CONFIRM");
         customRoundedButton5.setPreferredSize(new java.awt.Dimension(93, 40));
-        customRoundedButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customRoundedButton5customRoundedButton1ActionPerformed(evt);
-            }
-        });
+        customRoundedButton5.setRadius(40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -212,36 +178,12 @@ public class adminAddBookSAMPLE extends javax.swing.JPanel {
                         .addComponent(booktitle_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(roundedPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(customRoundedButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(customRoundedButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customRoundedButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void booktitle_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booktitle_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_booktitle_textfieldActionPerformed
-
-    private void booktitle_textfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booktitle_textfield1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_booktitle_textfield1ActionPerformed
-
-    private void bookauthor_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookauthor_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bookauthor_textfieldActionPerformed
-
-    private void booktitle_textfield2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booktitle_textfield2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_booktitle_textfield2ActionPerformed
-
-    private void bookauthor_textfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookauthor_textfield1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bookauthor_textfield1ActionPerformed
-
-    private void customRoundedButton5customRoundedButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customRoundedButton5customRoundedButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customRoundedButton5customRoundedButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

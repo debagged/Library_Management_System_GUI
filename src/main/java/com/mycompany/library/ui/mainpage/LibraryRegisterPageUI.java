@@ -139,6 +139,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
 
         login_seperator.setBackground(new java.awt.Color(103, 120, 97));
 
+        fnameField.setBorderRadius(30);
         fnameField.setBorderThickness(2.0F);
 
         mnameField.setBorderThickness(2.0F);
@@ -379,6 +380,7 @@ public class LibraryRegisterPageUI extends javax.swing.JFrame {
     private void FocusGained(java.awt.event.FocusEvent evt){
         updateBorderThickness(evt.getSource(), 3);
     }
+    
     private void FocusLost(java.awt.event.FocusEvent evt){
         updateBorderThickness(evt.getSource(), 2);
     }

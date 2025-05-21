@@ -41,6 +41,7 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.RoundedPanel()"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -55,26 +56,26 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
+                          <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="password_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="confirmNewPassLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="emptyConfirmPassMessage" min="-2" pref="191" max="-2" attributes="0"/>
                               </Group>
                               <Component id="confirmPassField" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="confirm_button" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="logIn_label" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="confirmButton" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="logInLabel" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="username_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="unameLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="emptyUnameMessage" min="-2" pref="191" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="newpassword_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="newPassLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="emptyPassMessage" min="-2" pref="191" max="-2" attributes="0"/>
                               </Group>
@@ -92,19 +93,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="username_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="unameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyUnameMessage" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="unameField" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="newpassword_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="newPassLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyPassMessage" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -112,21 +113,21 @@
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="emptyConfirmPassMessage" min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="password_label" min="-2" max="-2" attributes="0"/>
+                      <Component id="confirmNewPassLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="confirmPassField" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="confirm_button" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="confirmButton" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="logIn_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="logInLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="loginHeader_label">
+        <Component class="javax.swing.JLabel" name="headerLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="78" red="67" type="rgb"/>
@@ -141,7 +142,7 @@
             <Property name="text" type="java.lang.String" value="PASSWORD RESET"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="newpassword_label">
+        <Component class="javax.swing.JLabel" name="newPassLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -152,7 +153,7 @@
             <Property name="text" type="java.lang.String" value="New Password:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="password_label">
+        <Component class="javax.swing.JLabel" name="confirmNewPassLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -163,7 +164,7 @@
             <Property name="text" type="java.lang.String" value="Confirm Password:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="confirm_button">
+        <Component class="javax.swing.JButton" name="confirmButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="78" red="67" type="rgb"/>
@@ -181,7 +182,7 @@
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.CustomRoundedButton()"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="logIn_label">
+        <Component class="javax.swing.JLabel" name="logInLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="14" style="0"/>
@@ -206,8 +207,11 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="username_label">
+        <Component class="javax.swing.JLabel" name="unameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -228,6 +232,9 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="emptyConfirmPassMessage">
           <Properties>
@@ -239,6 +246,9 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
         <Component class="custom.components.RoundedPasswordField" name="passField">
           <Properties>
@@ -258,6 +268,9 @@
             </Property>
             <Property name="borderThickness" type="float" value="2.0"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
         <Component class="custom.components.RoundedPasswordField" name="confirmPassField">
           <Properties>
@@ -277,11 +290,17 @@
             </Property>
             <Property name="borderThickness" type="float" value="2.0"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
         <Component class="custom.components.RoundedTextField" name="unameField">
           <Properties>
             <Property name="borderThickness" type="float" value="2.0"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>

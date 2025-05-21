@@ -14,9 +14,9 @@ import javax.swing.SwingUtilities;
 
 import com.mycompany.library.functions.AddCover;
 
-public class AdminAddBookFrame extends javax.swing.JPanel {
+public class adminAddBook extends javax.swing.JPanel {
     
-    public AdminAddBookFrame() {
+    public adminAddBook() {
         initComponents();
         initListeners();
         setBackground(new java.awt.Color(255,255,244));
@@ -94,6 +94,7 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
         bookNumOfPagesField.setBorderRadius(35);
         bookNumOfPagesField.setBorderThickness(2.0F);
 
+        bookCallNumberField.setEditable(false);
         bookCallNumberField.setForeground(new java.awt.Color(79, 82, 78));
         bookCallNumberField.setText("Call Number:");
         bookCallNumberField.setBorderRadius(35);
@@ -164,7 +165,7 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
         jScrollPane2.setViewportView(bookDescriptionField);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        setLayout(layout);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -248,6 +249,49 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
                         .addGap(16, 16, 16))))
         );
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void initListeners(){
+
+            //add focus listeners to fields
+
+            java.awt.event.FocusListener fieldFocusListener = new java.awt.event.FocusAdapter() {
+                public void focusGained(java.awt.event.FocusEvent evt) {
+                    FocusGained(evt);
+                }
+
+                public void focusLost(java.awt.event.FocusEvent evt) {
+                    FocusLost(evt);
+                }
+            };
+
+            JComponent[] components = {
+                bookTitleField, bookAuthorField, bookTagComboBox,
+                bookEditionField, bookYearPublished, bookDateAcquired,
+                bookNumOfPagesField, bookCallNumberField, bookISBN,
+                bookDescriptionField
+            };
+
+            for (JComponent comp : components) {
+                comp.addFocusListener(fieldFocusListener);
+            }
+
+            //add mouse listeners to buttons
+
+            java.awt.event.MouseListener buttonsMouseListener = new java.awt.event.MouseAdapter() {
+                public void mouseEntered(java.awt.event.MouseEvent evt) {MouseEntered(evt);}
+                public void mouseExited(java.awt.event.MouseEvent evt) {MouseExited(evt);}
+                public void mousePressed(java.awt.event.MouseEvent evt) {MousePressed(evt);}
+            };
+
+            JComponent[] components2 = {
+                addCoverLabel, confirmButton, backButton
+            };
+
+            for (JComponent comp : components2){
+                comp.addMouseListener(buttonsMouseListener);
+            }
+            
+    }
 
     private void updateFocusedButton(Object source, int thickness) {
         JComponent[] components = {
@@ -277,53 +321,34 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
         }
     }
 
-    private void initListeners(){
+    private void hoverButton(Object source){
 
-        //add focus listeners to fields
-
-        java.awt.event.FocusListener fieldFocusListener = new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                FocusGained(evt);
-            }
-
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                FocusLost(evt);
-            }
-        };
-
-        JComponent[] components = {
-            bookTitleField, bookAuthorField, bookTagComboBox,
-            bookEditionField, bookYearPublished, bookDateAcquired,
-            bookNumOfPagesField, bookCallNumberField, bookISBN,
-            bookDescriptionField
-        };
-
-        for (JComponent comp : components) {
-            comp.addFocusListener(fieldFocusListener);
-        }
-
-        //add mouse listeners to buttons
-
-        java.awt.event.MouseListener buttonsMouseListener = new java.awt.event.MouseAdapter() {
-           public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                MousePressed(evt);
-            }
-        };
-
-        JComponent[] components2 = {
+        JComponent[] buttons = {
             addCoverLabel, confirmButton, backButton
         };
 
-        for (JComponent comp : components2){
-            comp.addMouseListener(buttonsMouseListener);
+        for (JComponent comp : buttons){
+            if(source==comp){
+                if(comp instanceof javax.swing.JLabel){comp.setLocation(comp.getX(), comp.getY()-5);}
+
+                if(comp instanceof custom.components.CustomRoundedButton){comp.setLocation(comp.getX(), comp.getY()-5);} 
+            }
         }
-        
+    }
+
+    private void unHoverButton(Object source){
+
+        JComponent[] buttons = {
+            addCoverLabel, confirmButton, backButton
+        };
+
+        for (JComponent comp : buttons){
+            if(source==comp){
+                if(comp instanceof javax.swing.JLabel){comp.setLocation(comp.getX(), comp.getY()+5);}
+
+                if(comp instanceof custom.components.CustomRoundedButton){comp.setLocation(comp.getX(), comp.getY()+5);}
+            }
+        }
     }
 
     private void FocusGained(java.awt.event.FocusEvent evt){
@@ -334,7 +359,7 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
         updateFocusedButton(evt.getSource(), 2);
 
         if(evt.getSource()==bookTagComboBox){
-            if(!bookAuthorField.getText().isBlank() && !bookAuthorField.getText().equals(" Book Author:")){
+            if(!bookAuthorField.getText().isBlank() && !bookAuthorField.getText().equals("Book Author:")){
                 String[] name = bookAuthorField.getText().trim().split(" ");
                 String authorLastName = name[name.length-1];
                 String tag = bookTagComboBox.getSelectedItem().toString();
@@ -348,32 +373,12 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
 
     private void MouseEntered(java.awt.event.MouseEvent evt){
 
-        if(evt.getSource()==addCoverLabel){
-            addCoverPanel.setLocation(addCoverPanel.getX(), addCoverPanel.getY()-5);
-        }
-
-        if(evt.getSource()==confirmButton){
-            confirmButton.setLocation(confirmButton.getX(), confirmButton.getY()-5);
-        }
-
-        if(evt.getSource()==backButton){
-            backButton.setLocation(backButton.getX(), backButton.getY()-5);
-        }
+        hoverButton(evt.getSource());
     }
 
     private void MouseExited(java.awt.event.MouseEvent evt){
 
-        if(evt.getSource()==addCoverLabel){
-            addCoverPanel.setLocation(addCoverPanel.getX(), addCoverPanel.getY()+5);
-        }
-
-        if(evt.getSource()==confirmButton){
-            confirmButton.setLocation(confirmButton.getX(), confirmButton.getY()+5);
-        }
-
-        if(evt.getSource()==backButton){
-            backButton.setLocation(backButton.getX(), backButton.getY()+5);
-        }
+        unHoverButton(evt.getSource());
         
     }
 
@@ -417,7 +422,7 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
 
             String callNum = com.mycompany.library.functions.LibraryFunctions.generateCallNumber(tag, authorLastName);
 
-            if(com.mycompany.library.functions.LibraryFunctions.saveBookToDatabase(ISBN, title, edition, author, yearPublished, numOfPages, dateAcquired, callNum, description, coverImage)){
+            if(com.mycompany.library.functions.LibraryFunctions.saveBookToDatabase(ISBN, title, edition, author, yearPublished, numOfPages, dateAcquired, callNum, description, coverImage, tag)){
                 JOptionPane.showMessageDialog(this, "Book Added Successfully!");
                 bookTitleField.setText("Book Title:");
                 bookAuthorField.setText("Book Author:");
@@ -454,21 +459,23 @@ public class AdminAddBookFrame extends javax.swing.JPanel {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminAddBookFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminAddBook.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminAddBookFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminAddBook.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminAddBookFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminAddBook.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminAddBookFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminAddBook.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminAddBookFrame().setVisible(true);
+                new adminAddBook().setVisible(true);
             }
         });
     }

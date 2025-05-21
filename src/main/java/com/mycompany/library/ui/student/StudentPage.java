@@ -16,7 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.Timer;
 
 import com.mycompany.library.functions.LibraryFunctions;
-import com.mycompany.library.ui.mainpage.LibraryLogInPageUI;
+import com.mycompany.library.ui.mainpage.LogInPage;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -25,11 +25,15 @@ import java.awt.event.KeyAdapter;
 
 public class StudentPage extends javax.swing.JFrame {
 
-    public static String userID = null;
+    public static String userID = "06230002160";
+    public static StudentPage instance;
 
     public StudentPage() {
+
+        instance = this;
         
         initComponents();
+        initListeners();
         cardPanel.add(minimizedPanel, "minimized");
         cardPanel.add(expandedPanel, "extended");
 
@@ -40,16 +44,12 @@ public class StudentPage extends javax.swing.JFrame {
         borrowedBooksScrollPane.setName("viewBorrowedBooks");
 
         getContentPane().setBackground(java.awt.Color.decode("#91B577"));
-        initListeners();
+        
         addBooksToPanel();
         addBorrowedBooksToPanel();
-        addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                resizeBooksPanel();
-            }
-        });
 
-        changeScrollBarLook();
+        changeScrollBarLook(booksScrollPane);
+        changeScrollBarLook(borrowedBooksScrollPane);
     }
 
     /**
@@ -384,68 +384,6 @@ public class StudentPage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /* ArrayList<JPanel> bookPanelsList = new ArrayList<>();
-    HashMap<JPanel, JLabel> bookLabelsList = new HashMap<>();
-    private void addBooksToPanel(){
-
-        File bookCoversFolder = new File("src/main/resources/BookCovers");
-
-        File[] bookCoversFolderFiles = bookCoversFolder.listFiles(File::isFile);
-        if(bookCoversFolderFiles != null){
-            for(File cover : bookCoversFolderFiles){
-
-                String[] bookDescription = cover.getName().split("[_.]");
-
-                String title = bookDescription[0];
-                String author = bookDescription[1];
-
-                if(com.mycompany.library.functions.LibraryFunctions.checkIfBorrowed(title, author)){
-                    booksPanel.revalidate();
-                    booksPanel.repaint();
-                    continue;
-                } else {
-                }
-
-                ImageIcon origIcon = new ImageIcon(cover.getPath());
-                Image scaledIcon = origIcon.getImage().getScaledInstance(160, 230, Image.SCALE_SMOOTH);
-                ImageIcon bookCover = new ImageIcon(scaledIcon);
-                
-                custom.components.RoundedPanel books = new custom.components.RoundedPanel();
-                books.setPreferredSize(new Dimension(180,300));
-                books.setLayout(new FlowLayout(FlowLayout.CENTER,0,10));
-                books.setBorderVisible(false);
-                books.setOpaque(true);
-                books.setBackground(new Color(255,255,255,0));
-                books.addMouseListener(new java.awt.event.MouseAdapter() {
-                        public void mouseEntered(java.awt.event.MouseEvent evt) {
-                            MouseEntered(evt);
-                        }
-                        public void mouseExited(java.awt.event.MouseEvent evt) {
-                            MouseExited(evt);
-                        }
-                        public void mousePressed(java.awt.event.MouseEvent evt) {
-                            MousePressed(evt);
-                        }
-                });
-
-                JLabel booksLabel = new JLabel();
-                booksLabel.setIcon(bookCover);
-                booksLabel.setText("<html><div style='text-align: center;'>" + title + "<br><i>" + author + "</i></div></html>");
-                booksLabel.setFont(new Font("Serif", Font.BOLD,15));
-                booksLabel.setHorizontalTextPosition(JLabel.CENTER);
-                booksLabel.setVerticalTextPosition(JLabel.BOTTOM);
-                booksLabel.setHorizontalAlignment(JLabel.CENTER);
-                booksLabel.setIconTextGap(5);
-
-                books.add(booksLabel);
-                booksPanel.add(books);
-                
-                bookPanelsList.add(books);
-                bookLabelsList.put(books,booksLabel);
-            }
-        }
-    } */
-
     private custom.components.RoundedPanel createBookPanel(String title, String author, ImageIcon bookCover, HashMap<JPanel, JLabel> labelMap){
 
         custom.components.RoundedPanel bookPanel = new custom.components.RoundedPanel();
@@ -490,10 +428,16 @@ public class StudentPage extends javax.swing.JFrame {
     HashMap<JPanel, JLabel> bookLabelsList = new HashMap<>();
     
     public void addBooksToPanel() {
+
+        booksPanel.removeAll();
+        bookPanelsList.clear();
+        bookLabelsList.clear();
+
         List<LibraryFunctions.bookInfos> booksFromDB = LibraryFunctions.fetchBookData();
         List<LibraryFunctions.BorrowedBookInfos> borrowedBooksFromDB = LibraryFunctions.fetchBorrowedBookData();
 
         for (LibraryFunctions.bookInfos book : booksFromDB) {
+
             boolean isBorrowed = false;
             for (LibraryFunctions.BorrowedBookInfos borrowedBook : borrowedBooksFromDB){
                 if(borrowedBook.isbn.equals(book.isbn)){
@@ -516,12 +460,18 @@ public class StudentPage extends javax.swing.JFrame {
 
         booksPanel.revalidate();
         booksPanel.repaint();
+        resizeBooksPanel(bookPanelsList, booksPanel, booksScrollPane);
     }
 
-    ArrayList<JPanel> borrowedBookPanelsList = new ArrayList<>();
-    HashMap<JPanel, JLabel> borrowedBookLabelsList = new HashMap<>();
+    static ArrayList<JPanel> borrowedBookPanelsList = new ArrayList<>();
+    static HashMap<JPanel, JLabel> borrowedBookLabelsList = new HashMap<>();
     
     public void addBorrowedBooksToPanel() {
+
+        borrowedBooksPanel.removeAll();
+        borrowedBookPanelsList.clear();
+        borrowedBookLabelsList.clear();
+
         List<LibraryFunctions.bookInfos> booksFromDB = LibraryFunctions.fetchBookData();
         List<LibraryFunctions.BorrowedBookInfos> borrowedBooksFromDB = LibraryFunctions.fetchBorrowedBookData();
 
@@ -543,36 +493,30 @@ public class StudentPage extends javax.swing.JFrame {
 
         borrowedBooksPanel.revalidate();
         borrowedBooksPanel.repaint();
+        resizeBooksPanel(borrowedBookPanelsList, borrowedBooksPanel, borrowedBooksScrollPane);
     }
 
-    private void resizeBooksPanel(){
+    private static void resizeBooksPanel(ArrayList list, JPanel panel, JScrollPane scrollPane){
         int bookPanelWidth = 170;
         int bookPanelHeight = 290;
 
-        int containerWidth = booksScrollPane.getViewport().getWidth();
-        int containerHeight = booksScrollPane.getViewport().getHeight();
-        if (containerWidth == 0) containerWidth = 700; // fallback
+        int containerWidth = scrollPane.getViewport().getWidth();
+        if (containerWidth == 0) containerWidth = 700;
 
         int booksPerRow = containerWidth / bookPanelWidth;
         if (booksPerRow == 0) booksPerRow = 1;
 
-        int rows = (int) Math.ceil((double) bookPanelsList.size() / booksPerRow);
+        int rows = (int) Math.ceil((double) list.size() / booksPerRow);
         int heightNeeded = rows * bookPanelHeight + (rows * 10); // spacing
 
-        booksPanel.setPreferredSize(new Dimension(containerWidth, heightNeeded));
-        booksPanel.revalidate();
-        booksPanel.repaint();
+        panel.setPreferredSize(new Dimension(containerWidth, heightNeeded));
 
-        // Toggle scroll bar visibility based on content height
-        if (heightNeeded <= containerHeight) {
-            booksScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-        } else {
-            booksScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        }
+        panel.revalidate();
+        panel.repaint();
     }
     
-    private void changeScrollBarLook() {
-        javax.swing.JScrollBar verticalBar = booksScrollPane.getVerticalScrollBar();
+    private void changeScrollBarLook(JScrollPane scrollPane) {
+        javax.swing.JScrollBar verticalBar = scrollPane.getVerticalScrollBar();
         verticalBar.setUnitIncrement(10);
         verticalBar.setUI(new javax.swing.plaf.basic.BasicScrollBarUI() {
             @Override
@@ -704,7 +648,6 @@ public class StudentPage extends javax.swing.JFrame {
         JComponent[] components = {
             burgerButton, burgerButtonPanel, viewBooksButton,
             viewBorrowedBooksButton, logOutLabel
-            viewBorrowedBooksButton, logOutLabel
         };
 
         for(JComponent comp : components){
@@ -720,102 +663,61 @@ public class StudentPage extends javax.swing.JFrame {
 
     private void MouseEntered(java.awt.event.MouseEvent evt){
 
-        for(JPanel panels : bookPanelsList){
-            if(evt.getSource()==panels){
-                panels.setOpaque(true);
-                panels.setBackground(new Color(255,255,255,80));
+        Object source = evt.getSource();
 
-                panels.getParent().repaint();
-            }
-        }
+        if (StudentPageFunctions.setPanelHoverBackground(bookPanelsList, source, new Color(255, 255, 255, 80))) {return;}
+        else if (StudentPageFunctions.setPanelHoverBackground(borrowedBookPanelsList, source, new Color(255, 255, 255, 80))) {return;}
 
-        for(JPanel panels : borrowedBookPanelsList){
-            if(evt.getSource()==panels){
-                panels.setOpaque(true);
-                panels.setBackground(new Color(255,255,255,80));
-
-                panels.getParent().repaint();
-            }
-        }
-
-        if(evt.getSource()==burgerButton){
-            burgerButtonPanel.setBackground(new Color(0,0,0,100));
-        }
-
-        if(evt.getSource()==viewBooksButton){
-            if(getVisibleCard(cardPanel2).getName().equals("viewBooks")){
-                return;
-            }
-            viewBooksButton.setOpaque(true);
+        if(source == viewBooksButton){
+            if(getVisibleCard(cardPanel2).getName().equals("viewBooks")){ return; }
             viewBooksButton.setBackground(new Color(141,181,119,200));
-            sidePanel.repaint();
-        }
-
-        if(evt.getSource()==viewBorrowedBooksButton){
-            if(getVisibleCard(cardPanel2).getName().equals("viewBorrowedBooks")){
-                return;
-            }
+        
+        } else if(source == viewBorrowedBooksButton){
+            if(getVisibleCard(cardPanel2).getName().equals("viewBorrowedBooks")){ return; }
             viewBorrowedBooksButton.setBackground(new Color(141,181,119,200));
-            sidePanel.repaint();
-        }
-
-        if(evt.getSource()==logOutLabel){
+        
+        } else if(source == burgerButton){
+            burgerButtonPanel.setBackground(new Color(0,0,0,100));
+        
+        } else if(source == logOutLabel){
             logOutPanel.setBackground(new Color(0,0,0,100));
         }
+
+        sidePanel.repaint();
     }
 
     private void MouseExited(java.awt.event.MouseEvent evt){
 
-        for(JPanel panels : bookPanelsList){
-            if(evt.getSource()==panels){
-                panels.setOpaque(true);
-                panels.setBackground(new Color(255,255,255,0));
+        Object source = evt.getSource();
 
-                panels.getParent().repaint();
-            }
-        }
-
-        for(JPanel panels : borrowedBookPanelsList){
-            if(evt.getSource()==panels){
-                panels.setOpaque(true);
-                panels.setBackground(new Color(255,255,255,0));
-
-                panels.getParent().repaint();
-            }
-        }
-
-        if(evt.getSource()==burgerButton){
-            burgerButtonPanel.setBackground(new Color(0,0,0,0));
-            sidePanel.repaint();
-        }
+        if (StudentPageFunctions.setPanelHoverBackground(bookPanelsList, source, new Color(255, 255, 255, 0))) {return;}
+        else if (StudentPageFunctions.setPanelHoverBackground(borrowedBookPanelsList, source, new Color(255, 255, 255, 0))) {return;}
 
         if(evt.getSource()==viewBooksButton){
             viewBooksButton.setBackground(new Color(0,0,0,0));
-            sidePanel.repaint();
-        }
 
-        if(evt.getSource()==viewBorrowedBooksButton){
+        
+        } else if(evt.getSource()==viewBorrowedBooksButton){
             viewBorrowedBooksButton.setBackground(new Color(0,0,0,0));
-            sidePanel.repaint();
+
+        
+        } else if(evt.getSource()==burgerButton){
+            burgerButtonPanel.setBackground(new Color(0,0,0,0));
+
+        
+        } else if(evt.getSource()==logOutLabel){
+            logOutPanel.setBackground(new Color(0,0,0,0));
+
         }
 
-        if(evt.getSource()==logOutLabel){
-            logOutPanel.setBackground(new Color(0,0,0,0));
-            sidePanel.repaint();
-        }
+        sidePanel.repaint();
     }
 
-    public static String ISBN = null;
-    public static String title = null;
-    public static String author = null;
-    public static ImageIcon bookCover = null;
-    public static boolean isReturned = false;
     public static JDialog viewBooksDialog = new JDialog((JFrame) null, "View Book", true);
 
     private void MousePressed(java.awt.event.MouseEvent evt){
 
-        StudentViewBooks viewBookInfos = new StudentViewBooks();
-        returnBookPopUp returnBook = new returnBookPopUp();
+        Object source = evt.getSource();
 
         CardLayout cl = (CardLayout) cardPanel2.getLayout();
         searchBar.setVisible(true);
@@ -826,99 +728,33 @@ public class StudentPage extends javax.swing.JFrame {
         }
 
         for(JPanel book : bookPanelsList){
+            if(source == book && getVisibleCard(cardPanel2).getName().equals("viewBooks")){
+                String bookTitle = StudentPageFunctions.getTitleFromLabel(bookLabelsList.get(book));
 
-            if(evt.getSource()==book){
-                
-                if(getVisibleCard(cardPanel2).getName().equals("viewBorrowedBooks")) continue;
-                JLabel bookLabel = bookLabelsList.get(book);
-                
-                String text = bookLabel.getText().replaceAll("<[^>]*>", "_").trim();
+                if(bookTitle != null){
+                    StudentPageFunctions.BookInfo info = StudentPageFunctions.getBookInfo(bookTitle);
 
-                String[] info = text.split("__");
-                String bookTitle = info[1];
-                List<LibraryFunctions.bookInfos> bookInfos = LibraryFunctions.fetchBookByTitle(bookTitle);
+                    if(info != null){
+                        StudentPageFunctions.showViewBookDialog(viewBooksDialog,info);
+                        return;
 
-                int yearPublished = 0;
-                //String tag = null;
-                String edition = null;
-                int pages = 0;
-                String dateAcquired = null;
-                String callNum = null;
-                String desctiption = null;
-
-                for (LibraryFunctions.bookInfos infos : bookInfos){
-                    title = infos.title;
-                    author = infos.author;
-                    yearPublished = infos.yearPublished;
-                    edition = infos.edition;
-                    ISBN = infos.isbn;
-                    pages = infos.pages;
-                    dateAcquired = infos.dateAcquired;
-                    callNum = infos.callNumber;
-                    desctiption = infos.description;
-                    bookCover = infos.cover;
-                    Image scaled = bookCover.getImage().getScaledInstance(205, 290, Image.SCALE_SMOOTH);
-                    bookCover = new ImageIcon(scaled);
+                    } 
                 }
-
-                viewBookInfos.bookTitleLabel.setText(title);
-                viewBookInfos.bookAuthorLabel.setText(author);
-                viewBookInfos.bookPublishedLabel.setText(String.valueOf("Published: " + yearPublished));
-                //viewBookInfos.bookGenreLabel.setText("Tag: " + tag);
-                viewBookInfos.bookEditionLabel.setText("Edition: " + edition);
-                viewBookInfos.bookISBNLabel.setText("ISBN: " + ISBN);
-                viewBookInfos.bookPagesLabel.setText("Pages: " + String.valueOf(pages));
-                viewBookInfos.bookAcquiredLabel.setText("Date Acquired: " + dateAcquired);
-                viewBookInfos.bookCallNumLabel.setText("Call Number: " + callNum);
-                viewBookInfos.bookDescription.setText(desctiption);
-                viewBookInfos.bookCoverLabel.setIcon(bookCover);
-
-                viewBooksDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-                viewBooksDialog.setContentPane(viewBookInfos);
-                viewBooksDialog.pack();
-                viewBooksDialog.setLocationRelativeTo(this);
-                viewBooksDialog.setVisible(true);
-
             }
         }
 
         for(JPanel book : borrowedBookPanelsList){
+            if(source == book && getVisibleCard(cardPanel2).getName().equals("viewBorrowedBooks")){
+                String bookTitle = StudentPageFunctions.getTitleFromLabel(borrowedBookLabelsList.get(book));
 
-            if(evt.getSource()==book){
-                
-                if(getVisibleCard(cardPanel2).getName().equals("viewBooks")) continue;
-                JLabel bookLabel = borrowedBookLabelsList.get(book);
-                
-                String text = bookLabel.getText().replaceAll("<[^>]*>", "_").trim();
+                if(bookTitle != null){
+                    StudentPageFunctions.BorrowedBookInfo borrowedBookInfo = StudentPageFunctions.getBorrowedBookInfo(bookTitle);
 
-                String[] info = text.split("__");
-                String bookTitle = info[1];
-                List<LibraryFunctions.bookInfos> bookInfos = LibraryFunctions.fetchBookByTitle(bookTitle);
-                List<LibraryFunctions.BorrowedBookInfos> borrowedBooksFromDB = LibraryFunctions.fetchBorrowedBookData();
-
-                for (LibraryFunctions.bookInfos infos : bookInfos){
-                    for(LibraryFunctions.BorrowedBookInfos borrowedBookInfos : borrowedBooksFromDB){
-                        if(borrowedBookInfos.isbn.equals(infos.isbn)){
-                            title = infos.title;
-                            author = infos.author;
-                            bookCover = infos.cover;
-                            ISBN = infos.isbn;
-                            Image scaled = bookCover.getImage().getScaledInstance(205, 290, Image.SCALE_SMOOTH);
-                            bookCover = new ImageIcon(scaled);
-                        }
+                    if(borrowedBookInfo != null){
+                        StudentPageFunctions.showReturnBookDialog(borrowedBookInfo);
+                        return;
                     }
                 }
-
-                returnBook.bookTitleLabel.setText(title);
-                returnBook.bookAuthorLabel.setText(author);
-                returnBook.bookCoverLabel.setIcon(bookCover);
-
-                JDialog returnBookDialog = new JDialog((JFrame) null, "Return Book", true);
-                returnBookDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-                returnBookDialog.setContentPane(returnBook);
-                returnBookDialog.pack();
-                returnBookDialog.setLocationRelativeTo(this);
-                returnBookDialog.setVisible(true);
             }
         }
 
@@ -968,7 +804,7 @@ public class StudentPage extends javax.swing.JFrame {
                                                         "Log Out?", JOptionPane.YES_NO_OPTION);
             if(logOut == JOptionPane.YES_OPTION){
                 this.dispose();
-                new LibraryLogInPageUI().setVisible(true);
+                new LogInPage().setVisible(true);
             }else{
                 return;
             }
@@ -976,14 +812,38 @@ public class StudentPage extends javax.swing.JFrame {
     }
 
     public void KeyReleased(java.awt.event.KeyEvent e){
-        String query = searchBar.getText().toLowerCase();
-        for (JPanel panel : bookPanelsList) {
-            JLabel label = bookLabelsList.get(panel);
-            boolean visible = label.getText().toLowerCase().contains(query);
-            panel.setVisible(visible);
+
+        JPanel panelUsed;
+
+        if(getVisibleCard(cardPanel2).getName().equals("viewBooks")){
+
+            String query = searchBar.getText().toLowerCase();
+
+            for (JPanel panel : bookPanelsList) {
+
+                JLabel label = bookLabelsList.get(panel);
+                boolean visible = label.getText().toLowerCase().contains(query);
+                panel.setVisible(visible);
+            }
+
+            panelUsed = booksPanel;
+
+        } else{
+
+            String query = searchBar.getText().toLowerCase();
+
+            for (JPanel panel : borrowedBookPanelsList) {
+
+                JLabel label = borrowedBookLabelsList.get(panel);
+                boolean visible = label.getText().toLowerCase().contains(query);
+                panel.setVisible(visible);
+            }
+
+            panelUsed = borrowedBooksPanel;
         }
-        booksPanel.revalidate();
-        booksPanel.repaint();
+        
+        panelUsed.revalidate();
+        panelUsed.repaint();
     }
 
     /**
@@ -1025,9 +885,9 @@ public class StudentPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel booksPanel;
-    private javax.swing.JScrollPane booksScrollPane;
+    private static javax.swing.JScrollPane booksScrollPane;
     public static javax.swing.JPanel borrowedBooksPanel;
-    private javax.swing.JScrollPane borrowedBooksScrollPane;
+    private static javax.swing.JScrollPane borrowedBooksScrollPane;
     private javax.swing.JLabel burgerButton;
     private custom.components.RoundedPanel burgerButtonPanel;
     private javax.swing.JPanel cardPanel;

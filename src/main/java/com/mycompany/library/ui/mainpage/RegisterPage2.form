@@ -48,7 +48,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="registerHeader_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -56,25 +56,25 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
-                          <Component id="confirmpassword_label" min="-2" max="-2" attributes="0"/>
+                          <Component id="confirmPassLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="emptyConfirmPassMessage" min="-2" pref="131" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="back_label" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="confirm_button" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="backLabel" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="confirmButton" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="createpassword_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="createPassLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="emptyNewPassMessage" min="-2" pref="131" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="createusername_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="createUnameLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="emptyUnameMessage" min="-2" pref="131" max="-2" attributes="0"/>
                                       </Group>
@@ -100,41 +100,41 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="registerHeader_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="login_seperator" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="createusername_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="createUnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyUnameMessage" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Component id="newUnameField" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="createpassword_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="createPassLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyNewPassMessage" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="newPassField" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="confirmpassword_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="confirmPassLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emptyConfirmPassMessage" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="confirmNewPassField" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="confirm_button" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="confirmButton" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="back_label" max="-2" attributes="0"/>
+                  <Component id="backLabel" max="-2" attributes="0"/>
                   <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="registerHeader_label">
+        <Component class="javax.swing.JLabel" name="headerLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="78" red="67" type="rgb"/>
@@ -149,7 +149,7 @@
             <Property name="text" type="java.lang.String" value="REGISTER"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="createusername_label">
+        <Component class="javax.swing.JLabel" name="createUnameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -160,7 +160,7 @@
             <Property name="text" type="java.lang.String" value="Create Username :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="createpassword_label">
+        <Component class="javax.swing.JLabel" name="createPassLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -171,7 +171,7 @@
             <Property name="text" type="java.lang.String" value="Create Password :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="confirm_button">
+        <Component class="javax.swing.JButton" name="confirmButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="78" red="67" type="rgb"/>
@@ -189,7 +189,7 @@
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.CustomRoundedButton();"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="back_label">
+        <Component class="javax.swing.JLabel" name="backLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="14" style="0"/>
@@ -201,7 +201,7 @@
             <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="confirmpassword_label">
+        <Component class="javax.swing.JLabel" name="confirmPassLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>

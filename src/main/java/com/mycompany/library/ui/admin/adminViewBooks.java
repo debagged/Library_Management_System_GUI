@@ -5,11 +5,10 @@ import java.awt.Window;
 import javax.swing.JDialog;
 import javax.swing.SwingUtilities;
 
-public class adminViewBooksPanel extends javax.swing.JPanel {
+public class adminViewBooks extends javax.swing.JPanel {
 
-    public adminViewBooksPanel() {
+    public adminViewBooks() {
         initComponents();
-        initListeners();
     }
 
     /**
@@ -54,6 +53,17 @@ public class adminViewBooksPanel extends javax.swing.JPanel {
 
         backButton.setForeground(new java.awt.Color(255, 255, 242));
         backButton.setText("Back");
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
+            }
+        });
 
         login_seperator2.setBackground(new java.awt.Color(103, 120, 97));
         login_seperator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -102,8 +112,12 @@ public class adminViewBooksPanel extends javax.swing.JPanel {
 
         jScrollPane1.setBorder(null);
 
+        bookDescription.setEditable(false);
+        bookDescription.setBackground(new java.awt.Color(255, 255, 242));
+        bookDescription.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         bookDescription.setBorderThickness(0.0F);
         bookDescription.setFocusable(false);
+        bookDescription.setOpaque(true);
         jScrollPane1.setViewportView(bookDescription);
 
         bookCoverPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
@@ -202,22 +216,20 @@ public class adminViewBooksPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void initListeners(){
-        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt){
-                MousePressed(evt);
-            }
-        });
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {
+        backButton.setLocation(backButton.getX(), backButton.getY()-5);
     }
 
-    private void MousePressed(java.awt.event.MouseEvent evt){
-        if(evt.getSource()==backButton){
-            Window parentWindow = SwingUtilities.getWindowAncestor(this);
-                if (parentWindow instanceof JDialog) {
-                    parentWindow.dispose();
-            }
-        }
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {
+        backButton.setLocation(backButton.getX(), backButton.getY()+5);
     }
+
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {
+
+        Window parentWindow = SwingUtilities.getWindowAncestor(this);
+        if (parentWindow instanceof JDialog) parentWindow.dispose();
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private custom.components.CustomRoundedButton backButton;

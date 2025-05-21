@@ -1,20 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.library.ui.student;
 
-/**
- *
- * @author shawn
- */
-public class studentBorrowedBookViewPopup extends javax.swing.JPanel {
+import java.awt.Window;
 
-    /**
-     * Creates new form studentBorrowedBookViewPopup
-     */
-    public studentBorrowedBookViewPopup() {
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.SwingUtilities;
+
+import com.mycompany.library.functions.LibraryFunctions;
+
+public class studentReturnBookPopUp extends javax.swing.JPanel {
+
+    public studentReturnBookPopUp() {
         initComponents();
+        initListeners();
     }
 
     /**
@@ -27,47 +25,64 @@ public class studentBorrowedBookViewPopup extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        returnBook_button = new custom.components.CustomRoundedButton();
-        bookAuthor_label = new javax.swing.JLabel();
-        bookTitle_label = new javax.swing.JLabel();
-        cancel_button = new custom.components.CustomRoundedButton();
+        returnBookButton = new custom.components.CustomRoundedButton();
+        bookAuthorLabel = new javax.swing.JLabel();
+        bookTitleLabel = new javax.swing.JLabel();
+        cancelButton = new custom.components.CustomRoundedButton();
+        bookCoverPanel = new javax.swing.JPanel();
+        bookCoverLabel = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 242));
         jPanel1.setPreferredSize(new java.awt.Dimension(310, 505));
 
-        returnBook_button.setForeground(new java.awt.Color(255, 255, 242));
-        returnBook_button.setText("RETURN BOOK");
-        returnBook_button.setMaximumSize(new java.awt.Dimension(124, 40));
-        returnBook_button.setMinimumSize(new java.awt.Dimension(124, 40));
-        returnBook_button.setPreferredSize(new java.awt.Dimension(124, 40));
-        returnBook_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                returnBook_buttoncustomRoundedButton1ActionPerformed(evt);
-            }
-        });
+        returnBookButton.setForeground(new java.awt.Color(255, 255, 242));
+        returnBookButton.setText("RETURN BOOK");
+        returnBookButton.setMaximumSize(new java.awt.Dimension(124, 40));
+        returnBookButton.setMinimumSize(new java.awt.Dimension(124, 40));
+        returnBookButton.setPreferredSize(new java.awt.Dimension(124, 40));
+        returnBookButton.setRadius(40);
 
-        bookAuthor_label.setBackground(new java.awt.Color(79, 82, 78));
-        bookAuthor_label.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        bookAuthor_label.setForeground(new java.awt.Color(79, 82, 78));
-        bookAuthor_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookAuthor_label.setText("Jenny Noa");
+        bookAuthorLabel.setBackground(new java.awt.Color(79, 82, 78));
+        bookAuthorLabel.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        bookAuthorLabel.setForeground(new java.awt.Color(79, 82, 78));
+        bookAuthorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bookAuthorLabel.setText("Jenny Noa");
 
-        bookTitle_label.setBackground(new java.awt.Color(79, 82, 78));
-        bookTitle_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bookTitle_label.setForeground(new java.awt.Color(79, 82, 78));
-        bookTitle_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookTitle_label.setText("Bad Dreams");
+        bookTitleLabel.setBackground(new java.awt.Color(79, 82, 78));
+        bookTitleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bookTitleLabel.setForeground(new java.awt.Color(79, 82, 78));
+        bookTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bookTitleLabel.setText("Bad Dreams");
 
-        cancel_button.setForeground(new java.awt.Color(255, 255, 242));
-        cancel_button.setText("CANCEL");
-        cancel_button.setMaximumSize(new java.awt.Dimension(124, 40));
-        cancel_button.setMinimumSize(new java.awt.Dimension(124, 40));
-        cancel_button.setPreferredSize(new java.awt.Dimension(124, 40));
-        cancel_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancel_buttoncustomRoundedButton1ActionPerformed(evt);
-            }
-        });
+        cancelButton.setForeground(new java.awt.Color(255, 255, 242));
+        cancelButton.setText("CANCEL");
+        cancelButton.setMaximumSize(new java.awt.Dimension(124, 40));
+        cancelButton.setMinimumSize(new java.awt.Dimension(124, 40));
+        cancelButton.setPreferredSize(new java.awt.Dimension(124, 40));
+        cancelButton.setRadius(40);
+
+        bookCoverPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+
+        bookCoverLabel.setMaximumSize(new java.awt.Dimension(155, 240));
+        bookCoverLabel.setMinimumSize(new java.awt.Dimension(155, 240));
+        bookCoverLabel.setPreferredSize(new java.awt.Dimension(155, 240));
+
+        javax.swing.GroupLayout bookCoverPanelLayout = new javax.swing.GroupLayout(bookCoverPanel);
+        bookCoverPanel.setLayout(bookCoverPanelLayout);
+        bookCoverPanelLayout.setHorizontalGroup(
+            bookCoverPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bookCoverPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bookCoverLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        bookCoverPanelLayout.setVerticalGroup(
+            bookCoverPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bookCoverPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bookCoverLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,28 +93,28 @@ public class studentBorrowedBookViewPopup extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(returnBook_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cancel_button, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(returnBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bookTitle_label)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(bookAuthor_label)))))
+                        .addGap(73, 73, 73)
+                        .addComponent(bookCoverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
+            .addComponent(bookTitleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bookAuthorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(323, Short.MAX_VALUE)
-                .addComponent(bookTitle_label)
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(bookCoverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bookTitleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bookAuthor_label)
+                .addComponent(bookAuthorLabel)
                 .addGap(20, 20, 20)
-                .addComponent(returnBook_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(returnBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cancel_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
 
@@ -119,20 +134,91 @@ public class studentBorrowedBookViewPopup extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void returnBook_buttoncustomRoundedButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnBook_buttoncustomRoundedButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_returnBook_buttoncustomRoundedButton1ActionPerformed
+    private void initListeners(){
+        java.awt.event.MouseAdapter mouseAdapters = new java.awt.event.MouseAdapter(){
 
-    private void cancel_buttoncustomRoundedButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_buttoncustomRoundedButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancel_buttoncustomRoundedButton1ActionPerformed
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MousePressed(evt);
+            }
+        };
+
+        JComponent[] buttons = {
+            returnBookButton, cancelButton
+        };
+
+        for (JComponent comp : buttons){
+            comp.addMouseListener(mouseAdapters);
+        }
+    }
+
+    private void hoverButon(JComponent comp){
+        comp.setLocation(comp.getX(), comp.getY()-5);
+    }
+
+    private void unHoverButon(JComponent comp){
+        comp.setLocation(comp.getX(), comp.getY()+5);
+    }
+
+    private void MouseEntered(java.awt.event.MouseEvent evt) {
+
+        JComponent[] buttons = {
+            returnBookButton, cancelButton
+        };
+
+        for (JComponent comp : buttons){
+            if(evt.getSource()==comp)
+            hoverButon(comp);
+        }
+    }
+
+    private void MouseExited(java.awt.event.MouseEvent evt) {
+
+        JComponent[] buttons = {
+            returnBookButton, cancelButton
+        };
+
+        for (JComponent comp : buttons){
+            if(evt.getSource()==comp)
+            unHoverButon(comp);
+        }
+    }
+
+    private void MousePressed(java.awt.event.MouseEvent evt) {
+
+        if(evt.getSource()==cancelButton){
+            Window parentWindow = SwingUtilities.getWindowAncestor(this);
+
+            if (parentWindow instanceof JDialog) {
+                parentWindow.dispose();
+            }
+        }
+
+        if(evt.getSource()==returnBookButton){
+
+            Window parentWindow = SwingUtilities.getWindowAncestor(this);
+            if (parentWindow instanceof JDialog) {
+                
+                LibraryFunctions.returnBook(StudentPageFunctions.isbn, StudentPage.userID);
+                StudentPageFunctions.refreshBookPanels();
+                parentWindow.dispose();
+            }
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bookAuthor_label;
-    private javax.swing.JLabel bookTitle_label;
-    private custom.components.CustomRoundedButton cancel_button;
+    public javax.swing.JLabel bookAuthorLabel;
+    public javax.swing.JLabel bookCoverLabel;
+    private javax.swing.JPanel bookCoverPanel;
+    public javax.swing.JLabel bookTitleLabel;
+    private custom.components.CustomRoundedButton cancelButton;
     private javax.swing.JPanel jPanel1;
-    private custom.components.CustomRoundedButton returnBook_button;
+    private custom.components.CustomRoundedButton returnBookButton;
     // End of variables declaration//GEN-END:variables
 }

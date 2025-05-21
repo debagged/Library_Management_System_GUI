@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.library.ui.student;
 
 import java.awt.Window;
 
+import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -14,12 +11,9 @@ import javax.swing.SwingUtilities;
 
 import com.mycompany.library.functions.LibraryFunctions;
 
-public class StudentViewBooks extends javax.swing.JPanel {
+public class studentViewBookPopUp extends javax.swing.JPanel {
 
-    /**
-     * Creates new form viewBooksOverviewSAMPLE2
-     */
-    public StudentViewBooks() {
+    public studentViewBookPopUp() {
         initComponents();
         initListeners();
     }
@@ -121,8 +115,12 @@ public class StudentViewBooks extends javax.swing.JPanel {
 
         jScrollPane1.setBorder(null);
 
+        bookDescription.setEditable(false);
+        bookDescription.setBackground(new java.awt.Color(255, 255, 242));
+        bookDescription.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         bookDescription.setBorderThickness(0.0F);
         bookDescription.setFocusable(false);
+        bookDescription.setOpaque(true);
         jScrollPane1.setViewportView(bookDescription);
 
         bookCoverPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
@@ -201,7 +199,6 @@ public class StudentViewBooks extends javax.swing.JPanel {
                             .addComponent(borrowBookButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bookCoverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(bookPublishedLabel)
@@ -277,7 +274,7 @@ public class StudentViewBooks extends javax.swing.JPanel {
 
     private void MousePressed(java.awt.event.MouseEvent evt){
 
-        bookBorrowedPopUp borrowedPopUp = new bookBorrowedPopUp();
+        studentBookBorrowedPopUp borrowedPopUp = new studentBookBorrowedPopUp();
 
         if(evt.getSource()==backButton){
             Window parentWindow = SwingUtilities.getWindowAncestor(this);
@@ -288,11 +285,17 @@ public class StudentViewBooks extends javax.swing.JPanel {
 
         if(evt.getSource()==borrowBookButton){
             String id = StudentPage.userID;
+            String[] isbnText = studentViewBookPopUp.bookISBNLabel.getText().split(":");
+            String isbn = isbnText[1].trim();
+            
+            String title = studentViewBookPopUp.bookTitleLabel.getText().trim();
+            String author = studentViewBookPopUp.bookAuthorLabel.getText().trim();
+            Icon cover = studentViewBookPopUp.bookCoverLabel.getIcon();
 
-            if(LibraryFunctions.borrowBook(StudentPage.ISBN, id)){
-                borrowedPopUp.bookTitleLabel.setText(StudentPage.title);
-                borrowedPopUp.bookAuthorLabel.setText(StudentPage.author);
-                borrowedPopUp.bookCover.setIcon(StudentPage.bookCover);
+            if(LibraryFunctions.borrowBook(isbn, id)){
+                borrowedPopUp.bookTitleLabel.setText(title);
+                borrowedPopUp.bookAuthorLabel.setText(author);
+                borrowedPopUp.bookCover.setIcon(cover);
 
                 JDialog dialog = new JDialog((JFrame) null, "Success", true);
                 dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -310,17 +313,17 @@ public class StudentViewBooks extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private custom.components.CustomRoundedButton backButton;
     public javax.swing.JLabel bookAcquiredLabel;
-    public javax.swing.JLabel bookAuthorLabel;
+    public static javax.swing.JLabel bookAuthorLabel;
     public javax.swing.JLabel bookCallNumLabel;
-    public javax.swing.JLabel bookCoverLabel;
+    public static javax.swing.JLabel bookCoverLabel;
     private javax.swing.JPanel bookCoverPanel;
     public custom.components.RoundedTextArea bookDescription;
     public javax.swing.JLabel bookEditionLabel;
     public javax.swing.JLabel bookGenreLabel;
-    public javax.swing.JLabel bookISBNLabel;
+    public static javax.swing.JLabel bookISBNLabel;
     public javax.swing.JLabel bookPagesLabel;
     public javax.swing.JLabel bookPublishedLabel;
-    public javax.swing.JLabel bookTitleLabel;
+    public static javax.swing.JLabel bookTitleLabel;
     private custom.components.CustomRoundedButton borrowBookButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator login_seperator2;

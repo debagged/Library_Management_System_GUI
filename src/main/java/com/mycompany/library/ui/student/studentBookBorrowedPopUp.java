@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.library.ui.student;
 
 import java.awt.Window;
@@ -9,16 +5,9 @@ import java.awt.Window;
 import javax.swing.JDialog;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author Layosa
- */
-public class bookBorrowedPopUp extends javax.swing.JPanel {
+public class studentBookBorrowedPopUp extends javax.swing.JPanel {
 
-    /**
-     * Creates new form bookBorrowedPopUp
-     */
-    public bookBorrowedPopUp() {
+    public studentBookBorrowedPopUp() {
         initComponents();
     }
 
@@ -31,50 +20,27 @@ public class bookBorrowedPopUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        HeaderLabel = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        headerLabel = new javax.swing.JLabel();
+        login_seperator = new javax.swing.JSeparator();
+        backButton = new custom.components.CustomRoundedButton();
+        bookAuthorLabel = new javax.swing.JLabel();
+        bookTitleLabel = new javax.swing.JLabel();
         coverPanel = new javax.swing.JPanel();
         bookCover = new javax.swing.JLabel();
-        bookTitleLabel = new javax.swing.JLabel();
-        bookAuthorLabel = new javax.swing.JLabel();
-        backButton = new custom.components.CustomRoundedButton();
 
-        HeaderLabel.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        HeaderLabel.setForeground(new java.awt.Color(101, 121, 97));
-        HeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HeaderLabel.setText("Successfully Borrowed");
+        setBackground(new java.awt.Color(255, 255, 242));
 
-        coverPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+        headerLabel.setBackground(new java.awt.Color(103, 120, 97));
+        headerLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(103, 120, 97));
+        headerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headerLabel.setText("SUCCESSFULLY BORROWED");
 
-        javax.swing.GroupLayout coverPanelLayout = new javax.swing.GroupLayout(coverPanel);
-        coverPanel.setLayout(coverPanelLayout);
-        coverPanelLayout.setHorizontalGroup(
-            coverPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coverPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bookCover, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        coverPanelLayout.setVerticalGroup(
-            coverPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coverPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bookCover, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        bookTitleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        bookTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookTitleLabel.setText("Title");
-
-        bookAuthorLabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        bookAuthorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookAuthorLabel.setText("Author");
+        login_seperator.setBackground(new java.awt.Color(103, 120, 97));
 
         backButton.setForeground(new java.awt.Color(255, 255, 242));
-        backButton.setText("Back To Library");
-        backButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        backButton.setRadius(55);
+        backButton.setText("BACK TO LIBRARY");
+        backButton.setRadius(50);
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 backButtonMouseEntered(evt);
@@ -87,43 +53,72 @@ public class bookBorrowedPopUp extends javax.swing.JPanel {
             }
         });
 
+        bookAuthorLabel.setBackground(new java.awt.Color(79, 82, 78));
+        bookAuthorLabel.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        bookAuthorLabel.setForeground(new java.awt.Color(79, 82, 78));
+        bookAuthorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bookAuthorLabel.setText("Jenny Noa");
+
+        bookTitleLabel.setBackground(new java.awt.Color(79, 82, 78));
+        bookTitleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bookTitleLabel.setForeground(new java.awt.Color(79, 82, 78));
+        bookTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bookTitleLabel.setText("Bad Dreams");
+
+        coverPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)));
+
+        javax.swing.GroupLayout coverPanelLayout = new javax.swing.GroupLayout(coverPanel);
+        coverPanel.setLayout(coverPanelLayout);
+        coverPanelLayout.setHorizontalGroup(
+            coverPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coverPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bookCover, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        coverPanelLayout.setVerticalGroup(
+            coverPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coverPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bookCover, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HeaderLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(headerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addComponent(bookTitleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bookAuthorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(coverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(87, 87, 87))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(coverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(HeaderLabel)
+                .addGap(37, 37, 37)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(coverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(coverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(bookTitleLabel)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bookAuthorLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGap(39, 39, 39)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -139,20 +134,22 @@ public class bookBorrowedPopUp extends javax.swing.JPanel {
         Window parentWindow = SwingUtilities.getWindowAncestor(this);
 
         if (parentWindow instanceof JDialog) {
-            StudentPage.booksPanel.removeAll();
-            StudentPage.borrowedBooksPanel.removeAll();
+            StudentPageFunctions.refreshBookPanels();
             parentWindow.dispose();
             StudentPage.viewBooksDialog.dispose();
         }
     }
 
+    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel HeaderLabel;
     private custom.components.CustomRoundedButton backButton;
     public javax.swing.JLabel bookAuthorLabel;
     public javax.swing.JLabel bookCover;
     public javax.swing.JLabel bookTitleLabel;
     private javax.swing.JPanel coverPanel;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JSeparator login_seperator;
     // End of variables declaration//GEN-END:variables
 }

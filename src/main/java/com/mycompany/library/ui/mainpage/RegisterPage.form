@@ -53,17 +53,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-                  <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                  <Component id="next_button" min="-2" pref="240" max="-2" attributes="0"/>
+                  <Component id="nextButton" min="-2" pref="240" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="logIn_label" min="-2" pref="58" max="-2" attributes="0"/>
+                  <Component id="logInLabel" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -74,19 +74,19 @@
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Component id="firstName_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fnameLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                  <Component id="suffix_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="suffixLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                  <Component id="lastName_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lnameLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                  <Component id="middleName_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mnameLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="suffixComboBox" pref="206" max="32767" attributes="0"/>
                               <Component id="fnameField" alignment="1" max="32767" attributes="0"/>
@@ -99,10 +99,10 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                          <Component id="sex_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sexLabel" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="studID_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="studIDLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -115,11 +115,11 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                  <Component id="course_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="courseLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="email_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -137,13 +137,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="loginHeader_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="login_seperator" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="firstName_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="sex_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sexLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -152,8 +152,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="middleName_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="course_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="mnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="courseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -162,8 +162,8 @@
                   </Group>
                   <EmptySpace pref="7" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lastName_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="studID_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="studIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -172,8 +172,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="email_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="suffix_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="suffixLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -183,16 +183,16 @@
                   <EmptySpace pref="17" max="32767" attributes="0"/>
                   <Component id="errorMessage" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="next_button" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="nextButton" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="logIn_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="logInLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="loginHeader_label">
+        <Component class="javax.swing.JLabel" name="headerLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="78" red="67" type="rgb"/>
@@ -207,7 +207,7 @@
             <Property name="text" type="java.lang.String" value="REGISTER"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="firstName_label">
+        <Component class="javax.swing.JLabel" name="fnameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -220,7 +220,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="middleName_label">
+        <Component class="javax.swing.JLabel" name="mnameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -234,7 +234,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="next_button">
+        <Component class="javax.swing.JButton" name="nextButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="78" red="67" type="rgb"/>
@@ -251,7 +251,7 @@
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new custom.components.CustomRoundedButton()"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="logIn_label">
+        <Component class="javax.swing.JLabel" name="logInLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="14" style="0"/>
@@ -266,7 +266,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lastName_label">
+        <Component class="javax.swing.JLabel" name="lnameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -279,7 +279,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="suffix_label">
+        <Component class="javax.swing.JLabel" name="suffixLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -292,7 +292,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="email_label">
+        <Component class="javax.swing.JLabel" name="emailLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -305,7 +305,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="studID_label">
+        <Component class="javax.swing.JLabel" name="studIDLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -318,7 +318,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="course_label">
+        <Component class="javax.swing.JLabel" name="courseLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -331,7 +331,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="sex_label">
+        <Component class="javax.swing.JLabel" name="sexLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -367,6 +367,9 @@
             <Property name="borderRadius" type="int" value="30"/>
             <Property name="borderThickness" type="float" value="2.0"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
+          </AuxValues>
         </Component>
         <Component class="custom.components.RoundedTextField" name="mnameField">
           <Properties>
@@ -420,18 +423,17 @@
         <Component class="custom.components.RoundedComboBox" name="courseComboBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="11">
-                <StringItem index="0" value="Senior High School"/>
-                <StringItem index="1" value="BS in Nursing"/>
-                <StringItem index="2" value="BS in Medical Laboratory Science (Medical Technology)"/>
-                <StringItem index="3" value="BS in Pharmacy"/>
-                <StringItem index="4" value="BS in Physical Therapy"/>
-                <StringItem index="5" value="BS in Psychology"/>
-                <StringItem index="6" value="BS in Accountancy"/>
-                <StringItem index="7" value="BS in Accounting Information System"/>
-                <StringItem index="8" value="BS in Tourism Management"/>
-                <StringItem index="9" value="BS in Computer Science"/>
-                <StringItem index="10" value="BS in Criminology"/>
+              <StringArray count="10">
+                <StringItem index="0" value="Science, Technology, Engineering, and Mathematics"/>
+                <StringItem index="1" value="Humanities and Social Sciences"/>
+                <StringItem index="2" value="Accountancy, Business, and Management"/>
+                <StringItem index="3" value="Hospitality and International Management"/>
+                <StringItem index="4" value="Nursing"/>
+                <StringItem index="5" value="Medical Laboratory Science"/>
+                <StringItem index="6" value="Pharmacy"/>
+                <StringItem index="7" value="Physical Therapy"/>
+                <StringItem index="8" value="Accountancy"/>
+                <StringItem index="9" value="Computer Science"/>
               </StringArray>
             </Property>
             <Property name="borderRadius" type="int" value="35"/>

@@ -214,11 +214,13 @@ public class LogInPage extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 if(evt.getKeyCode() == KeyEvent.VK_ENTER){
 
-                    if(MainPageFunctions.signIn().equals("Admin")){
+                    String result = MainPageFunctions.signIn();
+
+                    if("Admin".equals(result)){
                         LogInPage.instance.setVisible(false);
                         new AdminPage().setVisible(true);
 
-                    } else {
+                    } else if(result != null){
                         LogInPage.instance.setVisible(false);
                         new StudentPage().setVisible(true);
                     }

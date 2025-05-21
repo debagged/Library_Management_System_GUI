@@ -25,7 +25,7 @@ import java.awt.event.KeyAdapter;
 
 public class StudentPage extends javax.swing.JFrame {
 
-    public static String userID = "06230002160";
+    public static String userID = null;
     public static StudentPage instance;
 
     public StudentPage() {

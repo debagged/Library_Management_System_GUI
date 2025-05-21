@@ -26,32 +26,32 @@ public class MainPageFunctions {
     protected static boolean validateInput(String uname, String pass, String confirmPass){
 
         if(uname.isBlank()){
-                showError(ForgotPassPage.unameField, ForgotPassPage.emptyUnameMessage, "please enter your username");
-                return false;
-            }
+            showError(ForgotPassPage.unameField, ForgotPassPage.emptyUnameMessage, "please enter your username");
+            return false;
+        }
 
-            if(pass.isBlank()){
-                showError(ForgotPassPage.passField, ForgotPassPage.emptyPassMessage, "please enter your new password");
-                return false;
-            }
+        if(pass.isBlank()){
+            showError(ForgotPassPage.passField, ForgotPassPage.emptyPassMessage, "please enter your new password");
+            return false;
+        }
 
-            if(confirmPass.isBlank()){
-                showError(ForgotPassPage.confirmPassField, ForgotPassPage.emptyConfirmPassMessage, "please confirm your password");
-                return false;
-            }
+        if(confirmPass.isBlank()){
+            showError(ForgotPassPage.confirmPassField, ForgotPassPage.emptyConfirmPassMessage, "please confirm your password");
+            return false;
+        }
 
-            if(uname.equals("admin") || uname.equals("Admin")){
-                showError(ForgotPassPage.unameField, ForgotPassPage.emptyUnameMessage, "Invalid Input");
-                return false;
-            }
+        if(uname.equals("admin") || uname.equals("Admin")){
+            showError(ForgotPassPage.unameField, ForgotPassPage.emptyUnameMessage, "Invalid Input");
+            return false;
+        }
 
-            if(!pass.equals(confirmPass)){
-                showError(ForgotPassPage.passField, ForgotPassPage.emptyPassMessage, "passwords must match");
+        if(!pass.equals(confirmPass)){
+            showError(ForgotPassPage.passField, ForgotPassPage.emptyPassMessage, "passwords must match");
 
-                showError(ForgotPassPage.confirmPassField, ForgotPassPage.emptyConfirmPassMessage, "passwords must match");
-                return false;
+            showError(ForgotPassPage.confirmPassField, ForgotPassPage.emptyConfirmPassMessage, "passwords must match");
+            return false;
 
-            }
+        }
         return true;
     }
 
@@ -85,7 +85,7 @@ public class MainPageFunctions {
 
         resetValidation();
 
-        if(!MainPageFunctions.validateInput(uname, pass, confirmPass)){return;}
+        if(!MainPageFunctions.validateInput(uname, pass, confirmPass)){ return; }
 
         if(!UserData.resetPassword(uname, confirmPass)){
             showError(ForgotPassPage.unameField, ForgotPassPage.emptyUnameMessage, "username not found");
@@ -174,4 +174,68 @@ public class MainPageFunctions {
 
     //-----------------------------------------------------------------------------------------------------//
     
+    //-------------------------------------REGISTER PAGE---------------------------------------------------//
+
+    protected static boolean validateRegisterInput(String uname, String pass, String confirmPass){
+        if(uname.isBlank()){
+            MainPageFunctions.emptyFieldError(RegisterPage2.newUnameField, RegisterPage2.emptyUnameMessage,"please enter your username");
+            return false;
+        }
+
+        if(pass.isBlank()){
+            MainPageFunctions.emptyFieldError(RegisterPage2.newPassField, RegisterPage2.emptyNewPassMessage, "please enter your password");
+            return false;
+        }
+
+        if(confirmPass.isBlank()){
+            MainPageFunctions.emptyFieldError(RegisterPage2.confirmNewPassField, RegisterPage2.emptyConfirmPassMessage, "please confirm your password");
+            return false;
+        }
+
+        if(!pass.equals(confirmPass)){
+            MainPageFunctions.emptyFieldError(RegisterPage2.newPassField, RegisterPage2.emptyNewPassMessage, "passwords must match");
+            MainPageFunctions.emptyFieldError(RegisterPage2.confirmNewPassField, RegisterPage2.emptyConfirmPassMessage, "passwords must match");
+            return false;
+        }
+
+        return true;
+    }
+
+    protected static void resetRegisterValidation(){
+        RegisterPage2.emptyUnameMessage.setText(null);
+        RegisterPage2.emptyNewPassMessage.setText(null);
+        RegisterPage2.emptyConfirmPassMessage.setText(null);
+        RegisterPage2.newUnameField.setBorderColor(java.awt.Color.decode("#667961"));
+        RegisterPage2.newPassField.setBorderColor(java.awt.Color.decode("#667961"));
+        RegisterPage2.confirmNewPassField.setBorderColor(java.awt.Color.decode("#667961"));
+    }
+
+    protected static void showRegisterSuccess(){
+        JOptionPane.showMessageDialog(RegisterPage2.instance, "Successfully registered!");
+        RegisterPage2.newUnameField.setText(null);
+        RegisterPage2.newPassField.setText(null);
+        RegisterPage2.confirmNewPassField.setText(null);
+        resetRegisterValidation();
+        RegisterPage2.instance.dispose();
+        new LogInPage().setVisible(true);
+    }
+
+    protected static void registerUser(){
+
+        String username = RegisterPage2.newUnameField.getText().trim();
+        String pass = String.valueOf(RegisterPage2.newPassField.getPassword());
+        String confirmPass = String.valueOf(RegisterPage2.confirmNewPassField.getPassword());
+        String userID = RegisterPage.studIDField.getText().trim();
+        resetRegisterValidation();
+
+        if(!validateRegisterInput(username, pass, confirmPass)){ return; }
+
+        if(UserData.registerUserLoginToDB(userID, username, confirmPass)){
+            showRegisterSuccess();
+            return;
+        }else{
+            JOptionPane.showMessageDialog(RegisterPage2.instance, "Register Failed!");
+        }
+    }
+
 }

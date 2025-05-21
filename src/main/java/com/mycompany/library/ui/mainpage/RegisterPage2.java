@@ -2,17 +2,19 @@ package com.mycompany.library.ui.mainpage;
 
 import java.awt.event.KeyEvent;
 
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 import com.mycompany.library.users.UserData;
 
 public class RegisterPage2 extends javax.swing.JFrame {
 
+    public static RegisterPage2 instance;
+
     public RegisterPage2() {
+
+        instance = this;
+
         initComponents();
         initListeners();
     }
@@ -193,7 +195,7 @@ public class RegisterPage2 extends javax.swing.JFrame {
         confirmNewPassField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-                    confirmButton.doClick();
+                    MainPageFunctions.registerUser();
                 }
             }
         });
@@ -221,54 +223,11 @@ public class RegisterPage2 extends javax.swing.JFrame {
 
     private void MousePressed(java.awt.event.MouseEvent evt){
 
-        String username = newUnameField.getText().trim();
-        String pass = String.valueOf(newPassField.getPassword());
-        String confirmPass = String.valueOf(confirmNewPassField.getPassword());
-        String userID = RegisterPage.studIDField.getText().trim();
+        MainPageFunctions.registerUser();
 
         if(evt.getSource()==backLabel){
             this.dispose();
             new RegisterPage().setVisible(true);
-        }
-
-        if(evt.getSource()==confirmButton){
-
-            if(username.isBlank()){
-                MainPageFunctions.emptyFieldError(newUnameField, emptyUnameMessage,"please enter your username");
-                return;
-            }
-
-            if(pass.isBlank()){
-                MainPageFunctions.emptyFieldError(newPassField, emptyNewPassMessage, "please enter your password");
-                return;
-            }
-
-            if(confirmPass.isBlank()){
-                MainPageFunctions.emptyFieldError(confirmNewPassField, emptyConfirmPassMessage, "please confirm your password");
-                return;
-            }
-
-            if(!pass.equals(confirmPass)){
-                MainPageFunctions.emptyFieldError(newPassField, emptyNewPassMessage, "passwords must match");
-                MainPageFunctions.emptyFieldError(confirmNewPassField, emptyConfirmPassMessage, "passwords must match");
-                return;
-            }else{
-                
-
-                if(UserData.registerUserLoginToDB(userID, username, confirmPass)){
-
-                    JOptionPane.showMessageDialog(rootPane, "Successfully registered!");
-                    newPassField.setText(null);
-                    newPassField.setText(null);
-                    confirmNewPassField.setText(null);
-                    this.dispose();
-                    new LogInPage().setVisible(true);
-                    
-                }else{
-                    JOptionPane.showMessageDialog(rootPane, "Register Failed!");
-                }
-            }
-
         }
     }
 
@@ -310,18 +269,18 @@ public class RegisterPage2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
     private javax.swing.JButton confirmButton;
-    private custom.components.RoundedPasswordField confirmNewPassField;
+    protected static custom.components.RoundedPasswordField confirmNewPassField;
     private javax.swing.JLabel confirmPassLabel;
     private javax.swing.JLabel createPassLabel;
     private javax.swing.JLabel createUnameLabel;
-    private javax.swing.JLabel emptyConfirmPassMessage;
-    private javax.swing.JLabel emptyNewPassMessage;
-    private javax.swing.JLabel emptyUnameMessage;
+    protected static javax.swing.JLabel emptyConfirmPassMessage;
+    protected static javax.swing.JLabel emptyNewPassMessage;
+    protected static javax.swing.JLabel emptyUnameMessage;
     private javax.swing.JLabel headerLabel;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator login_seperator;
     private javax.swing.JLabel mainBackground_label;
-    private custom.components.RoundedPasswordField newPassField;
-    private custom.components.RoundedTextField newUnameField;
+    protected static custom.components.RoundedPasswordField newPassField;
+    protected static custom.components.RoundedTextField newUnameField;
     // End of variables declaration//GEN-END:variables
 }

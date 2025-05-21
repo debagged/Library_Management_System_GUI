@@ -381,7 +381,8 @@ public class adminEditBook extends javax.swing.JPanel {
 
             if(com.mycompany.library.functions.LibraryFunctions.updateBookInDatabase(ISBN, title, edition, author, yearPublished, numOfPages, callNum, description, tag)){
                 JOptionPane.showMessageDialog(this, "Book info edit success!");
-
+                AdminFunctions.refreshBooksPanels();
+                
                 Window parentWindow = SwingUtilities.getWindowAncestor(this);
 
                 if (parentWindow instanceof JDialog) parentWindow.dispose();

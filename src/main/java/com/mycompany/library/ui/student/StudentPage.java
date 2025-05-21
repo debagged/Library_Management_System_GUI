@@ -758,27 +758,9 @@ public class StudentPage extends javax.swing.JFrame {
             }
         }
 
-        if(borrowedBooksPanel.getComponentCount() == 0 ||
-            booksPanel.getComponentCount() == 0){
-                    
-            addBorrowedBooksToPanel();
-            addBooksToPanel();
-
-            booksPanel.repaint();
-            booksPanel.revalidate();
-            borrowedBooksPanel.repaint();
-            borrowedBooksPanel.revalidate();
-        }
-
         if(evt.getSource()==viewBooksButton){
             cl.show(cardPanel2, "viewBooks");
             highlightButton(viewBooksButton);
-
-            if(booksPanel.getComponentCount()==0){
-                addBooksToPanel();
-                booksPanel.revalidate();
-                booksPanel.repaint();
-            }
 
             sidePanel.revalidate();
             sidePanel.repaint();
@@ -787,12 +769,6 @@ public class StudentPage extends javax.swing.JFrame {
         if(evt.getSource()==viewBorrowedBooksButton){
             cl.show(cardPanel2, "viewBorrowedBooks");
             highlightButton(viewBorrowedBooksButton);
-
-            if(borrowedBooksPanel.getComponentCount()==0){
-                addBorrowedBooksToPanel();
-                borrowedBooksPanel.revalidate();
-                borrowedBooksPanel.repaint();
-            }
 
             sidePanel.revalidate();
             sidePanel.repaint();

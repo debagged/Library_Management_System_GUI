@@ -66,5 +66,19 @@ public class AdminFunctions {
 
         showDialog(editBook, "Edit Book", true);
     }
+
+    protected static void  refreshBooksPanels(){
+        AdminPage.booksPanel.removeAll();
+        AdminPage.bookPanelsList.clear();
+        AdminPage.bookLabelsList.clear();
+
+        AdminPage.instance.addBooksToPanel(AdminPage.booksPanel, AdminPage.editBooksPanel);
+
+        AdminPage.booksPanel.revalidate();
+        AdminPage.booksPanel.repaint();
+        AdminPage.editBooksPanel.revalidate();
+        AdminPage.editBooksPanel.repaint();
+
+    }
     
 }

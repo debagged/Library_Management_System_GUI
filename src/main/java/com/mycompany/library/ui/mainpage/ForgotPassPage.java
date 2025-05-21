@@ -82,10 +82,10 @@ public class ForgotPassPage extends javax.swing.JFrame {
         emptyConfirmPassMessage.setForeground(new java.awt.Color(204, 0, 0));
         emptyConfirmPassMessage.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        passField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        passField.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 1, 1));
         passField.setBorderThickness(2.0F);
 
-        confirmPassField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 120, 97)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 12)));
+        confirmPassField.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 1, 1));
         confirmPassField.setBorderThickness(2.0F);
 
         unameField.setBorderThickness(2.0F);

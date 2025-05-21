@@ -73,6 +73,7 @@ public class LogInPage extends javax.swing.JFrame {
 
         unameField.setBorderThickness(2.0F);
 
+        passField.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 1, 1));
         passField.setBorderThickness(2.0F);
 
         signInButton.setForeground(new java.awt.Color(255, 255, 255));

@@ -11,8 +11,6 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -24,7 +22,12 @@ import com.mycompany.library.ui.mainpage.LogInPage;
 
 public class AdminPage extends javax.swing.JFrame {
 
+    public static AdminPage instance;
+
     public AdminPage() {
+
+        instance = this;
+
         initComponents();
         initListeners();
         
@@ -416,10 +419,17 @@ public class AdminPage extends javax.swing.JFrame {
         });
     }
 
-    ArrayList<JPanel> bookPanelsList = new ArrayList<>();
-    HashMap<JPanel, JLabel> bookLabelsList = new HashMap<>();
+    static ArrayList<JPanel> bookPanelsList = new ArrayList<>();
+    static HashMap<JPanel, JLabel> bookLabelsList = new HashMap<>();
 
-    private void addBooksToPanel(JPanel viewBooks, JPanel editBooks) {
+    protected void addBooksToPanel(JPanel viewBooks, JPanel editBooks) {
+
+        booksPanel.removeAll();
+        editBooksPanel.removeAll();
+        booksPanel.add(addBooksButton);
+        bookPanelsList.clear();
+        bookLabelsList.clear();
+
         List<LibraryFunctions.bookInfos> booksFromDB = LibraryFunctions.fetchBookData();
 
         for (LibraryFunctions.bookInfos book : booksFromDB) {
@@ -800,13 +810,13 @@ public class AdminPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private custom.components.RoundedPanel addBooksButton;
     private javax.swing.JLabel addBooksLabel;
-    public javax.swing.JPanel booksPanel;
+    public static javax.swing.JPanel booksPanel;
     public javax.swing.JScrollPane booksScrollPaneCard;
     private javax.swing.JLabel burgerButton;
     private custom.components.RoundedPanel burgerButtonPanel;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JPanel cardPanel2;
-    private javax.swing.JPanel editBooksPanel;
+    public static javax.swing.JPanel editBooksPanel;
     private javax.swing.JScrollPane editBooksScrollPaneCard;
     private custom.components.RoundedPanel editBooksSideButton;
     private javax.swing.JLabel editBooksSideLabel;

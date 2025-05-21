@@ -435,6 +435,7 @@ public class adminAddBook extends javax.swing.JPanel {
                 bookISBN.setText("ISBN");
                 addCoverLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download_green.png")));
                 bookTitleField.requestFocusInWindow();
+                AdminFunctions.refreshBooksPanels();
 
             }else{
                 JOptionPane.showMessageDialog(this, "Book Not Added");

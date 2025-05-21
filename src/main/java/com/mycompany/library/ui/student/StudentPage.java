@@ -605,9 +605,12 @@ public class StudentPage extends javax.swing.JFrame {
                 viewBooksLabel.setText((width > 150) ? "View Books" : "");
                 viewBorrowedLabel.setText((width > 150) ? "<html>View&nbsp;Borrowed<br>Books</html>" : "");
                 logOutLabel.setText((width > 150) ? "Log Out" : "");
-                
+
                 sidePanel.revalidate();
                 sidePanel.repaint();
+                
+                resizeBooksPanel(bookPanelsList, booksPanel, booksScrollPane);
+                resizeBooksPanel(borrowedBookPanelsList, borrowedBooksPanel, borrowedBooksScrollPane);
             }
 
         });

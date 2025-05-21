@@ -3,9 +3,6 @@ package com.mycompany.library.ui.mainpage;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JComponent;
-import javax.swing.JOptionPane;
-
-import com.mycompany.library.users.UserData;
 
 public class RegisterPage2 extends javax.swing.JFrame {
 

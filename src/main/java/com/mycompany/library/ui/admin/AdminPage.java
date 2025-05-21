@@ -608,6 +608,9 @@ public class AdminPage extends javax.swing.JFrame {
                 
                 sidePanel.revalidate();
                 sidePanel.repaint();
+
+                resizeBooksPanel(booksPanel, booksScrollPaneCard);
+                resizeBooksPanel(editBooksPanel, editBooksScrollPaneCard);
             }
         });
     

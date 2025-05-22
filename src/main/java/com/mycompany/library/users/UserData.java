@@ -1,10 +1,5 @@
 package com.mycompany.library.users;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
@@ -12,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Base64;
-import java.util.concurrent.ExecutionException;
 
 import javax.swing.JOptionPane;
 
@@ -20,7 +14,19 @@ import com.mycompany.library.database.LibraryDatabase;
 
 public class UserData{
 
+    //--------------------------------------CHECK DB CONNECTION----------------------------------------------------------//
+
+    public static Connection checkDatabaseConnection(){
+        Connection connect = LibraryDatabase.getConnection();
+        if (connect == null){
+            JOptionPane.showMessageDialog(null, "Database is not connected. Please try again", "Connection Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        return connect;
+    }
+
     static Connection connect = LibraryDatabase.getConnection(); // Direct access
+
+    //---------------------------------------USER REGISTRATION-----------------------------------------------------------//
 
     public static boolean registerUserDataToDB(String user_ID, String given_name, String middle_name, String last_name, String gender, String campus_email, String course){
         
@@ -136,13 +142,8 @@ public class UserData{
                 String storedPassword = resultSet.getString("password");
 
                 if(storedPassword.equals(inputHashedPassword)) return true;
-
-                //System.out.println("User Login Successfully");
-
-                //return storedPassword.equals(inputHashedPassword); // Compare hashes
             }
 
-            //System.out.println("User not found");
             return false; // User not found
 
         } catch (SQLException e) {
@@ -157,6 +158,10 @@ public class UserData{
         }
     }
 
+    //-----------------------------------------------------------------------------------------------------------//
+
+
+    //---------------------------------------------RESET PASSWORD------------------------------------------------//
     public static boolean resetPassword(String username, String confirmPassword) {
         Connection connection = LibraryDatabase.getConnection();
         if (connection == null) return false; // Connection failed
@@ -188,58 +193,9 @@ public class UserData{
         return false; //uname not found
     }
 
-    String filePath = "src/main/resources/UserData_Log_File.txt";
-
-    public void saveDataToFile(String user_name, String password){
-        try (FileWriter fw = new FileWriter(filePath, true);
-                PrintWriter pw = new PrintWriter(fw)) {
-                    pw.println(user_name + ":" + password);
-                    pw.println("Role: Student");
-                    pw.println("=====================");
-                } catch (IOException e) {}       
-    }
-
-    public boolean readDataFromFile(String username, String password) {
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split(":");
-                if (parts[0].equals(String.valueOf(username))&& parts[1].equals(String.valueOf(password))) {
-                    return true;
-                }
-            }
-            return false; // Login failed
-        } catch(IOException e){}
-        return false;
-    }
-    
-    public String roleValidation(String username, String password) {
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            //String fileRole;
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split(":");
-                
-                if (parts[0].equals(String.valueOf(username)) && parts[1].equals(String.valueOf(password))) {
-                    String roleLine = br.readLine();
-                    if (roleLine.startsWith("Role:")) {
-                        return roleLine.split(":")[1].trim(); // Extract role of User
-                    }
-                }
-            }
-        } catch(IOException e){}
-        return null;
-    }
+    //----------------------------------------------------------------------------------------------------------//
 
     // WITH DB PROPERTY //
-
-    public static Connection checkDatabaseConnection(){
-        Connection connect = LibraryDatabase.getConnection();
-        if (connect == null){
-            JOptionPane.showMessageDialog(null, "Database is not connected. Please try again", "Connection Error", JOptionPane.INFORMATION_MESSAGE);
-        }
-        return connect;
-    }
 
     public static String courseChecker(String course){
         Connection connect = checkDatabaseConnection(); 
@@ -255,6 +211,7 @@ public class UserData{
             if (courseResult.next()) {
                 // Course exists, get its ID
                 course_ID = courseResult.getString("course_ID");
+                System.out.println("Course ID: " + course_ID);
             }
             else{
                 System.out.println("Chosen Course / Program is not currently avaibable at Our Lady Of Fatima University - Laguna Campus");

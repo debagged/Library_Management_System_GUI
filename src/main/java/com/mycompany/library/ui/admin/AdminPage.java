@@ -496,8 +496,8 @@ public class AdminPage extends javax.swing.JFrame {
     }
 
     private void resizeBooksPanel(JPanel panel, JScrollPane scrollPane){
-        int bookPanelWidth = 170;
-        int bookPanelHeight = 200;
+        int bookPanelWidth = 165;
+        int bookPanelHeight = 285;
 
         int containerWidth = scrollPane.getViewport().getWidth();
         if (containerWidth == 0) containerWidth = 700;
@@ -509,6 +509,7 @@ public class AdminPage extends javax.swing.JFrame {
         int heightNeeded = rows * bookPanelHeight + (rows * 10); // spacing
 
         panel.setPreferredSize(new Dimension(containerWidth, heightNeeded));
+
         panel.revalidate();
         panel.repaint();
 
